@@ -145,7 +145,8 @@ function handleSelection(option, stepId) {
     }, 250);
     return;
   }
-
+  console.log("Respuestas antes de enviar:");
+  console.log(JSON.stringify(respuestasSesion, null, 2));
   enviarSesion();
 
  setTimeout(() => {
