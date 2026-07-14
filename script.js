@@ -2,7 +2,9 @@ const state = {
   currentStep: "start"
 };
 
-let respuestasSesion = {
+function nuevaSesion() {
+  sesion = crypto.randomUUID();
+  respuestasSesion = {
     Pregunta1: "",
     Pregunta2: "",
     Pregunta3: "",
@@ -11,8 +13,14 @@ let respuestasSesion = {
     Pregunta6: "",
     Pregunta7: "",
     Pregunta8: ""
-};
-let sesion = crypto.randomUUID();
+  };
+
+  console.log("Nueva sesión iniciada:", sesion);
+}
+
+let sesion;
+let respuestasSesion;
+nuevaSesion();
 
 function formatMessageText(text) {
   if (!text) {
@@ -160,6 +168,7 @@ function startChat() {
 }
 
 function resetChat() {
+  nuevaSesion();
   document.getElementById("messages").innerHTML = "";
   document.getElementById("options").innerHTML = "";
   state.currentStep = "start";
@@ -167,6 +176,7 @@ function resetChat() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  nuevaSesion();
   document.getElementById("restart").addEventListener("click", resetChat);
   startChat();
 });
