@@ -145,8 +145,6 @@ function handleSelection(option, stepId) {
     }, 250);
     return;
   }
-
-  enviarSesion();
   respuestasSesion = {
     Pregunta1: "",
     Pregunta2: "",
@@ -157,7 +155,9 @@ function handleSelection(option, stepId) {
     Pregunta7: "",
     Pregunta8: ""
   };
-  
+  enviarSesion();
+
+
 
  setTimeout(() => {
       addMessage("Gracias por chatear! Puedes empezar de nuevo en cualquier momento.", "bot");
