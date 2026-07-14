@@ -13,6 +13,23 @@ let respuestasSesion = {
     Pregunta8: ""
 };
 let sesion = crypto.randomUUID();
+function reiniciarSesion() {
+
+    respuestasSesion = {
+        Pregunta1: "",
+        Pregunta2: "",
+        Pregunta3: "",
+        Pregunta4: "",
+        Pregunta5: "",
+        Pregunta6: "",
+        Pregunta7: "",
+        Pregunta8: ""
+    };
+
+    sesion = crypto.randomUUID();
+
+}
+
 
 function formatMessageText(text) {
   if (!text) {
@@ -148,6 +165,7 @@ function handleSelection(option, stepId) {
   console.log("Respuestas antes de enviar:");
   console.log(JSON.stringify(respuestasSesion, null, 2));
   enviarSesion();
+  reiniciarSesion();
 
  setTimeout(() => {
       addMessage("Gracias por chatear! Puedes empezar de nuevo en cualquier momento.", "bot");
