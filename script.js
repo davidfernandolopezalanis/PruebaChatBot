@@ -13,23 +13,6 @@ let respuestasSesion = {
     Pregunta8: ""
 };
 let sesion = crypto.randomUUID();
-/*function reiniciarSesion() {
-
-    respuestasSesion = {
-        Pregunta1: "",
-        Pregunta2: "",
-        Pregunta3: "",
-        Pregunta4: "",
-        Pregunta5: "",
-        Pregunta6: "",
-        Pregunta7: "",
-        Pregunta8: ""
-    };
-
-    sesion = crypto.randomUUID();
-
-}*/
-
 
 function formatMessageText(text) {
   if (!text) {
@@ -143,7 +126,7 @@ async function enviarSesion() {
 
         console.error("Error al conectar con Power Automate:", error);
 
-    }  
+    }
 
 }
 
@@ -162,9 +145,8 @@ function handleSelection(option, stepId) {
     }, 250);
     return;
   }
-  enviarSesion();
-  resetChat();
 
+  enviarSesion();
 
  setTimeout(() => {
       addMessage("Gracias por chatear! Puedes empezar de nuevo en cualquier momento.", "bot");
@@ -180,7 +162,6 @@ function startChat() {
 function resetChat() {
   document.getElementById("messages").innerHTML = "";
   document.getElementById("options").innerHTML = "";
-  reiniciarSesion();
   state.currentStep = "start";
   startChat();
 }
