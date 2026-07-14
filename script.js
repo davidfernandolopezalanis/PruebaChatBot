@@ -130,7 +130,6 @@ async function enviarSesion() {
 
 }
 
-
 function handleSelection(option, stepId) {
   addMessage(option.label, "user");
   respuestasSesion[chatFlow[stepId].id] = option.label;
@@ -148,9 +147,6 @@ function handleSelection(option, stepId) {
   }
 
   enviarSesion();
-
-
-
 
  setTimeout(() => {
       addMessage("Gracias por chatear! Puedes empezar de nuevo en cualquier momento.", "bot");
