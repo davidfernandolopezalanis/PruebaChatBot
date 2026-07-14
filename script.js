@@ -11,8 +11,8 @@ const state = {
     Pregunta6: "",
     Pregunta7: "",
     Pregunta8: ""
-};*/
-let sesion = crypto.randomUUID();
+};
+let sesion = crypto.randomUUID();*/
 function reiniciarSesion() {
 
     respuestasSesion = {
