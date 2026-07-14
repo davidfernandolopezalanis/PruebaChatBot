@@ -170,4 +170,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("restart").addEventListener("click", resetChat);
   startChat();
 });
-
