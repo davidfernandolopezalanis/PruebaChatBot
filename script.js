@@ -2,7 +2,7 @@ const state = {
   currentStep: "start"
 };
 
-let respuestasSesion = {
+/*let respuestasSesion = {
     Pregunta1: "",
     Pregunta2: "",
     Pregunta3: "",
@@ -11,7 +11,7 @@ let respuestasSesion = {
     Pregunta6: "",
     Pregunta7: "",
     Pregunta8: ""
-};
+};*/
 let sesion = crypto.randomUUID();
 function reiniciarSesion() {
 
