@@ -181,6 +181,7 @@ function startChat() {
 function resetChat() {
   document.getElementById("messages").innerHTML = "";
   document.getElementById("options").innerHTML = "";
+  reiniciarSesion();
   state.currentStep = "start";
   startChat();
 }
