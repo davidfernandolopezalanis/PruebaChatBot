@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayuda FO Metal</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="chat-card">
+        <header class="chat-header">
+          <div>
+            <h1>Ayuda FO Metal</h1>
+            <p>Escoja una opcíon para continuar</p>
+          </div>
+          <button id="restart" class="secondary-btn">Empezar de nuevo</button>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite"></section>
+
+        <section class="options-panel">
+          <div id="options" class="options"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
