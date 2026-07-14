@@ -2,7 +2,7 @@ const state = {
   currentStep: "start"
 };
 
-/*let respuestasSesion = {
+let respuestasSesion = {
     Pregunta1: "",
     Pregunta2: "",
     Pregunta3: "",
@@ -12,7 +12,7 @@ const state = {
     Pregunta7: "",
     Pregunta8: ""
 };
-let sesion = crypto.randomUUID();*/
+let sesion = crypto.randomUUID();
 function reiniciarSesion() {
 
     respuestasSesion = {
@@ -143,7 +143,8 @@ async function enviarSesion() {
 
         console.error("Error al conectar con Power Automate:", error);
 
-    }
+    }  
+    reiniciarSesion();
 
 }
 
@@ -165,7 +166,7 @@ function handleSelection(option, stepId) {
   console.log("Respuestas antes de enviar:");
   console.log(JSON.stringify(respuestasSesion, null, 2));
   enviarSesion();
-  reiniciarSesion();
+
 
  setTimeout(() => {
       addMessage("Gracias por chatear! Puedes empezar de nuevo en cualquier momento.", "bot");
