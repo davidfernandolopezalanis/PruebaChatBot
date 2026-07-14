@@ -13,7 +13,7 @@ let respuestasSesion = {
     Pregunta8: ""
 };
 let sesion = crypto.randomUUID();
-function reiniciarSesion() {
+/*function reiniciarSesion() {
 
     respuestasSesion = {
         Pregunta1: "",
@@ -28,7 +28,7 @@ function reiniciarSesion() {
 
     sesion = crypto.randomUUID();
 
-}
+}*/
 
 
 function formatMessageText(text) {
@@ -144,7 +144,6 @@ async function enviarSesion() {
         console.error("Error al conectar con Power Automate:", error);
 
     }  
-    reiniciarSesion();
 
 }
 
@@ -163,9 +162,8 @@ function handleSelection(option, stepId) {
     }, 250);
     return;
   }
-  console.log("Respuestas antes de enviar:");
-  console.log(JSON.stringify(respuestasSesion, null, 2));
   enviarSesion();
+  resetChat();
 
 
  setTimeout(() => {
