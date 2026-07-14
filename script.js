@@ -129,17 +129,7 @@ async function enviarSesion() {
     }
 
 }
-function resetRespuestasSesion() {
-    respuestasSesion = {
-    Pregunta1: "",
-    Pregunta2: "",
-    Pregunta3: "",
-    Pregunta4: "",
-    Pregunta5: "",
-    Pregunta6: "",
-    Pregunta7: "",
-    Pregunta8: ""
-  };
+
 
 function handleSelection(option, stepId) {
   addMessage(option.label, "user");
@@ -156,10 +146,9 @@ function handleSelection(option, stepId) {
     }, 250);
     return;
   }
-  
-  resetRespuestasSesion();
+
   enviarSesion();
-  resetRespuestasSesion();
+
 
 
 
