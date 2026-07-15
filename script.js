@@ -168,7 +168,7 @@ function startChat() {
 }
 
 function resetChat() {
-  nuevaSesion();
+  /*nuevaSesion();*/
   document.getElementById("messages").innerHTML = "";
   document.getElementById("options").innerHTML = "";
   state.currentStep = "start";
