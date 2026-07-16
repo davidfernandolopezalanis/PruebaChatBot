@@ -104,12 +104,26 @@ const chatFlow = {
         },
         {
             label: "No",
-            next: "cuartoMetal"
+            next: "tercerMetal3horasMas"
         }
     ]
   },
-  cuartoMetal:{
+  tercerMetal3horasMas:{
     id: "Pregunta7",
+    question: "¿Este es el tercer rechazo de metal confirmado en más de 3 horas?",
+    options:[
+      {
+        label: "Si",
+        next: "NoParoLinea"
+      },
+      {
+        label: "No",
+        next: "cuartoMetal"
+      }
+    ]
+  },
+  cuartoMetal:{
+    id: "Pregunta8",
     question: "¿Este es el cuarto rechazo confirmado?",
     options:[
         {
@@ -123,7 +137,7 @@ const chatFlow = {
     ]
     },
   quintoMetal:{
-    id: "Pregunta8",
+    id: "Pregunta9",
     question:"¿Este es el quinto rechazo de metal confirmado en 12 horas o menos?",
     options: [
         {

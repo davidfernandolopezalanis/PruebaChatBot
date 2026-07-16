@@ -12,7 +12,8 @@ function nuevaSesion() {
     Pregunta5: "",
     Pregunta6: "",
     Pregunta7: "",
-    Pregunta8: ""
+    Pregunta8: "",
+    Pregunta9: ""
   };
 
   console.log("Nueva sesión iniciada:", sesion);
