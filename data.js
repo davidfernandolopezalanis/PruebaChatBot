@@ -1,6 +1,242 @@
 const chatFlow = {
   start: {
     id: "Pregunta1",
+    question: "¿En qué planta está localizado?",
+    options: [
+      {
+        label: "MTM (Montemorelos)",
+        next: "lineaMTM"
+      },
+      {
+        label: "SCA (Santa Catarina)",
+        next: "lineaSCA"
+      },
+      {
+        label: "TE (Tienda de Experiencia)",
+        next: "turnoTE"
+      },
+      {
+        label: "TOT (Toluca)",
+        next: "lineaTOT"
+      }
+    ]
+  },
+  lineaMTM: {
+    id: "Pregunta2",
+    question: "¿En qué línea se encontró el metal?",
+    options: [
+      {
+        label: "Barras",
+        next: "turnoMTM"
+      },
+      {
+        label: "Empaque",
+        next: "turnoMTM"
+      }
+    ]
+  },
+  lineaSCA: {
+    id: "Pregunta2",
+    question: "¿En qué linea se encontró el metal?",
+    options: [
+      {
+        label: "Goma - HBB",
+        next: "turnoSCA"
+      },
+      {
+        label: "Goma - Pellet",
+        next: "turnoSCA"
+      },
+      {
+        label: "HC - Chuan Tye",
+        next: "turnoSCA"
+      },
+      {
+        label: "HC - J&R",
+        next: "turnoSCA"
+      },
+      {
+        label: "HC - Muecas 8",
+        next: "turnoSCA"
+      },
+      {
+        label: "HC - Muecas 9",
+        next: "turnoSCA"
+      },
+      {
+        label: "HC - Panzon",
+        next: "turnoSCA"
+      },
+      {
+        label : "Lucas - Bomvazo",
+        next: "turnoSCA"
+      },
+      {
+        label: "Lucas - Gusano",
+        next: "turnoSCA"
+      },
+      {
+        label: "Lucas - Polvos",
+        next: "turnoSCA"
+      },
+      {
+        label: "SKW - L1",
+        next: "turnoSCA"
+      },
+      {
+        label: "SKW - L2",
+        next: "turnoSCA"
+      },
+      {
+        label: "SKW - L3",
+        next: "turnoSCA"
+      },
+      {
+        label: "SKW - Premezclas",
+        next: "turnoSCA"
+      },
+      {
+        label: "SKW - Salsitas",
+        next: "turnoSCA"
+      }
+    ]
+  },
+  lineaTOT:{
+    id: "Pregunta2",
+    question: "¿En qué línea se encontró el metal?",
+    options: [
+      {
+        label: "Golosina - AA 21",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - AA 4000",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - AA 8000",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - AA MIDI",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Flowpack 1",
+        next : "turnosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Flowpack 1",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Multi Pon 1",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Multi Pon 2",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - Empque - SAPAL",
+        next: "turnosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Thurlings",
+        next: "turnosTOT"
+      },
+      {
+        label: "TAR - Bagger",
+        next: "turnosTOT"
+      },
+      {
+        label: "TAR - Coberturas",
+        next: "turnosTOT"
+      },
+      {
+        label: "TAR - Confitiers",
+        next: "turnosTOT"
+      },
+      {
+        label: "TAR - Granillo",
+        next: "turnosTOT"
+      },
+      {
+        label: "TAR - Marquetas",
+        next: "turnosTOT"
+      },
+      {
+        label: "TAR - Trampados",
+        next: "turnosTOT"
+      }
+    ]
+  },
+  turnoMTM: {
+    id: "Pregunta3",
+    question: "¿En qué turno se encontró el metal?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 2 (Tarde)",
+        next: "medidaMetal"
+      }
+    ]
+  },
+  turnoTE: {
+    id: "Pregunta3",
+    question: "¿En qué turno se encontró el metal?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 2 (Tarde)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 3 (Noche)",
+        next: "medidaMetal"
+      }
+    ]
+  },
+  turnoSCA:{
+    id: "Pregunta3",
+    question: "¿En qué turno se encontró el metal?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 2 (Trade)",
+        next: "medidaMetal"
+      }
+    ]
+  },
+  turnosTOT: {
+    id: "Pregunta3",
+    question: "¿En qué turno se ecnontró el metal?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 2 (Tarde)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 3 (Noche)",
+        next: "medidaMetal"
+      }
+    ]
+  },
+  medidaMetal: {
+    id: "Pregunta4",
     question: "¿El metal encontrado es mayor a 7mm?",
     options: [
       {
@@ -23,7 +259,7 @@ const chatFlow = {
     final: true
   },
   no7mm: {
-    id: "Pregunta2",
+    id: "Pregunta5",
     question: "¿Dónde fue encontrado el objeto metálico?",
     options: [
       {
@@ -53,7 +289,7 @@ const chatFlow = {
     ]
   },
   preguntaPrimerRechazo: {
-    id: "Pregunta3",
+    id: "Pregunta6",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
@@ -67,7 +303,7 @@ const chatFlow = {
     ]
   },
   posibilidadMetalEnProducto: {
-    id: "Pregunta4",
+    id: "Pregunta7",
     question: "¿Existe posibilidad de que el metal haya llegado al producto?",
     options: [
       {
@@ -81,7 +317,7 @@ const chatFlow = {
     ]
   },
   segundoMetal:{
-    id: "Pregunta5",
+    id: "Pregunta8",
     question: "¿Es el segundo rechazo confirmado?",
     options: [
         {
@@ -95,7 +331,7 @@ const chatFlow = {
     ]
   },
   tercerMetal:{
-    id: "Pregunta6",
+    id: "Pregunta9",
     question: "¿Este es el tercer rechazo de metal confirmado en tres horas o menos?",
     options:[
         {
@@ -104,13 +340,13 @@ const chatFlow = {
         },
         {
             label: "No",
-            next: "tercerMetal3horasMas"
+            next: "tercerMetalMas3Horas"
         }
     ]
   },
-  tercerMetal3horasMas:{
-    id: "Pregunta7",
-    question: "¿Este es el tercer rechazo de metal confirmado en más de 3 horas?",
+  tercerMetalMas3Horas:{
+    id: "Pregunta10",
+    question: "¿Este es el tercer rechazo de metal confirmado en más de tres horas?",
     options:[
       {
         label: "Si",
@@ -123,7 +359,7 @@ const chatFlow = {
     ]
   },
   cuartoMetal:{
-    id: "Pregunta8",
+    id: "Pregunta11",
     question: "¿Este es el cuarto rechazo confirmado?",
     options:[
         {
@@ -137,7 +373,7 @@ const chatFlow = {
     ]
     },
   quintoMetal:{
-    id: "Pregunta9",
+    id: "Pregunta12",
     question:"¿Este es el quinto rechazo de metal confirmado en 12 horas o menos?",
     options: [
         {
