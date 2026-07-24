@@ -2,7 +2,7 @@ const state = {
   currentStep: "start"
 };
 
-function nuevaSesion() {
+  function nuevaSesion() {
   sesion = crypto.randomUUID();
   respuestasSesion = {
     Pregunta1: "",
@@ -13,7 +13,10 @@ function nuevaSesion() {
     Pregunta6: "",
     Pregunta7: "",
     Pregunta8: "",
-    Pregunta9: ""
+    Pregunta9: "",
+    Pregunta10: "",
+    Pregunta11: "",
+    Pregunta12: ""
   };
 
   console.log("Nueva sesión iniciada:", sesion);
@@ -126,6 +129,7 @@ async function enviarSesion() {
 
         if (respuesta.ok) {
             console.log("Sesión enviada correctamente.");
+            
         } else {
             const error = await respuesta.text();
             console.error("Error del flujo:", error);
@@ -156,6 +160,7 @@ function handleSelection(option, stepId) {
   }
 
   enviarSesion();
+  
 
  setTimeout(() => {
       addMessage("Gracias por chatear! Puedes empezar de nuevo en cualquier momento.", "bot");
@@ -169,11 +174,12 @@ function startChat() {
 }
 
 function resetChat() {
-  /*nuevaSesion();*/
+  nuevaSesion();
   document.getElementById("messages").innerHTML = "";
   document.getElementById("options").innerHTML = "";
   state.currentStep = "start";
   startChat();
+  nuevaSesion();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
