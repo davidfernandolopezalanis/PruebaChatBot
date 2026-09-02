@@ -16,7 +16,18 @@ const state = {
     Pregunta9: "",
     Pregunta10: "",
     Pregunta11: "",
-    Pregunta12: ""
+    Pregunta12: "",
+    Pregunta13: "",
+    Pregunta14: "",
+    Pregunta15: "",
+    Pregunta16: "",
+    Pregunta17: "",
+    Pregunta18: "",
+    Pregunta19: "",
+    Pregunta20: "",
+    Pregunta21: "",
+    Pregunta22: "",
+    Pregunta23: "",
   };
 
   console.log("Nueva sesión iniciada:", sesion);
@@ -129,6 +140,7 @@ async function enviarSesion() {
 
         if (respuesta.ok) {
             console.log("Sesión enviada correctamente.");
+            nuevaSesion();
             
         } else {
             const error = await respuesta.text();
@@ -160,6 +172,7 @@ function handleSelection(option, stepId) {
   }
 
   enviarSesion();
+
   
 
  setTimeout(() => {
@@ -169,21 +182,21 @@ function handleSelection(option, stepId) {
 }
 
 function startChat() {
-  addMessage("Hola! Soy un chatbot diseñado para ayudarte con incidentes de FO de metal", "bot");
+  addMessage("Hola! Soy un chatbot diseñado para ayudarte con incidentes de FO", "bot");
   showStep("start");
 }
 
 function resetChat() {
-  nuevaSesion();
+  //nuevaSesion();
   document.getElementById("messages").innerHTML = "";
   document.getElementById("options").innerHTML = "";
   state.currentStep = "start";
   startChat();
-  nuevaSesion();
+  //nuevaSesion();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  nuevaSesion();
+  //nuevaSesion();
   document.getElementById("restart").addEventListener("click", resetChat);
   startChat();
 });
