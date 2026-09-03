@@ -2625,7 +2625,7 @@ const chatFlow = {
     ]
   },
   TOTAgua4:{
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n  3. Reportar y levantar anormalidad a mantenimiento. \n 4. Detonar inversitgación para definir fuente y cuasa potencial \n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n  6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n  8. Continuar monitoreo.",
+    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n  3. Reportar y levantar anormalidad a mantenimiento. \n 4. Detonar inversitgación para definir fuente y cuasa potencial \n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n  6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n  8. Continuar monitoreo. \n **Referencia:** STRD-01992 - Mars Wrigley Cleaning and Sanitation Standard",
     final: true
   },
   //====================================================
