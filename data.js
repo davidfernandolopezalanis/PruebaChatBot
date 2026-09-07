@@ -2821,7 +2821,7 @@ const chatFlow = {
   },
   TOTAgua3:{
     id: "Pregunta24",
-    question: "¿El agua está cayendo en pasillo o áreas alejadas, pero existe el riesgo de que salpique o llegue a la línea por el tráfico de personas o patines?",
+    question: "¿El agua está cayendo en pasillo o áreas alejadas?",
     options:[
       {
         label: "Si",
