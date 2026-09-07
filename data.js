@@ -2683,13 +2683,9 @@ const chatFlow = {
       }
     ]
   },
-  TOTVidrio3: {
+  TOTVidrio6: {
     response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró el objeto extraño.\n  5. Detonar investigación para definir fuente y causa potencial.\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
     image: "paro-linea.webp",
-    final: true
-  },
-  TOTVidrio4: {
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  5. Detonar investigación para definir fuente y causa potencial \n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT. \n 10. Continuar monitoreo. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
     final: true
   },
   //====================================================
