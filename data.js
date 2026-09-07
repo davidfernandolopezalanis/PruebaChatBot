@@ -38,28 +38,28 @@ const chatFlow = {
         next: "turnoMetalMTM"
       },
       {
-        label: "Plástico Suave",
+        label: "Plástico Suave/Duro",
         next: "turnoPlasticoMTM"
       },
       {
-        label: "Plástico Duro",
-        next: "turnoPlasticoMTM"
+        label: "Vidrio o Madera",
+        next: ""
       },
       {
-        label: "Otros Cuerpos Extraños (vidrio, madera, cabello, plagas, pelusa, etc.)",
-        next: "vidrioMaderaPlanta"
+        label: "Otros Cuerpos Extraños (cabello, plagas, pelusa, etc.)",
+        next: ""
       },
       {
         label: "Ingreso de Agua",
-        next: "aguaPlanta"
+        next: ""
       },
       {
         label: "Químico (lubricantes, pintura, sanitizantes, alérgenos)",
-        next: "quimicoPlanta"
+        next: ""
       },
       {
         label: "Incidentes de Calidad",
-        next: "otroPlanta"
+        next: ""
       }
     ]
   },
@@ -72,12 +72,12 @@ const chatFlow = {
         next: "lineaMetalSCA"
       },
       {
-        label: "Plástico Suave",
+        label: "Plástico Suave / Duro",
         next: "lineaPlasticoSCA"
       },
       {
-        label: "Plástico Duro",
-        next: "lineaPlasticoSCA"
+        label: "Vidrio o Madera",
+        next: ""
       },
       {
         label: "Otros Cuerpos Extraños (vidrio, madera, cabello, plagas, pelusa, etc.)",
@@ -106,16 +106,16 @@ const chatFlow = {
         next: "lineaMetalTOT"
       },
       {
-        label: "Plástico Suave",
+        label: "Plástico Suave / Duro",
         next: "lineaPlasticoTOT"
       },
       {
-        label: "Plástico Duro",
-        next: "lineaPlasticoTOT"
+        label: "Vidrio o Madera",
+        next: "lineaVidrioTOT"
       },
       {
-        label: "Otros Cuerpos Extraños (vidrio, madera, cabello, plagas, pelusa, etc.)",
-        next: "lineaFOTOT"
+        label: "Otros Cuerpos Extraños (cabello, plagas, pelusa, etc.)",
+        next: "lineaOtrosTOT"
       },
       {
         label: "Ingreso de Agua",
@@ -475,10 +475,10 @@ const chatFlow = {
     ]
   },
   //--------------------------------------------
-  //              LINEA OBJETO EXTRAÑO
+  //              LINEA VIDRIOS / MADERA
   //--------------------------------------------
 
-  lineaFOMTM: {
+  lineaVidrioMTM: {
     id: "Pregunta3",
     question: "¿En qué línea se encontró el objeto extraño?",
     options: [
@@ -492,7 +492,7 @@ const chatFlow = {
       }
     ]
   },
-  lineaFOSCA: {
+  lineaVidrioSCA: {
     id: "Pregunta3",
     question: "¿En qué linea se encontró el objeto extraño?",
     options: [
@@ -558,7 +558,7 @@ const chatFlow = {
       }
     ]
   },
-  lineaFOTOT:{
+  lineaVidrioTOT:{
     id: "Pregunta3",
     question: "¿En qué línea se encontró la materia extraña?",
     options: [
@@ -625,6 +625,160 @@ const chatFlow = {
       {
         label: "TAR - Trampados",
         next: "turnosVidrioTOT"
+      }
+    ]
+  },
+
+  //--------------------------------------------
+  //              LINEA VIDRIOS / MADERA
+  //--------------------------------------------
+  lineaOtrosMTM: {
+    id: "Pregunta3",
+    question: "¿En qué línea se encontró el objeto extraño?",
+    options: [
+      {
+        label: "Barras",
+        next: "turnoOtrosMTM"
+      },
+      {
+        label: "Empaque",
+        next: "turnoOtrosMTM"
+      }
+    ]
+  },
+  lineaOtrosSCA: {
+    id: "Pregunta3",
+    question: "¿En qué linea se encontró el objeto extraño?",
+    options: [
+      {
+        label: "Goma - HBB",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "Goma - Pellet",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "HC - Chuan Tye",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "HC - J&R",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "HC - Muecas 8",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "HC - Muecas 9",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "HC - Panzon",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label : "Lucas - Bomvazo",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "Lucas - Gusano",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "Lucas - Polvos",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "SKW - L1",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "SKW - L2",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "SKW - L3",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "SKW - Premezclas",
+        next: "turnoOtrosSCA"
+      },
+      {
+        label: "SKW - Salsitas",
+        next: "turnoOtrosSCA"
+      }
+    ]
+  },
+  lineaOtrosTOT:{
+    id: "Pregunta3",
+    question: "¿En qué línea se encontró la materia extraña?",
+    options: [
+      {
+        label: "Golosina - AA 21",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - AA 4000",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - AA 8000",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - AA MIDI",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Flowpack 1",
+        next : "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Flowpack 2",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Multi Pon 1",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Multi Pon 2",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - Empque - SAPAL",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "Golosina - Empaque - Thurlings",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "TAR - Bagger",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "TAR - Coberturas",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "TAR - Confitiers",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "TAR - Granillo",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "TAR - Marquetas",
+        next: "turnosOtrosTOT"
+      },
+      {
+        label: "TAR - Trampados",
+        next: "turnosOtrosTOT"
       }
     ]
   },
@@ -940,7 +1094,7 @@ const chatFlow = {
   },
 
   //--------------------------------------------
-  //                LINEA OTRO
+  //                LINEA INCIDENTE Q&FS
   //--------------------------------------------
 
   lineaQFSIncidenteMTM: {
@@ -1274,11 +1428,11 @@ const chatFlow = {
     options: [
       {
         label: "Turno 1 (Mañana)",
-        next: "medidaMetal"
+        next: "SCAVidrio1"
       },
       {
         label: "Turno 2 (Trade)",
-        next: "medidaMetal"
+        next: "SCAVidrio1"
       }
     ]
   },
@@ -1288,18 +1442,88 @@ const chatFlow = {
     options: [
       {
         label: "Turno 1 (Mañana)",
-        next: "TOTForeignO1"
+        next: "TOTVidrio1"
       },
       {
         label: "Turno 2 (Tarde)",
-        next: "TOTForeignO1"
+        next: "TOTVidrio1"
       },
       {
         label: "Turno 3 (Noche)",
-        next: "TOTForeignO1"
+        next: "TOTVidrio1"
       }
     ]
   },
+
+  //-----------------------------------------------------
+  //                   TURNOS VIDRIO
+  //-----------------------------------------------------
+
+  turnoOtrosMTM: {
+    id: "Pregunta4",
+    question: "¿En qué turno se encontró el vidrio?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 2 (Tarde)",
+        next: "medidaMetal"
+      }
+    ]
+  },
+  turnoOtrosTE: {
+    id: "Pregunta4",
+    question: "¿En qué turno se encontró el metal?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 2 (Tarde)",
+        next: "medidaMetal"
+      },
+      {
+        label: "Turno 3 (Noche)",
+        next: "medidaMetal"
+      }
+    ]
+  },
+  turnoOtrosSCA:{
+    id: "Pregunta4",
+    question: "¿En qué turno se encontró el metal?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "SCAOtros1"
+      },
+      {
+        label: "Turno 2 (Trade)",
+        next: "SCAOtros1"
+      }
+    ]
+  },
+  turnosOtrosTOT: {
+    id: "Pregunta4",
+    question: "¿En qué turno se ecnontró la materia extraña?",
+    options: [
+      {
+        label: "Turno 1 (Mañana)",
+        next: "TOTOtros1"
+      },
+      {
+        label: "Turno 2 (Tarde)",
+        next: "TOTOtros1"
+      },
+      {
+        label: "Turno 3 (Noche)",
+        next: "TOTOtros1"
+      }
+    ]
+  },
+
 
   //-----------------------------------------------------
   //                   TURNOS AGUA
@@ -1440,7 +1664,7 @@ const chatFlow = {
   },
 
   //-----------------------------------------------------
-  //                   TURNOS OTRO
+  //                   TURNOS INCIDENTE Q&FS
   //-----------------------------------------------------
 
   turnoQFSIncidenteMTM: {
@@ -1513,12 +1737,12 @@ const chatFlow = {
   //====================================================
 
   paroLinea: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  \   1. Detener la línea inmediatamente.\n  2. Notificar del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager.\n  3. Detonar investigación para definir fuente y causa potencial.\n  4. Revisión OPRP filtros, mallas, magnetos.\n  5. Caracterizar partículas con fines de investigación.\n  6. Documentar evento en reporte de contaminación.\n  7. Lanzar NCMGT.\n---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n---------------------------------------",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  \   1. Detener la línea inmediatamente.\n  2.  Segregar El Producto De Acuerdo Con El Last Good Check \n 3.Notificar del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager.\n  4. Revisión CCps, OPRP filtros, mallas, magnetos. \n 5. Caracterizar partículas con fines de investigación. \n 6. Detonar investigación para definir fuente y causa potencial.\n  7. Documentar evento en 'Reporte de turno' y llena el documento 'FORM-56871 Informacion para el levantamiento de incidentes en NCMGT'.\n  8. Lanzar NCMGT QVS/Q&FS. \n 9. Llenar el análisis de riesgos (RA) con el equipo de food safety. \n 10. Esperar señal de arranque por RA equipo HACCP \n---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n--------------------------------------- \n **Referencias:** PR-28769, REF-09274, PR-23677, PR-23565",
     image: "paro-linea.webp",
     final: true
   },
   NoParoLinea: {
-    response: "**Haz lo siguiente:**\n1. Continua con tu producción normal.\n2. Documentar evento en reporte de contaminación.\n3. Debes mantener el monitoreo por las siguientes 12 horas.\n---------------------------------------\n**RECUERDA**\nCuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento.\n---------------------------------------\n**El proceso de escalamiento consiste en:**\n- Notificar del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager.\n- Detonar investigación para definir fuente y causa potencial.\n- Revisión OPRP filtros, mallas, magnetos.\n- Caracterizar partículas con fines de investigación.\n- Documentar evento en reporte de contaminación.",
+    response: "**Haz lo siguiente:**\n 1. Notificar del evento a tu supervisor/QVS/Q%FS Local Team/Q&FS Manager \n2. Continua con tu producción normal.\n 3. Revisión CCPs, OPRP filtros, mallas, magnetos. (Si al revisar estos elementos encuentras METAL debes reiniciar el chat y contaría como tu segundo rechazo confirmado). \n 4. Caracterizar partículas con fines de investigación. \n 5. Revisión de reporte de turno para detectar algún mantenimiento previo donde se pudo generar roce de metal con metal. \n 6. Documentar evento en 'reporte de turno' y llenar el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. Lanzar NCMGT LOW QVS/Q&FS \n 8. Reinicia con monitoreo especial por las siguientes 12 horas. \n---------------------------------------\n**RECUERDA**\nCuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento.\n---------------------------------------\n **Referencias:** PR-28769, REF-09274, PR-23677, PR-23565",
     final: true
   },
 
@@ -2230,47 +2454,61 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS PLASTICO SCA
   //====================================================
-  SCAPlastico1: {
+  SCAPlastico1:{
     id: "Pregunta17",
-    question: "¿Dónde fue encontrado el objeto plástico?",
+    question: "¿Qué tipo de objeto plástico encontraste?",
     options: [
       {
-        label: "En producto",
+        label: "Duro (ej. moldes, acrílico, empaques)",
         next: "SCAPlastico2"
       },
       {
-        label: "En molde con desgaste (le falta un pedazo)",
-        next: "SCAPlastico3"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "SCAPlastico2"
-      },
-      {
-        label: "EN PCC",
-        next: "SCAPlastico2"
-      },
-      {
-        label: "EN OPRP",
-        next: "SCAPlastico2"
-      },
-      {
-        label: "En herramienta de limpieza",
-        next: "SCAPlastico2"
-      },
-      {
-        label: "Otro (Ej. Magneto/Filtro)",
+        label: "Suave (ej. empaque, bolsas)",
         next: "SCAPlastico2"
       }
     ]
   },
   SCAPlastico2: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontro la particula.\n  5. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety  ---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 11. Esperar señal de arranque por RA equipo HACCP.  \n ---------------------------------------",
+    id: "Pregunta18",
+    question: "¿Dónde fue encontrado el objeto plástico?",
+    options: [
+      {
+        label: "En producto",
+        next: "SCAPlastico3"
+      },
+      {
+        label: "En molde con desgaste (le falta un pedazo)",
+        next: "SCAPlastico4"
+      },
+      {
+        label: "En tanques/marmita",
+        next: "SCAPlastico3"
+      },
+      {
+        label: "EN PCC",
+        next: "SCAPlastico3"
+      },
+      {
+        label: "EN OPRP",
+        next: "SCAPlastico3"
+      },
+      {
+        label: "En herramienta de limpieza",
+        next: "SCAPlastico3"
+      },
+      {
+        label: "Otro (Ej. Magneto/Filtro)",
+        next: "SCAPlastico3"
+      }
+    ]
+  },
+  SCAPlastico3: {
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontro la particula.\n  5. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety  ---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 11. Esperar señal de arranque por RA equipo HACCP.  \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
     image: "paro-linea.webp",
     final: true
   },
-  SCAPlastico3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Retira el molde de uso operativo \n 5. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró la partícula \n  6. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Detectar origen de partícula. \n 9. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 10. Lanzar NCMGT MEDIO QVS/Q&FS \n 11. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 12. Esperar señal de arranque por RA equipo HACCP.",
+  SCAPlastico4: {
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Retira el molde de uso operativo \n 5. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró la partícula \n  6. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Detectar origen de partícula. \n 9. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 10. Lanzar NCMGT MEDIO QVS/Q&FS \n 11. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 12. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
     image: "paro-linea.webp",
     final: true
   },
@@ -2281,48 +2519,61 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS PLASTICO TOT
   //====================================================
-
-  TOTPlastico1: {
+  TOTPlastico1:{
     id: "Pregunta17",
-    question: "¿Dónde fue encontrado el objeto plástico?",
+    question: "¿Qué tipo de objeto plástico encontraste?",
     options: [
       {
-        label: "En producto",
+        label: "Duro (ej. moldes, acrílico, empaques)",
         next: "TOTPlastico2"
       },
       {
-        label: "En molde con desgaste (le falta un pedazo)",
-        next: "TOTPlastico3"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "TOTPlastico2"
-      },
-      {
-        label: "EN PCC",
-        next: "TOTPlastico2"
-      },
-      {
-        label: "EN OPRP",
-        next: "TOTPlastico2"
-      },
-      {
-        label: "En herramienta de limpieza",
-        next: "TOTPlastico2"
-      },
-      {
-        label: "Otro (Ej. Magneto/Filtro)",
+        label: "Suave (ej. empaque, bolsas)",
         next: "TOTPlastico2"
       }
     ]
   },
   TOTPlastico2: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontro la particula.\n  5. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety  ---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 11. Esperar señal de arranque por RA equipo HACCP.  \n ---------------------------------------",
+    id: "Pregunta18",
+    question: "¿Dónde fue encontrado el objeto plástico?",
+    options: [
+      {
+        label: "En producto",
+        next: "TOTPlastico3"
+      },
+      {
+        label: "En molde con desgaste (le falta un pedazo)",
+        next: "TOTPlastico4"
+      },
+      {
+        label: "En tanques/marmita",
+        next: "TOTPlastico3"
+      },
+      {
+        label: "EN PCC",
+        next: "TOTPlastico3"
+      },
+      {
+        label: "EN OPRP",
+        next: "TOTPlastico3"
+      },
+      {
+        label: "En herramienta de limpieza",
+        next: "TOTPlastico3"
+      },
+      {
+        label: "Otro (Ej. Magneto/Filtro)",
+        next: "TOTPlastico3"
+      }
+    ]
+  },
+  TOTPlastico3: {
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontro la particula.\n  5. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety  ---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 11. Esperar señal de arranque por RA equipo HACCP.  \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
     image: "paro-linea.webp",
     final: true
   },
-  TOTPlastico3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Retira el molde de uso operativo \n 5. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró la partícula \n  6. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Detectar origen de partícula. \n 9. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 10. Lanzar NCMGT MEDIO QVS/Q&FS \n 11. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 12. Esperar señal de arranque por RA equipo HACCP.",
+  TOTPlastico4: {
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Retira el molde de uso operativo \n 5. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró la partícula \n  6. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Detectar origen de partícula. \n 9. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 10. Lanzar NCMGT MEDIO QVS/Q&FS \n 11. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 12. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
     image: "paro-linea.webp",
     final: true
   },
@@ -2332,223 +2583,181 @@ const chatFlow = {
   //====================================================
 
   //====================================================
-  //                PREGUNTAS OTROS SCA
+  //                PREGUNTAS VIDRIO/MADERA SCA
   //====================================================
-  SCAForeignO1: {
-    id: "Pregunta18",
+  SCAVidrio1: {
+    id: "Pregunta19",
     question: "¿Qué tipo de objeto encontraste?",
     options: [
       {
         label: "Vidrio",
-        next: "SCAForeignO3"
+        next: "SCAVidrio3"
       },
       {
         label: "Madera",
-        next: "SCAForeignO3"
+        next: "SCAVidrio3"
       },
-      {
-        label: "Cartón",
-        next: "SCAForeignO2"
-      },
-      {
-        label: "Pelusa",
-        next: "SCAForeignO2"
-      },
-      {
-        label: "Hilo",
-        next: "SCAForeignO2"
-      },
-      {
-        label: "Plagas",
-        next: "SCAForeignO2"
-      },
-      {
-        label: "Cabello",
-        next: "SCAForeignO2"
-      },
-      {
-        label: "Uñas",
-        next: "SCAForeignO2"
-      }
+      
     ]
   },
-  SCAForeignO2: {
-    id: "Pregunta19",
+  SCAVidrio3: {
+    id: "Pregunta20",
     question: "¿Dónde fue encontrado el objeto extraño?",
     options: [
       {
         label: "En producto",
-        next: "SCAForeignO4"
+        next: "SCAVidrio4"
       },
       {
         label: "En tanques/marmita",
-        next: "SCAForeignO5"
+        next: "SCAVidrio4"
       },
       {
         label: "En PCC",
-        next: "SCAForeignO5"
+        next: "SCAVidrio4"
       },
       {
         label: "En OPRP",
-        next: "SCAForeignO5"
+        next: "SCAVidrio4"
       },
       {
         label: "Otro",
-        next: "SCAForeignO5"
+        next: "SCAVidrio4"
       }
     ]
   },
-  SCAForeignO3: {
-    id: "Pregunta19",
-    question: "¿Dónde fue encontrado el objeto extraño?",
-    options: [
-      {
-        label: "En producto",
-        next: "SCAForeignO4"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "SCAForeignO4"
-      },
-      {
-        label: "En PCC",
-        next: "SCAForeignO4"
-      },
-      {
-        label: "En OPRP",
-        next: "SCAForeignO4"
-      },
-      {
-        label: "Otro",
-        next: "SCAForeignO4"
-      }
-    ]
-  },
-  SCAForeignO4: {
+  SCAVidrio4: {
     response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró el objeto extraño.\n  5. Detonar investigación para definir fuente y causa potencial.\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP.",
     image: "paro-linea.webp",
     final: true
   },
-  SCAForeignO5: {
+  SCAVidrio5: {
     response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  5. Detonar investigación para definir fuente y causa potencial \n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT. \n 10. Continuar monitoreo.",
     final: true
   },
+  //====================================================
+  //                PREGUNTAS VIDRIO/MADERA MTM
+  //====================================================
+
+  //====================================================
+  //                PREGUNTAS VIDRIO/MADERA TOT
+  //====================================================
+
+  TOTVidrio1: {
+    id: "Pregunta19",
+    question: "¿Qué tipo de objeto encontraste?",
+    options: [
+      {
+        label: "Vidrio",
+        next: "TOTVidrio3"
+      },
+      {
+        label: "Madera",
+        next: "TOTVidrio3"
+      }
+    ]
+  },
+  TOTVidrio2: {
+    id: "Pregunta20",
+    question: "¿Dónde fue encontrado el objeto extraño?",
+    options: [
+      {
+        label: "En producto",
+        next: "TOTVidrio4"
+      },
+      {
+        label: "En tanques/marmita",
+        next: "TOTVidrio4"
+      },
+      {
+        label: "En PCC",
+        next: "TOTVidrio4"
+      },
+      {
+        label: "En OPRP",
+        next: "TOTVidrio4"
+      },
+      {
+        label: "Otro",
+        next: "TOTVidrio4"
+      }
+    ]
+  },
+  TOTVidrio3: {
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró el objeto extraño.\n  5. Detonar investigación para definir fuente y causa potencial.\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
+    image: "paro-linea.webp",
+    final: true
+  },
+  TOTVidrio4: {
+    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  5. Detonar investigación para definir fuente y causa potencial \n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT. \n 10. Continuar monitoreo. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
+    final: true
+  },
+  //====================================================
+  //                PREGUNTAS VIDRIO/MADERA TE
+  //====================================================
+  
   //====================================================
   //                PREGUNTAS OTROS MTM
   //====================================================
 
   //====================================================
-  //                PREGUNTAS OTROS TOT
+  //                PREGUNTAS OTROS SCA
   //====================================================
 
-  TOTForeignO1: {
-    id: "Pregunta18",
-    question: "¿Qué tipo de objeto encontraste?",
-    options: [
-      {
-        label: "Vidrio",
-        next: "TOTForeignO3"
-      },
-      {
-        label: "Madera",
-        next: "TOTForeignO3"
-      },
-      {
-        label: "Cartón",
-        next: "TOTForeignO2"
-      },
-      {
-        label: "Pelusa",
-        next: "TOTForeignO2"
-      },
-      {
-        label: "Hilo",
-        next: "TOTForeignO2"
-      },
-      {
-        label: "Plagas",
-        next: "TOTForeignO2"
-      },
-      {
-        label: "Cabello",
-        next: "TOTForeignO2"
-      },
-      {
-        label: "Uñas",
-        next: "TOTForeignO2"
-      }
-    ]
-  },
-  TOTForeignO2: {
-    id: "Pregunta19",
-    question: "¿Dónde fue encontrado el objeto extraño?",
-    options: [
-      {
-        label: "En producto",
-        next: "TOTForeignO4"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "TOTForeignO5"
-      },
-      {
-        label: "En PCC",
-        next: "TOTForeignO5"
-      },
-      {
-        label: "En OPRP",
-        next: "TOTForeignO5"
-      },
-      {
-        label: "Otro",
-        next: "TOTForeignO5"
-      }
-    ]
-  },
-  TOTForeignO3: {
-    id: "Pregunta19",
-    question: "¿Dónde fue encontrado el objeto extraño?",
-    options: [
-      {
-        label: "En producto",
-        next: "TOTForeignO4"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "TOTForeignO4"
-      },
-      {
-        label: "En PCC",
-        next: "TOTForeignO4"
-      },
-      {
-        label: "En OPRP",
-        next: "TOTForeignO4"
-      },
-      {
-        label: "Otro",
-        next: "TOTForeignO4"
-      }
-    ]
-  },
-  TOTForeignO4: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró el objeto extraño.\n  5. Detonar investigación para definir fuente y causa potencial.\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP.",
-    image: "paro-linea.webp",
-    final: true
-  },
-  TOTForeignO5: {
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  5. Detonar investigación para definir fuente y causa potencial \n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT. \n 10. Continuar monitoreo.",
-    final: true
-  },
   //====================================================
   //                PREGUNTAS OTROS TE
   //====================================================
 
   //====================================================
+  //                PREGUNTAS OTROS TOT
+  //====================================================
+  TOTOtros1:{
+    id: "Pregunta21",
+    question: "¿Qué tipo de cuerpo extraño encontraste?",
+    options: [
+      {
+        label: "Cartón/Pelusa/Hilo",
+        next: "TOTOtros2"
+      },
+      {
+        label: "Plagas",
+        next: "TOTOtros2"
+      },
+      {
+        label: "Cabello/Uñas",
+        next: "TOTOtros2"
+      },
+    ]
+  },
+  TOTOtros2:{
+    id: "Pregunta22",
+    question: "¿El contaminante está en el producto?",
+    options: [
+      {
+        label: "Si",
+        next: "TOTOtros3"
+      },
+      {
+        label: "No",
+        next: "TOTOtros4"
+      }
+    ]
+  },
+  TOTOtros3:{
+    response: "**¡PARO DE LÍNEA!** \n Debes hacer lo siguiente: \n 1. Detener la línea inmediatamente. \n 2. Segregar El Producto De Acuerdo Con El Last Good Check. \n 3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n 4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontrí el objeto extraño. \n 5. Detonar investigación para definir fuente y causa potencial. \n 6. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT', \n 7. Detectar origen de partícula. \n 8. Revisar toda la línea para identificar más partículas y asegurar despeje completo. \n 9. Lanzar NCMGT QVS/Q&FS. \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 11. Esperar señal de arranque por RA equipo HACCP. \n **Referencias:** **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28756**-Procedimiento de Manejo Integral de Plagas",
+    image: "paro-linea.webp",
+    final: true
+  },
+  TOTOtros4:{
+    response : "**Haz lo siguiente: ** \n 1. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n 2. Detonar investigación para definir fuente y causa potencial. \n 3. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 4. Lanzar NCMGT. \n 5. Continuar monitoreo. \n **Referencias:** **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28756**-Procedimiento de Manejo Integral de Plagas",
+    final: true
+  },
+
+  //====================================================
   //                PREGUNTAS AGUA SCA
   //====================================================
   SCAAgua1:{
-    id: "Pregunta20",
+    id: "Pregunta23",
     question: "¿El goteo condensación o ingreso de agua cayó **DIRECTAMENTE** sobre el producto, materias primas, material de empaque o Zona 2?",
     options:[
       {
@@ -2567,7 +2776,7 @@ const chatFlow = {
     final: true
   },
   SCAAgua3:{
-    id: "Pregunta21",
+    id: "Pregunta24",
     question: "¿El agua está cayendo en pasillo o áreas alejadas, pero existe el riesgo de que salpique o llegue a la línea por el tráfico de personas o patines?",
     options:[
       {
@@ -2592,7 +2801,7 @@ const chatFlow = {
   //                PREGUNTAS AGUA TOT
   //====================================================
   TOTAgua1:{
-    id: "Pregunta20",
+    id: "Pregunta23",
     question: "¿El goteo condensación o ingreso de agua cayó **DIRECTAMENTE** sobre el producto, materias primas, material de empaque o Zona 1, 2?",
     options:[
       {
@@ -2606,26 +2815,31 @@ const chatFlow = {
     ]
   },
   TOTAgua2:{
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n 4. Detonar investigación para definir fuente y causa potencial.\n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n 8. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n **9. Esperar señal de arranque por RA equipo HACCP.**",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n 4. Detonar investigación para definir fuente y causa potencial.\n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n 8. Llenar el análisis de riesgos (RA) con el equipo de food safety \n **9. Esperar señal de arranque por RA equipo HACCP.** \n **Referencias:** 'STRD-01992-Mars Wrigley Cleaning and Sanitation Standard' , 'PR-28758 - Procedimiento General de Limpieza y Desinfección', 'PR-28769- Procedimiento de Monitoreo de CCPs y OPRPs'",
     image: "paro-linea.webp",
     final: true
   },
   TOTAgua3:{
-    id: "Pregunta21",
+    id: "Pregunta24",
     question: "¿El agua está cayendo en pasillo o áreas alejadas, pero existe el riesgo de que salpique o llegue a la línea por el tráfico de personas o patines?",
     options:[
       {
         label: "Si",
-        next: "TOTAgua2"
+        next: "TOTAgua4"
       },
       {
         label: "No",
-        next: "TOTAgua4"
+        next: "TOTAgua5"
       }
     ]
   },
   TOTAgua4:{
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n  3. Reportar y levantar anormalidad a mantenimiento. \n 4. Detonar inversitgación para definir fuente y cuasa potencial \n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n  6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n  8. Continuar monitoreo. \n **Referencia:** STRD-01992 - Mars Wrigley Cleaning and Sanitation Standard",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n 2. SOLICITAR ISOPADO SUCIO ZONA AFECTADA. \n 3. Solicitar a Kryon, acordonar el área, secar inmediatamente. \n 4. Reportar y levantar anormalidad a mantenimiento.\n 5. Detonar investigación para definir fuente y causa potencial.\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Lanzar NCMGT \n 8. Continuar monitoreo \n **Referencias:** 'STRD-01992-Mars Wrigley Cleaning and Sanitation Standard' , 'PR-28758 - Procedimiento General de Limpieza y Desinfección', 'PR-28769- Procedimiento de Monitoreo de CCPs y OPRPs' \n **Referencias:** **STRD-01992**-Mars Wrigley Cleaning and Sanitation Standard, **PR-28758**-Procedimiento General de Limpieza y Desinfección, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs",
+    image: "paro-linea.webp",
+    final: true
+  },
+  TOTAgua5:{
+    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n 3. Reportar y levantar anormalidad a mantenimiento. \n4. Detonar investigación para definir fuente y causa potencial \n5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n7. Lanzar NCMGT \8. Continuar monitoreo. \ **Referencia:** STRD-01992 - Mars Wrigley Cleaning and Sanitation Standard \n **Referencias:** **STRD-01992**-Mars Wrigley Cleaning and Sanitation Standard, **PR-28758**-Procedimiento General de Limpieza y Desinfección, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs",
     final: true
   },
   //====================================================
@@ -2636,7 +2850,7 @@ const chatFlow = {
   //                PREGUNTAS QUIMICO SCA
   //====================================================
   SCAQuimico1: {
-    id: "Pregunta22",
+    id: "Pregunta25",
     question: "¿Qué tipo contaminación química identificaste?",
     options: [
       {
@@ -2658,7 +2872,7 @@ const chatFlow = {
     ]
   },
   SCAQuimico2: {
-    id: "Pregunta23",
+    id: "Pregunta26",
     question: "¿El químico tuvo contacto con el producto, ingredientes, empaques o Z1?",
     options: [
       {
@@ -2677,7 +2891,7 @@ const chatFlow = {
     final: true
   },
   SCAQuimico4: {
-    id: "Pregunta24",
+    id: "Pregunta27",
     question: "¿El derrame ocurrió cerca de la línea  hay riesgo de contaminación cruzada?",
     options: [
       {
@@ -2707,7 +2921,7 @@ const chatFlow = {
   //                PREGUNTAS QUIMICO TOT
   //====================================================
   TOTQuimico1: {
-    id: "Pregunta22",
+    id: "Pregunta25",
     question: "¿Qué tipo contaminación química identificaste?",
     options: [
       {
@@ -2729,7 +2943,7 @@ const chatFlow = {
     ]
   },
   TOTQuimico2: {
-    id: "Pregunta23",
+    id: "Pregunta26",
     question: "¿El químico tuvo contacto con el producto, ingredientes, empaques o Z1?",
     options: [
       {
@@ -2748,7 +2962,7 @@ const chatFlow = {
     final: true
   },
   TOTQuimico4: {
-    id: "Pregunta24",
+    id: "Pregunta27",
     question: "¿El derrame ocurrió cerca de la línea  hay riesgo de contaminación cruzada?",
     options: [
       {
@@ -2762,12 +2976,12 @@ const chatFlow = {
     ]
   },
   TOTQuimico5: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Acordonar y restringir el área  \n 5. Realizar la limpieza de las áreas involucradas. \n  6. Detonar investigación para definir fuente y causa potencial.\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Lanzar NCMGT MEDIO QVS/Q&FS \n 9. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 10. Esperar señal de arranque por RA equipo HACCP.",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Acordonar y restringir el área  \n 5. Realizar la limpieza de las áreas involucradas. \n  6. Detonar investigación para definir fuente y causa potencial.\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Lanzar NCMGT MEDIO QVS/Q&FS \n 9. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 10. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **STRD-00012**-Minimum Requirements for Allergen Changeover on a Chocolate Moulding Line, **REF-03264**-Requirements for Allergen Management in Human Foodstuffs, **PR-28759**-Procedimiento de Manejo de Alérgenos TOT, **PR-42219**-Procedimiento para derrame de Alérgenos, **PR-28763**-Procedimiento Control de Químicos",
     image: "paro-linea.webp",
     final: true
   },
   TOTQuimico6: {
-    response: "**Notificar del evento a tu supervisor/QVS/Q&FS Manager.**",
+    response: "**Notificar del evento a tu supervisor/QVS/Q&FS Manager.** \n \n **Referencias: ** **STRD-00012**-Minimum Requirements for Allergen Changeover on a Chocolate Moulding Line, **REF-03264**-Requirements for Allergen Management in Human Foodstuffs, **PR-28759**-Procedimiento de Manejo de Alérgenos TOT, **PR-42219**-Procedimiento para derrame de Alérgenos, **PR-28763**-Procedimiento Control de Químicos",
     final: true
   },
   //====================================================
@@ -2778,7 +2992,7 @@ const chatFlow = {
   //             PREGUNTAS INCIDENTES Q&FS SCA
   //====================================================
   SCAQFSIncidente1: {
-    id: "Pregunta25",
+    id: "Pregunta28",
     question: "¿Qué tipo de desviación de calidad detectaste?",
     options: [
       {
@@ -2796,7 +3010,7 @@ const chatFlow = {
     ]
   },
   SCAQFSIncidente2: {
-    id: "Pregunta26",
+    id: "Pregunta29",
     question: "¿Hay producto terminado comprometido?",
     options: [
       {
@@ -2817,12 +3031,12 @@ const chatFlow = {
   //             PREGUNTAS INCIDENTES Q&FS TOT
   //====================================================
   TOTQFSIncidente1: {
-    id: "Pregunta25",
+    id: "Pregunta28",
     question: "¿Qué tipo de desviación de calidad detectaste?",
     options: [
       {
         label: "Error en la mezcla / ingredientes equivocados",
-        response: "**Detener el proceso.** \n No avanzar el producto. \n Escalar a Q&FS. \n Lanzar NCMGT"
+        response: "**Detener el proceso.** \n No avanzar el producto. \n Escalar a Q&FS. \n Lanzar NCMGT. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard"
       },
       {
         label: "Parámetro fuera de límite",
@@ -2830,21 +3044,21 @@ const chatFlow = {
       },
       {
         label: "Falla Sensorial",
-        response: "**Detener** **avance** **del** **lote** **específico**. \n Aislar muestra y llamar a VS Calidad."
+        response: "**Detener** **avance** **del** **lote** **específico**. \n Aislar muestra y llamar a VS Calidad. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard"
       }
     ]
   },
   TOTQFSIncidente2: {
-      id: "Pregunta26",
+      id: "Pregunta29",
       question: "¿Hay producto terminado comprometido?",
       options: [
         {
           label: "Si",
-          response: "Ejecutar Protocolo de Paro Inmediato. \n Segregar todo el producto afectado. \n Escalar a Q&FS. \n Lanzar NCMGT"
+          response: "Ejecutar Protocolo de Paro Inmediato. \n Segregar todo el producto afectado. \n Escalar a Q&FS. \n Lanzar NCMGT. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard"
         },
         {
           label: "No",
-          response: "Detener el proceso. \n Escalar a Q&FS \n Lanzar NCMGT"
+          response: "Detener el proceso. \n Escalar a Q&FS \n Lanzar NCMGT. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard "
         }
       ]
   },
