@@ -2649,11 +2649,11 @@ const chatFlow = {
     options: [
       {
         label: "Vidrio",
-        next: "TOTVidrio3"
+        next: "TOTVidrio2"
       },
       {
         label: "Madera",
-        next: "TOTVidrio3"
+        next: "TOTVidrio2"
       }
     ]
   },
@@ -2663,23 +2663,23 @@ const chatFlow = {
     options: [
       {
         label: "En producto",
-        next: "TOTVidrio4"
+        next: "TOTVidrio3"
       },
       {
         label: "En tanques/marmita",
-        next: "TOTVidrio4"
+        next: "TOTVidrio3"
       },
       {
         label: "En PCC",
-        next: "TOTVidrio4"
+        next: "TOTVidrio3"
       },
       {
         label: "En OPRP",
-        next: "TOTVidrio4"
+        next: "TOTVidrio3"
       },
       {
         label: "Otro",
-        next: "TOTVidrio4"
+        next: "TOTVidrio3"
       }
     ]
   },
