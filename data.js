@@ -2839,7 +2839,7 @@ const chatFlow = {
     final: true
   },
   TOTAgua5:{
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n 3. Reportar y levantar anormalidad a mantenimiento. \n4. Detonar investigación para definir fuente y causa potencial \n5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n7. Lanzar NCMGT \8. Continuar monitoreo. \ **Referencia:** STRD-01992 - Mars Wrigley Cleaning and Sanitation Standard \n **Referencias:** **STRD-01992**-Mars Wrigley Cleaning and Sanitation Standard, **PR-28758**-Procedimiento General de Limpieza y Desinfección, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs",
+    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n 3. Reportar y levantar anormalidad a mantenimiento. \n4. Detonar investigación para definir fuente y causa potencial \n5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n7. Lanzar NCMGT \n 8. Continuar monitoreo. \ **Referencia:** STRD-01992 - Mars Wrigley Cleaning and Sanitation Standard \n **Referencias:** **STRD-01992**-Mars Wrigley Cleaning and Sanitation Standard, **PR-28758**-Procedimiento General de Limpieza y Desinfección, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs",
     final: true
   },
   //====================================================
