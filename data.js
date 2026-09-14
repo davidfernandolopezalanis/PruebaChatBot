@@ -2630,7 +2630,8 @@ const chatFlow = {
   //                PREGUNTAS OTROS TOT
   //====================================================
   TOTOtros1:{
-    response: "**Haz lo siguiente:** \n 1. Notificar del evento a tu supervisor/QVS/Q&FS Local Team. \n 2. Asegurar que no haya producto expuesto en contacto con la plaga/materia extraña. \n 3. Continuar con tu producción normal. \n 4. Revisar: \n     oooo.",
+    response: "**Haz lo siguiente:** \n 1. Notificar del evento a tu supervisor/QVS/Q&FS Local Team. \n 2. Asegurar que no haya producto expuesto en contacto con la plaga/materia extraña. \n 3. Continuar con tu producción normal. \n 4. Revisar: \n  - CARTÓN: El reporte del turno anterior para identificar intervenciones o mantenimientos donde pudieran haber quedado remanentes de cartón u otros materiales extraños. \n - PLAGAS: El último registro de limpieza profunda para detectar desviaciones. El último reporte del proveedor de plagas. \n - CABELLO/PELUSA/HILO/UÑAS: Verificar que el equipo de operación porte de manera correcta completa su Equipo de Protección Personal (EPP). \n 5. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Informacion para el levantamiento de incidentes en NCMGT'. \n 6. Lanzar NCMGT LOW QVS/Q&FS. \n 7. Esperar indicación del equipo calidad para realizar la limpieza en el área. \n **REFERENCIAS:** **PR-28756**-Procedimiento Manejo Integral de Plagas | **QM-03782**-Manual de Buenas Prácticas de Manufactura.",
+    final: true
   },
 
   //====================================================
@@ -2681,7 +2682,7 @@ const chatFlow = {
   //                PREGUNTAS AGUA TOT
   //====================================================
   TOTAgua1:{
-    id: "Pregunta23",
+    id: "Pregunta21",
     question: "¿El goteo condensación o ingreso de agua cayó **DIRECTAMENTE** sobre el producto, materias primas, material de empaque o Zona 1,/Zona 2?",
     options:[
       {
@@ -2699,7 +2700,7 @@ const chatFlow = {
     image: "paro-linea.webp",
     final: true
   },
-  TOTAgua5:{
+  TOTAgua3:{
     response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n 3. Reportar y levantar anormalidad a mantenimiento. \n4. Detonar investigación para definir fuente y causa potencial \n5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n7. Lanzar NCMGT \n 8. Continuar monitoreo. \ **Referencia:** STRD-01992 - Mars Wrigley Cleaning and Sanitation Standard \n **Referencias:** **STRD-01992**-Mars Wrigley Cleaning and Sanitation Standard, **PR-28758**-Procedimiento General de Limpieza y Desinfección, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs",
     final: true
   },
@@ -2782,67 +2783,26 @@ const chatFlow = {
   //                PREGUNTAS QUIMICO TOT
   //====================================================
   TOTQuimico1: {
-    id: "Pregunta25",
-    question: "¿Qué tipo contaminación química identificaste?",
+    id: "Pregunta22",
+    question: "¿El químico tuvo contacto directo con el producto, ingredientes, material de empaque o superficies de Zona 1?",
     options: [
       {
-        label: "Lubricantes",
+        label: "Si, contacto directo o derrame en Zona 1/Zona 2",
         next: "TOTQuimico2"
       },
       {
-        label: "Pintura",
-        next: "TOTQuimico2"
-      },
-      {
-        label: "Sanitizantes",
-        next: "TOTQuimico2"
-      },
-      {
-        label: "Alérgenos",
-        next: "TOTQuimico2"
+        label: "No, pero es un derrame en Zona 3/Zona 4",
+        next: "TOTQuimico3"
       }
     ]
   },
   TOTQuimico2: {
-    id: "Pregunta26",
-    question: "¿El químico tuvo contacto con el producto, ingredientes, empaques o Z1?",
-    options: [
-      {
-        label: "Si",
-        next: "TOTQuimico3"
-      },
-      {
-        label: "No",
-        next: "TOTQuimico4"
-      }
-    ]
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Acordonar** y restringir el área  \n 5. **Realizar** la limpieza de las áreas involucradas \n - NOTA: Todos los materiales y utensilios que se utilicen para limpiar el derrame se deben segregar y los responables de limpiar derrames de alérgenos las deben desechar inmediatamente. \n 6. **Solicitar** un hisopado a calidad para validar la limpieza de la zona.\n  7. **Detonar** investigación para definir fuente y causa potencial.\n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP.",
+    image: "paro-linea.webp",
+    final: true
   },
   TOTQuimico3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Acordonar y restringir el área  \n 5. Realizar la limpieza de las áreas involucradas. \n 6. Todos los materiales y utensilios de limpieza que se utilicen para limpiar el derrame se deben segregar y los responsables de limpiar derrames de alérgenos las deben desechar inmediatamente.\n  7. Detonar investigación para definir fuente y causa potencial.\n 8. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP.",
-    image: "paro-linea.webp",
-    final: true
-  },
-  TOTQuimico4: {
-    id: "Pregunta27",
-    question: "¿El derrame ocurrió cerca de la línea  hay riesgo de contaminación cruzada?",
-    options: [
-      {
-        label: "Si",
-        next: "TOTQuimico5"
-      },
-      {
-        label: "No",
-        next: "TOTQuimico6"
-      }
-    ]
-  },
-  TOTQuimico5: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Acordonar y restringir el área  \n 5. Realizar la limpieza de las áreas involucradas. \n  6. Detonar investigación para definir fuente y causa potencial.\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Lanzar NCMGT MEDIO QVS/Q&FS \n 9. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 10. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **STRD-00012**-Minimum Requirements for Allergen Changeover on a Chocolate Moulding Line, **REF-03264**-Requirements for Allergen Management in Human Foodstuffs, **PR-28759**-Procedimiento de Manejo de Alérgenos TOT, **PR-42219**-Procedimiento para derrame de Alérgenos, **PR-28763**-Procedimiento Control de Químicos",
-    image: "paro-linea.webp",
-    final: true
-  },
-  TOTQuimico6: {
-    response: "**Notificar del evento a tu supervisor/QVS/Q&FS Manager.** \n \n **Referencias: ** **STRD-00012**-Minimum Requirements for Allergen Changeover on a Chocolate Moulding Line, **REF-03264**-Requirements for Allergen Management in Human Foodstuffs, **PR-28759**-Procedimiento de Manejo de Alérgenos TOT, **PR-42219**-Procedimiento para derrame de Alérgenos, **PR-28763**-Procedimiento Control de Químicos",
+    response: "**Haz lo siguiente:** \n 1. Notificar del evento a tu supervisor/QVS.\n 2. Delimitar la zona afectada en pisos o montacargas pr el área del derrame.\n 3. Realizar limpieza: \n - Para **alérgenos**: Realizar la limpieza utilizando los utensilios con el código de colores asignado en conjunto con los traje Tyvek amarillos. Nota: Todos los materiales de limpieza desechables utilizados deben segregarse y desecharse inmediatamente. \n - Para **químicos**: Realizar la limpieza utilizando materiales absorbentes inertes. Nota 1: Queda estrictamente prohibido usar agua a alta presion o mangueras de aire comprimido, ya que esto aerosoliza y dispersa las partículas químicas o alegrénicas hacia la Zona 1. Nota 2: Si el derrame es un químico que ha caducado o es peligroso, el área de HSE debe encargarse de su traslado seguro al almacén de residuos peligrosos, destinar su disposición final de acuerdo con su naturaleza química.\n 4. **Solicitar** a Q&FS inspección visual para liberación del área. \n **Documentar** evento en 'reporte de turno' \n **Referencias:** **PR-42219**-Procedimiento para derrame de Alérgenos, **PR-28763**-Procedimiento Control de Químicos",
     final: true
   },
   //====================================================
@@ -2892,37 +2852,19 @@ const chatFlow = {
   //             PREGUNTAS INCIDENTES Q&FS TOT
   //====================================================
   TOTQFSIncidente1: {
-    id: "Pregunta28",
+    id: "Pregunta23",
     question: "¿Qué tipo de desviación de calidad detectaste?",
     options: [
       {
-        label: "Error en la mezcla / ingredientes equivocados",
-        response: "**Detener el proceso.** \n No avanzar el producto. \n Escalar a Q&FS. \n Lanzar NCMGT. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard"
-      },
+        label: "Desviación Sensorial",
+        response: "1. **Notificar** del evento a tu supervisor/QVS. \n 2. Participar en el **Panel de Conformidad** para evaluar la muestra contra el estándar físico vigente utilizanda la **Escala de Grado de Diferencia (DoD) de 7 puntos**. \n 3. **Escalar y detener la producción SOLO si** el panel determina un **DoD>=4**. \n 4. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentesen NCMGT', \n 5. **Lanzar** NCMGT QVS/Q&FS. \n **REFERENCIAS:** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT."
+      }
       {
-        label: "Parámetro fuera de límite",
-        next: "TOTQFSIncidente2"
-      },
-      {
-        label: "Falla Sensorial",
-        response: "**Detener** **avance** **del** **lote** **específico**. \n Aislar muestra y llamar a VS Calidad. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard"
+        label: "Error en la mezcla / ingredientes equivocados/ parámetro crítico fuera de límite (ej. Temperatura, Peso)",
+        response: "1. **Notificar** del evento a tu supervisor/QVS. \n **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 3. **Lanzar** NCMGT QVS/Q&FS.\n **REFERENCIAS:** Procedimiento sobre liberación producto (positive release) y control del producto no conforme (hold & release) TOT.",
       }
     ]
-  },
-  TOTQFSIncidente2: {
-      id: "Pregunta29",
-      question: "¿Hay producto terminado comprometido?",
-      options: [
-        {
-          label: "Si",
-          response: "Ejecutar Protocolo de Paro Inmediato. \n Segregar todo el producto afectado. \n Escalar a Q&FS. \n Lanzar NCMGT. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard"
-        },
-        {
-          label: "No",
-          response: "Detener el proceso. \n Escalar a Q&FS \n Lanzar NCMGT. \n **Referencias: ** **STRD-02471**-Global Sensory Quality Standard, **STRD-01785**-Inbound Verification Standard, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-14035**-Corporate Thermal Processing of Acidified and Acid Foods Standard "
-        }
-      ]
-  },
+  }
 
 
   //====================================================
