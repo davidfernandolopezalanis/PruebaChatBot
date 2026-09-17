@@ -2858,7 +2858,7 @@ const chatFlow = {
       {
         label: "Desviación Sensorial",
         response: "1. **Notificar** del evento a tu supervisor/QVS. \n 2. Participar en el **Panel de Conformidad** para evaluar la muestra contra el estándar físico vigente utilizanda la **Escala de Grado de Diferencia (DoD) de 7 puntos**. \n 3. **Escalar y detener la producción SOLO si** el panel determina un **DoD>=4**. \n 4. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentesen NCMGT', \n 5. **Lanzar** NCMGT QVS/Q&FS. \n **REFERENCIAS:** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT."
-      }
+      },
       {
         label: "Error en la mezcla / ingredientes equivocados/ parámetro crítico fuera de límite (ej. Temperatura, Peso)",
         response: "1. **Notificar** del evento a tu supervisor/QVS. \n **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 3. **Lanzar** NCMGT QVS/Q&FS.\n **REFERENCIAS:** Procedimiento sobre liberación producto (positive release) y control del producto no conforme (hold & release) TOT.",
