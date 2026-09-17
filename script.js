@@ -21,14 +21,9 @@ const state = {
     Pregunta14: "",
     Pregunta15: "",
     Pregunta16: "",
-    Pregunta17: "",
-    Pregunta18: "",
-    Pregunta19: "",
-    Pregunta20: "",
-    Pregunta21: "",
-    Pregunta22: "",
-    Pregunta23: ""
+    Pregunta17: ""
   };
+  
 
   console.log("Nueva sesión iniciada:", sesion);
 }

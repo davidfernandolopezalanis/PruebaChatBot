@@ -2002,7 +2002,7 @@ const chatFlow = {
     ]
   },
   TOTMetal6: {
-    id: "Pregunta10",
+    id: "Pregunta8",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
@@ -2016,7 +2016,7 @@ const chatFlow = {
     ]
   },
   TOTMetal7:{
-    id: "Pregunta11",
+    id: "Pregunta9",
     question: "¿Es el segundo rechazo confirmado?",
     options: [
       {
@@ -2030,7 +2030,7 @@ const chatFlow = {
     ]
   },
   TOTMetal8:{
-    id: "Pregunta12",
+    id: "Pregunta10",
     question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
     options:[
       {
@@ -2464,7 +2464,7 @@ const chatFlow = {
   //                PREGUNTAS PLASTICO TOT
   //====================================================
   TOTPlastico1: {
-    id: "Pregunta17",
+    id: "Pregunta11",
     question: "¿Dónde fue encontrado el objeto plástico?",
     options: [
       {
@@ -2487,8 +2487,8 @@ const chatFlow = {
     final: true
   },
   TOTPlastico3: {
-    id: "Pregunta18",
-    question: "La herramienta o utensilio se reportó como perdida, o se encontró rota en la línea",
+    id: "Pregunta12",
+    question: "¿La herramienta o utensilio se reportó como perdida, o se encontró rota en la línea?",
     options:[
       {
         label: "Se encontró rota y FALTAN fragmentos (>2mm)",
@@ -2575,7 +2575,7 @@ const chatFlow = {
   //====================================================
 
   TOTVidrio1: {
-    id: "Pregunta19",
+    id: "Pregunta13",
     question: "¿Qué tipo de objeto encontraste?",
     options: [
       {
@@ -2589,7 +2589,7 @@ const chatFlow = {
     ]
   },
   TOTVidrio2: {
-    id: "Pregunta20",
+    id: "Pregunta14",
     question: "¿Dónde fue encontrado el objeto extraño?",
     options: [
       {
@@ -2682,7 +2682,7 @@ const chatFlow = {
   //                PREGUNTAS AGUA TOT
   //====================================================
   TOTAgua1:{
-    id: "Pregunta21",
+    id: "Pregunta15",
     question: "¿El goteo condensación o ingreso de agua cayó **DIRECTAMENTE** sobre el producto, materias primas, material de empaque o Zona 1,/Zona 2?",
     options:[
       {
@@ -2783,7 +2783,7 @@ const chatFlow = {
   //                PREGUNTAS QUIMICO TOT
   //====================================================
   TOTQuimico1: {
-    id: "Pregunta22",
+    id: "Pregunta16",
     question: "¿El químico tuvo contacto directo con el producto, ingredientes, material de empaque o superficies de Zona 1?",
     options: [
       {
@@ -2852,7 +2852,7 @@ const chatFlow = {
   //             PREGUNTAS INCIDENTES Q&FS TOT
   //====================================================
   TOTQFSIncidente1: {
-    id: "Pregunta23",
+    id: "Pregunta17",
     question: "¿Qué tipo de desviación de calidad detectaste?",
     options: [
       {
