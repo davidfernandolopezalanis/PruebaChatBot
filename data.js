@@ -103,31 +103,31 @@ const chatFlow = {
     options: [
       {
         label: "Objeto Metálico",
-        next: "lineaMetalTOT"
+        next: "TOTMetal1"
       },
       {
         label: "Plástico Suave / Duro",
-        next: "lineaPlasticoTOT"
+        next: "TOTPlastico1"
       },
       {
         label: "Vidrio o Madera",
-        next: "lineaVidrioTOT"
+        next: "TOTVidrio1"
       },
       {
         label: "Otros Cuerpos Extraños (cabello, plagas, pelusa, etc.)",
-        next: "lineaOtrosTOT"
+        next: "TOTOtros1"
       },
       {
         label: "Ingreso de Agua",
-        next: "lineaAguaTOT"
+        next: "TOTAgua1"
       },
       {
         label: "Químico (lubricantes, pintura, sanitizantes, alérgenos)",
-        next: "lineaQuimicoTOT"
+        next: "TOTQuimico1"
       },
       {
         label: "Incidentes de Calidad",
-        next: "lineaQFSIncidenteTOT"
+        next: "TOTQFSIncidente1"
       }
     ]
   },
