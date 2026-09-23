@@ -902,7 +902,7 @@ const chatFlow = {
     options: [
       {
         label: "En molde con desgaste (le falta un pedazo)",
-        next: "TOTPlastico4"
+        next: "TOTPlastico2"
       },
       {
         label: "En producto/tanques/marmita",
@@ -915,7 +915,7 @@ const chatFlow = {
     ]
   },  
   TOTPlastico2: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** OPRP, Magnetos.\n  5. **Caracterizar** las partículas con fines de investigación. \n 6. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 7. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 9. **Llenar** el análisis de riesgos con el equipo de food safety  \n  10. **Esperar** señal de arranque por RA equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** OPRP filtros y mallas.\n  5. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 8. **Llenar** el análisis de riesgos con el equipo de food safety  \n  9. **Esperar** señal de arranque por RA equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
     image: "paro-linea.webp",
     final: true
   },
@@ -1036,12 +1036,12 @@ const chatFlow = {
     ]
   },
   TOTVidrio3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Delimitar** el área de tráfico peatonal para evitar que se dispersen estillas de vidrio a otras líneas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT QVS/Q&FS \n 8. **Llenar** el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 9. **Esperar** señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Delimitar** el área de tráfico peatonal para evitar que se dispersen estillas de vidrio a otras líneas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Consultar y/o agregar** al registro de Vidrio y Plástico Duro de la línea para identificar el origen del fragmento \n 7. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. **Realizar** limpieza \n 9. **Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
     image: "paro-linea.webp",
     final: true
   },
   TOTVidrio4: {
-    response: "**Haz lo siguiente** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Delimitar** el área del tráfico peatonal para evitar que se dispersen astillas de vidrio a otra líneas. \n 3. **Detonar** investigación para definir fuente y causa potencial. \n 4. **Consultar** el registro de Vidrio y Plástico Duro de la línea para identificar el origen del fragmento. \n 5. **Solicitar** al proveedor KRYON. \n 6. **Documentar** evento en 'reporte de turno'. \n **REFERENCIA:** **FORM-40844**-Incidente de rompimiento de vidrio, plástico duro y cerámica | **PR-28761**-Procedimiento Manejo de vidrio, plástico quebradizo y cerámica.",
+    response: "**Haz lo siguiente** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Delimitar** el área del tráfico peatonal para evitar que se dispersen astillas de vidrio a otra líneas. \n 3. **Detonar** investigación para definir fuente y causa potencial. \n 4. **Consultar y/o agregar** al registro de Vidrio y Plástico Duro de la línea para identificar el origen del fragmento. \n 5. **Solicitar** al proveedor KRYON. \n 6. **Documentar** evento en 'reporte de turno'. \n **REFERENCIA:** **FORM-40844**-Incidente de rompimiento de vidrio, plástico duro y cerámica | **PR-28761**-Procedimiento Manejo de vidrio, plástico quebradizo y cerámica.",
   },
   //====================================================
   //                PREGUNTAS VIDRIO/MADERA TE
