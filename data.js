@@ -175,7 +175,7 @@ const chatFlow = {
     final: true
   },
   NoParoLinea: {
-    response: "**Puedes continuar con la producción normal bajo monitoreo.** \n ** Ejecutar lo siguiente:**\n 1. Notificar del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n2. Continuar con tu producción normal.\n 3. Revisar CCPs, OPRP filtros, mallas, magnetos. \n 4. Caracterizar partículas con fines de investigación. \n 5. Revisar el reporte de turno para detecrar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. Documentar evento en 'reporte de turno' y llenar el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. Lanzar NCMGT LOW QVS/Q&FS \n 8. Reiniciar con monitoreo especial por las siguientes 12 horas. \n---------------------------------------\n**RECUERDA**\nCuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento.\n--------------------------------------- \n **Referencias:** **PR-28769**-Effective Application of Metal Detectors to Production Processes R2, **PR-23677**-Procedimiento de Monitoreo, Verificación y Validación de CCPs y OPRPs",
+    response: "**Puedes continuar con la producción normal bajo monitoreo.** \n ** Ejecutar lo siguiente:**\n 1. Notificar del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n2. Continuar con tu producción normal.\n 3. Revisar CCPs. \n 4. Caracterizar partículas con fines de investigación. \n 5. Revisar el reporte de turno para detecrar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. Documentar evento en 'reporte de turno' y llenar el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. Lanzar NCMGT LOW QVS/Q&FS \n 8. Reiniciar con monitoreo especial por las siguientes 12 horas. \n---------------------------------------\n**RECUERDA**\nCuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento.\n--------------------------------------- \n **Referencias:** **PR-28769**-Effective Application of Metal Detectors to Production Processes R2, **PR-23677**-Procedimiento de Monitoreo, Verificación y Validación de CCPs y OPRPs",
     final: true
   },
 
@@ -412,7 +412,7 @@ const chatFlow = {
       },
       {
         label: "En algún ingrediente o material de empaque.",
-        next: "TOTMetal6"
+        next: "TOTMetal5"
       },
       {
         label: "En OPRP",
@@ -434,6 +434,20 @@ const chatFlow = {
       }
     ]
   },
+  TOTMetal5: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "TOTMetal4"
+      },
+      {
+        label: "No",
+        next: "TOTMetal7"
+      }
+    ]
+  },
   TOTMetal6: {
     id: "Pregunta6",
     question: "¿Este es el primer rechazo confirmado?",
@@ -447,6 +461,10 @@ const chatFlow = {
         next: "TOTMetal7"
       }
     ]
+  },
+  TOTMetal4: {
+    response: "**Puedes continuar con la producción normal bajo monitoreo. Ejecutar lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n 2. **Continuar** con producción normal. \n 3. **Revisar** el porcentaje de defectivo de la orden surtida. \n **En caso de que sea mayor o igual al 2%:** \n - Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n - Generar la etiqueta de Rechazo \n - Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n - Entregar el rechazo a almacén. \n \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 6. **Lanzar** NCMGT LOW QVS/Q&FS \n 7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n \n **Referencia:** **PR-28743** Porcedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **TOT PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT)",
+    final: true
   },
   TOTMetal7:{
     id: "Pregunta7",
@@ -471,7 +489,8 @@ const chatFlow = {
         next: "paroLinea"
       },
       {
-        label: "No"
+        label: "No",
+        next: "NoParoLinea"
       }
     ]
   },
@@ -905,8 +924,8 @@ const chatFlow = {
         next: "TOTPlastico2"
       },
       {
-        label: "En producto/tanques/marmita",
-        next: "TOTPlastico3"
+        label: "En producto/tanques/marmita/OPRP",
+        next: "TOTPlastico2"
       },
       {
         label: "En herramienta de limpieza/utensilio de producción",
@@ -915,7 +934,7 @@ const chatFlow = {
     ]
   },  
   TOTPlastico2: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** OPRP filtros y mallas.\n  5. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 8. **Llenar** el análisis de riesgos con el equipo de food safety  \n  9. **Esperar** señal de arranque por RA equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
+    response: "**¡PARO DE LINEA!**\n Se ha detectado un peligro físico crítico. Ejecuta las siguientes acciones de inmediato:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** OPRP filtros y mallas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 8. **Llenar** el análisis de riesgos con el equipo de food safety  \n  9. **Esperar** señal de arranque por RA equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
     image: "paro-linea.webp",
     final: true
   },
@@ -925,17 +944,22 @@ const chatFlow = {
     options:[
       {
         label: "Se encontró rota y FALTAN fragmentos (>2mm)",
-        next: "TOTPlastico2"
+        next: "TOTPlastico5"
       },
       {
         label:"Se perdió y no se logra localizar",
-        next: "TOTPlastico2"
+        next: "TOTPlastico5"
       },
       {
         label: "Se encontró rota, pero está completa (no faltan pedazos)",
         next: "TOTPlastico4"
       }
     ]
+  },
+  TOTPlastico5: {
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto. Al no contar con CCPs o OPRPs físicos capaces de detener plástico en el proceso, debes retener todo el producto producido en el turno.  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** filtros y mallas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 8. **Llenar** el análisis de riesgos con el equipo de food safety  \n  9. **Esperar** señal de arranque por RA equipo HACCP. \n ---l------------------------------------ \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
+    image: "paro-linea.webp",
+    final: true
   },
   TOTPlastico4: {
     response: "**Haz lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Retirar** la herramienta dañada de la línea. \n 3. **Reemplazar** el utensilio por un sustituto nuevo, limpio, seco y previamente liberado. \n 4. **Detonar** investigación para definir fuente y causa potencial. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT \n **Continuar** monitero. \n **REFERENCIAS:** **PR-40192**-Procedimiento de Escalamiento ante Herramientas Rotas o Extraviadas, Sec. 4 | **PR-28761**-Procedimiento Manejo de vidrio, plástico quebradizo y cerámica.",
@@ -1129,7 +1153,7 @@ const chatFlow = {
     ]
   },
   TOTAgua2:{
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimidar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda por otras líneas.\n 5. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 6. **Solicitar** un hispoado de Zona 1 en sucio. \n 7. **Limpiar** la zona afectada. \n 8. **Solicitar** un hisopado de Zona 1 en limpio. \n **Registrar y documentar** en el reporte de turno, llenar el FORM-56871 y **levanta** una No Conformidad en Nexus. \n 10. **Llenar** el análisis de riesgos (RA) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP.** \n **REQUISITO DE ARRANQUE**: El quipo no podrá reanudar producción basándose únicamente en una inspección visual. El área **debe estar 100% seca** y se debe contar con **resultados de laboratorio conformes** que liberen la zona microbiológicamente. \n **Referencias:** 'STRD-01992-Mars Wrigley Cleaning and Sanitation Standard' , 'PR-28758 - Procedimiento General de Limpieza y Desinfección', 'PR-28769- Procedimiento de Monitoreo de CCPs y OPRPs'",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimitar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda por otras líneas.\n 5. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 6. **Solicitar** un hispoado de Zona 1 en sucio. \n 7. **Limpiar** la zona afectada. \n 8. **Solicitar** un hisopado de Zona 1 en limpio. \n **Registrar y documentar** en el reporte de turno, llenar el FORM-56871 y **levanta** una No Conformidad en Nexus. \n 10. **Llenar** el análisis de riesgos (RA) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP.** \n **REQUISITO DE ARRANQUE**: El quipo no podrá reanudar producción basándose únicamente en una inspección visual. El área **debe estar 100% seca** y se debe contar con **resultados de laboratorio conformes** que liberen la zona microbiológicamente. \n **Referencias:** 'STRD-01992-Mars Wrigley Cleaning and Sanitation Standard' , 'PR-28758 - Procedimiento General de Limpieza y Desinfección', 'PR-28769- Procedimiento de Monitoreo de CCPs y OPRPs'",
     image: "paro-linea.webp",
     final: true
   },
@@ -1230,7 +1254,7 @@ const chatFlow = {
     ]
   },
   TOTQuimico2: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Acordonar** y restringir el área  \n 5. **Realizar** la limpieza de las áreas involucradas \n - NOTA: Todos los materiales y utensilios que se utilicen para limpiar el derrame se deben segregar y los responables de limpiar derrames de alérgenos las deben desechar inmediatamente. \n 6. **Solicitar** un hisopado a calidad para validar la limpieza de la zona.\n  7. **Detonar** investigación para definir fuente y causa potencial.\n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP.",
+    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Acordonar** y restringir el área  \n 5. **Realizar** la limpieza de las áreas involucradas \n - NOTA: Todos los materiales y utensilios que se utilicen para limpiar el derrame se deben segregar y los responables de limpiar derrames de alérgenos las deben desechar inmediatamente. \n 6. **Solicitar** un hisopado a calidad para validar la limpieza de la zona.\n  7. **Detonar** investigación para definir fuente y causa potencial.\n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n -------------------------------------------\n **Referencias:** **PR-42219** (Procedimiento para derrame de Alérgenos) | **PR-28763** (Procedimiento Control de Químicos)",
     image: "paro-linea.webp",
     final: true
   },
@@ -1290,13 +1314,21 @@ const chatFlow = {
     options: [
       {
         label: "Desviación Sensorial",
-        response: "1. **Notificar** del evento a tu supervisor/QVS. \n 2. Participar en el **Panel de Conformidad** para evaluar la muestra contra el estándar físico vigente utilizanda la **Escala de Grado de Diferencia (DoD) de 7 puntos**. \n 3. **Escalar y detener la producción SOLO si** el panel determina un **DoD>=4**. \n 4. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentesen NCMGT', \n 5. **Lanzar** NCMGT QVS/Q&FS. \n **REFERENCIAS:** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT."
+        next: "TOTQFSIncidente2"
       },
       {
         label: "Error en la mezcla / ingredientes equivocados/ parámetro crítico fuera de límite (ej. Temperatura, Peso)",
-        response: "1. **Notificar** del evento a tu supervisor/QVS. \n **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 3. **Lanzar** NCMGT QVS/Q&FS.\n **REFERENCIAS:** Procedimiento sobre liberación producto (positive release) y control del producto no conforme (hold & release) TOT.",
+        next: "TOTQFSIncidente3"
       }
     ]
+  },
+  TOTQFSIncidente2: {
+    response: "**Haz lo siguiente** \n 1. Notificar del evento a tu supervisor/QVS. \n 2. Segregar. \n 3. Participar en el **Panel de Conformidad** para evaluar la muestra contra el estándar físico vigente utilizando la **Escala de Grado de Diferencia (DoD) de 7 puntos**.\n 4. Escalar \n 5. **Dictaminar el producto (SOLO si** el panes determina una **DoD >= 4 es RECHAZO**) \n 6. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 7. Lanzar NCMGT QVS/Q&FS. \n -------------------------------------\n **Referencia:** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT.",
+    final: true
+  },
+  TOTQFSIncidente3: {
+    response: "1. Notificar del evento a tu supervisor/QVS \n 2. Segregar. \n 3. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 11. **Dictaminar el producto**: \n **En caso de mezcla de empaque= inspeccionar hasta el producto NO mezclado y seccionarlo** \n **En caso de mezcla de pastas y/o ingredientes= realizar sensorial y trazabilidad (integrar al DATA en el proceso)** \n Documentos de trazabilidad: reporte de turno, transferencias de pastas, entrega de materiales, cantidades utilizadas. \n 5. Lanzar NCMGT QVS/Q&FS. \n 6. Realizar investigación. \n 7. Esperar autorización con base a la información del dictamen del producto de Q&FS \n ------------------------------ \n **Referencia:** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT",
+    final: true
   }
 
 
