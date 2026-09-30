@@ -458,7 +458,7 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "TOTMetal7"
+        next: "TOTMetal71"
       }
     ]
   },
