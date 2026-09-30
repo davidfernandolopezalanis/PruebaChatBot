@@ -394,7 +394,7 @@ const chatFlow = {
     options: [
       {
         label: "Si",
-        next: "paroLinea"
+        next: "TOTMetalRespuesta1"
       },
       {
         label: "No",
@@ -412,7 +412,7 @@ const chatFlow = {
       },
       {
         label: "En algún ingrediente o material de empaque.",
-        next: "TOTMetal5"
+        next: "TOTMetal51"
       },
       {
         label: "En OPRP",
@@ -426,11 +426,11 @@ const chatFlow = {
     options: [
       {
         label: "Si",
-        next: "paroLinea"
+        next: "TOTMetalRespuesta2"
       },
       {
         label: "No",
-        next: "TOTMetal6"
+        next: "TOTMetal5"
       }
     ]
   },
@@ -440,7 +440,21 @@ const chatFlow = {
     options: [
       {
         label: "Si",
-        next: "TOTMetal4"
+        next: "TOTMetalRespuesta3"
+      },
+      {
+        label: "No",
+        next: "TOTMetal71"
+      }
+    ]
+  },
+  TOTMetal51: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "TOTMetalRespuesta6"
       },
       {
         label: "No",
@@ -454,7 +468,7 @@ const chatFlow = {
     options: [
       {
         label: "Si",
-        next: "NoParoLinea"
+        next: "TOTMetalRespuesta3"
       },
       {
         label: "No",
@@ -472,11 +486,25 @@ const chatFlow = {
     options: [
       {
         label: "Si",
-        next: "NoParoLinea"
+        next: "TOTMetalRespuesta4"
       },
       {
         label: "No",
         next: "TOTMetal8"
+      }
+    ]
+  },
+  TOTMetal71:{
+    id: "Pregunta7",
+    question: "¿Es el segundo rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "TOTMetalRespuesta7"
+      },
+      {
+        label: "No",
+        next: "TOTMetal81"
       }
     ]
   },
@@ -486,13 +514,63 @@ const chatFlow = {
     options:[
       {
         label: "Si",
-        next: "paroLinea"
+        next: "TOTMetalRespuesta5"
       },
       {
         label: "No",
         next: "NoParoLinea"
       }
     ]
+  },
+  TOTMetal81:{
+    id: "Pregunta8",
+    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
+    options:[
+      {
+        label: "Si",
+        next: "TOTMetalRespuesta8"
+      },
+      {
+        label: "No",
+        next: "TOTMetalRespuesta7"
+      }
+    ]
+  },
+  TOTMetalRespuesta1:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Caracterizar** las partículas con fines de investigación. \n 6. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 7. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 8. **Lanzar** NCMGT QVS/Q&FS. \n 9. **Llenar** el análisis de riesgos (RA) con el equipo de food safety. \n 10. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec 5.1)",
+    image: "paro-linea.webp",
+    final:true
+  },
+  TOTMetalRespuesta2:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Caracterizar** las partículas con fines de investigación. \n 6. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 7. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 8. **Lanzar** NCMGT QVS/Q&FS. \n 9. **Llenar** el análisis de riesgos (RA) con el equipo de food safety. \n 10. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec 5.1)",
+    image: "paro-linea.webp",
+    final:true
+  },
+  TOTMetalRespuesta3:{
+    response: "Puedes continuar con la producción normal bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción normal. \n 3. **Revisar** CCPs, OPRP filtros, mallas, magnetos. (Si al revisar estos elementos encuentras METAL debes reiniciar el chat y contaría como segundo rechazo confirmado). \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Revisar** el reporte de turno para detectar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS. \n  8. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentat 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec. 5.1)",
+    final:true
+  },
+  TOTMetalRespuesta4:{
+    response: "Puedes continuar con la producción normal bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción normal. \n 3. **Revisar** CCPs, OPRP filtros, mallas, magnetos. (Si al revisar estos elementos encuentras METAL debes reiniciar el chat y contaría como segundo rechazo confirmado). \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Revisar** el reporte de turno para detectar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS. \n  8. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentat 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec. 5.1)",
+    final:true
+  },
+  TOTMetalRespuesta5:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Caracterizar** las partículas con fines de investigación. \n 6. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 7. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 8. **Lanzar** NCMGT QVS/Q&FS. \n 9. **Llenar** el análisis de riesgos (RA) con el equipo de food safety. \n 10. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec 5.1)",
+    image: "paro-linea.webp",
+    final:true
+  },
+  TOTMetalRespuesta6:{
+    response: "Puedes continuar con la producción normal bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción normal. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Regitrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentat 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **TOT PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec. 5.1)",
+    final:true
+  },
+  TOTMetalRespuesta7:{
+    response: "Puedes continuar con la producción normal bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción normal. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Regitrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentat 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **TOT PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec. 5.1)",
+    final:true
+  },
+  TOTMetalRespuesta8:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Revisar** el porcentaje de defectivo de la orden surtida: \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma. \n -Entregar el rechazo a almacén \n 6. **Caracterizar** las partículas con fines de investigación. \n 7. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 8. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 9. **Lanzar** NCMGT QVS/Q&FS. \n 10. **Llenar** el análisis de riesgos (RA) con el equipo de food safety. \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec 5.1)",
+    image: "paro-linea.webp",
+    final:true
   },
 
   //====================================================
