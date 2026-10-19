@@ -175,7 +175,7 @@ const chatFlow = {
     final: true
   },
   NoParoLinea: {
-    response: "**Puedes continuar con la producción normal bajo monitoreo.** \n ** Ejecutar lo siguiente:**\n 1. Notificar del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n2. Continuar con tu producción normal.\n 3. Revisar CCPs, OPRP filtros, mallas, magnetos. \n (Si al revisar estos elementos encuentras METAL debes reiniciar el chat y contaría como tu segundo rechazo confirmado) \n 4. Caracterizar partículas con fines de investigación. \n 5. Revisar el reporte de turno para detecrar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. Documentar evento en 'reporte de turno' y llenar el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. Lanzar NCMGT LOW QVS/Q&FS \n 8. Reiniciar con monitoreo especial por las siguientes 12 horas. \n---------------------------------------\n**RECUERDA**\nCuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento.\n--------------------------------------- \n **Referencias:** **PR-28769**-Effective Application of Metal Detectors to Production Processes R2, **PR-23677**-Procedimiento de Monitoreo, Verificación y Validación de CCPs y OPRPs",
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad. \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS \n 14. **Llenar el análisis de riesgos (FORM-50002) con el equipo de food safety \n **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo HACCP. \n ----------------------------------- \n **Recuerda** \n Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n -------------------------------------\n **Referencias:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCP's | **REF-05557** HACCP-based Food Safety Management Programme Standard",
     final: true
   },
 
@@ -417,7 +417,7 @@ const chatFlow = {
       {
         label: "En OPRP",
         next: "TOTMetal31"
-      }
+      },
       {
         label: "En No OPRP (Ej. Mallas Flitros)",
         next: "TOTMetalRespuesta10"
@@ -569,11 +569,11 @@ const chatFlow = {
     final:true
   },
   TOTMetalRespuesta4:{
-    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** CCPs, OPRP filtros, mallas, magnetos. (Si al revisar estos elementos encuentras METAL debes reiniciar el chat y contaría como segundo rechazo confirmado). \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Revisar** el reporte de turno para detectar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS. \n  8. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec. 5.1)",
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme).\n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirma contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Regsitrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo de HACCP. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec. 5.1) | **FORM-38293** Plan HACCP CCP's | **REF-05557** HAXXP-based Food Safety Management Programme Standard",
     final:true
   },
   TOTMetalRespuesta5:{
-    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Caracterizar** las partículas con fines de investigación. \n 6. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 7. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 8. **Lanzar** NCMGT QVS/Q&FS. \n 9. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety. \n 10. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-23677** (Aplicación de Detectores de Metales, Sec. 5) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site TOT, Sec 5.1)",
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad \n 3. **Segregar** el producto de acuerdo con el last good cehck (útlimo control conforme). \n 4. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen del prpducto (liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCP's | **REF-05557** HACCP-based Food Safety Management Programme Standard",
     image: "paro-linea.webp",
     final:true
   },
@@ -1023,6 +1023,24 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS PLASTICO TOT
   //====================================================
+  TOTPlastico01: {
+    id: "Pregunta9",
+    question: "¿De qué material es el objeto encontrado?",
+    options: [
+      {
+        label: "Vidrio",
+        next: "TOTPlastico2"
+      },
+      {
+        label: "Madera",
+        next: "TOTPlastico2"
+      },
+      {
+        label: "Plástico",
+        next: "TOTPlastico1"
+      }
+    ]
+  },
   TOTPlastico1: {
     id: "Pregunta9",
     question: "¿Dónde fue encontrado el objeto plástico?",
