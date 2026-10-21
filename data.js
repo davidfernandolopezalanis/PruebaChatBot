@@ -106,15 +106,11 @@ const chatFlow = {
         next: "TOTMetal1"
       },
       {
-        label: "Plástico Suave / Duro",
+        label: "Plástico (Suave/Duro)/Vidrio/Madera",
         next: "TOTPlastico1"
       },
       {
-        label: "Vidrio o Madera",
-        next: "TOTVidrio1"
-      },
-      {
-        label: "Otros Cuerpos Extraños (cabello, plagas, pelusa, etc.)",
+        label: "Otros Cuerpos Extraños (cabello/plagas/pelusa/sangre)",
         next: "TOTOtros1"
       },
       {
@@ -390,7 +386,7 @@ const chatFlow = {
 
   TOTMetal1: {
     id: "Pregunta3",
-    question: "¿El objeto metálico encontrado es superior a 7mm y/o es esférico superior a 44.5mm?",
+    question: "¿El objeto metálico encontrado es superior a 7mm y/o es esférico menor o igual a 44.5mm?",
     options: [
       {
         label: "Si",
@@ -440,7 +436,7 @@ const chatFlow = {
   },
   TOTMetal31:{
     id: "Pregunta5",
-    question: "¿El objeto metálico encontrado es superior a 6 mm?",
+    question: "¿El objeto metálico encontrado es superior a 6 mm y es duro o su condición es afilada/puntiaguda?",
     options: [
       {
         label: "Si",
