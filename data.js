@@ -551,7 +551,7 @@ const chatFlow = {
     ]
   },
   TOTMetalRespuesta1:{
-    response: "**¡PARO DE LÍNEA INMEDIATO!** \n \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad.\n 3. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme). \n 4. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP) \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen del producto (Liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad.\n 3. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme). \n 4. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP) \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen del producto (Liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
     image: "paro-linea.webp",
     final:true
   },
@@ -1017,19 +1017,19 @@ const chatFlow = {
   //====================================================
 
   //====================================================
-  //                PREGUNTAS PLASTICO TOT
+  //                PREGUNTAS VIDRIO/PLASTICO/MADERA TOT
   //====================================================
   TOTPlastico01: {
     id: "Pregunta9",
     question: "¿De qué material es el objeto encontrado?",
     options: [
       {
-        label: "Vidrio",
-        next: "TOTPlastico2"
+        label: "Vidrio/cerámica",
+        next: "TOTVidrio1"
       },
       {
         label: "Madera",
-        next: "TOTPlastico2"
+        next: "TOTMadera1"
       },
       {
         label: "Plástico",
@@ -1042,52 +1042,79 @@ const chatFlow = {
     question: "¿Dónde fue encontrado el objeto plástico?",
     options: [
       {
-        label: "En molde con desgaste (le falta un pedazo)",
-        next: "TOTPlastico2"
+        label: "En Zona 1/Zona 2",
+        next: "TOTRepsuestaPlastico1"
       },
       {
-        label: "En producto/tanques/marmita/OPRP",
-        next: "TOTPlastico2"
+        label: "En Zona 3/Zona4",
+        next: "TOTRespuestaPlastico2"
       },
       {
         label: "En herramienta de limpieza/utensilio de producción",
-        next: "TOTPlastico3"
+        next: "TOTRespuestaPlastico3"
       }
     ]
   },  
-  TOTPlastico2: {
-    response: "**¡PARO DE LINEA!**\n Se ha detectado un peligro físico crítico. Ejecuta las siguientes acciones de inmediato:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** OPRP filtros y mallas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 8. **Llenar** el análisis de riesgos con el equipo de food safety  \n  9. **Esperar** señal de arranque por RA equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
-    image: "paro-linea.webp",
-    final: true
-  },
-  TOTPlastico3: {
-    id: "Pregunta10",
-    question: "¿La herramienta o utensilio se reportó como perdida, o se encontró rota en la línea?",
-    options:[
+  TOTVidrio1: {
+    id: "Pregunta9",
+    question: "¿Dónde fue encontrado el objeto?",
+    options: [
       {
-        label: "Se encontró rota y FALTAN fragmentos (>2mm)",
-        next: "TOTPlastico5"
+        label: "En Zona 1/Zona 2",
+        next: "TOTRespuestVidrio1"
       },
       {
-        label:"Se perdió y no se logra localizar",
-        next: "TOTPlastico5"
+        label: "En Zona 3/Zona4",
+        next: "TOTRespuestaVidrio2"
+      }
+    ]
+  }, 
+  TOTMadera1: {
+    id: "Pregunta9",
+    question: "¿Dónde fue encontrado el objeto?",
+    options: [
+      {
+        label: "En Zona 1/Zona 2",
+        next: "TOTRespuestaMadera1"
       },
       {
-        label: "Se encontró rota, pero está completa (no faltan pedazos)",
-        next: "TOTPlastico4"
+        label: "En Zona 3/Zona4",
+        next: "TOTRespuestaMadera2"
       }
     ]
   },
-  TOTPlastico5: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto. Al no contar con CCPs o OPRPs físicos capaces de detener plástico en el proceso, debes retener todo el producto producido en el turno.  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Revisar** filtros y mallas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Lanzar** NCMGT MEDIO QVS/Q&FS \n 8. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety  \n  9. **Esperar** señal de arranque por RA equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
+  TOTRespuestaVidrio1: {
+    response: "**¡PARO DE LINEA!**\n 1. **Detener** la línea inmediatamente.\n  2. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager.\n  3. **Delimitar** el área con cinta amarilla y restringir el paso. \n  4. **Segregar** el producto de acuerdo con el last good check (último control conforme) \n 5. **Colocar y registrar** la evidencia en el formato acorde a donde se haya encontrado vidrio: \n CCP -> FORM-38268 Monitoreo de Detectores de Metal (CCP) \n OPRP -> FORM-38267 Monitoreo de Mallas y Filtros \n PRODCUTO/TANQUES -> Reporte de turno \n 6. **Registrar** en el FORM-386268 Formato de registro de hallazgos \n 7. **Realizar** la limpieza con guantes anticorte \n 8. **Detonar** investigación para definir fuente y causa potencial. \n 9. **Documentar** evento en 'reporte de turno' \n 10. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'  \n 11. **Lanzar** NCMGT QVS/Q&FS \n 12. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 13. **Esperar** señal de arranque y dictamen del producto (liberación, reproceso o destrucción) por el equipo HACCP. \n --------------------------------------- \n **Referencias: ** **FORM-40844** Incidente de rompimiento de vidrio, plástico duro y cerámica | **FORM-38293** Plan HACCP CCP's | **FORM-38295** PLAN HACCP OPRP's y NO OPRP's | **REF-05557** HACCP-based Food Safety Management Programme Standard | **PR-28761** Procedimiento Manejo de vidrio, plástico quebradizo y cerámica",
     image: "paro-linea.webp",
     final: true
   },
-  TOTPlastico4: {
-    response: "**Haz lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Retirar** la herramienta dañada de la línea. \n 3. **Reemplazar** el utensilio por un sustituto nuevo, limpio, seco y previamente liberado. \n 4. **Detonar** investigación para definir fuente y causa potencial. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT \n **Continuar** monitero. \n ------------------------------- \n **REFERENCIAS:** **PR-40192**-Procedimiento de Escalamiento ante Herramientas Rotas o Extraviadas, Sec. 4 | **PR-28761**-Procedimiento Manejo de vidrio, plástico quebradizo y cerámica.",
+  TOTRespuestaVidrio2: {
+    response: "1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager \n 2. **Delimitar** el área del tráfico peatonal para evitar que se dispersen astillas de vidrio a otras líneas \n 3. **Evaluar** la posible afectación al producto. Si existe producto potencialmente afectado, deberá segregarse e identificarse y proceder conforme al proceso de control de producto no conforme aplicable en Toluca. \n 4. **Investigar** la fuente y causa del vidrio, incluyendo la revisión de equipos, instalaciones y elementos quebradizos cercanos. Si corresponde a un elemento inventariado, dar seguimiento en FORM-40610 Inventario de vidrio, plástico duro y cerámica; las desviaciones de equipo/instalaciones requieren seguimiento a reparación o sustitución. \n 5. **Solicitar** la recolección del vidrio y limpieza al proveedor de limpieza. \n 6. **Realizar** inspección y liberación del área por Q&FS, verificando que el área se encuentre en condiciones adecuadas y no represente riesgo para el proceso. \n 7. **Documentar** evento en FORM-40844 'Incidente de rompimiento de vidrio, plástico duro y cerámica' y en 'reporte de tunro' \n --------------------------------------------- \n **Referencias: ** **FORM-40844** Incidente de rompimiento de vidrio, plástico duro y cerámica | **FORM-38293** Plan HACCP CCP's | **FORM-38295** PLAN HACCP OPRP's y NO OPRP's | **REF-05557** HACCP-based Food Safety Management Programme Standard | **PR-28761** Procedimiento Manejo de vidrio, plástico quebradizo y cerámica",
     final: true
   },
-
+  TOTRespuestaMadera1: {
+    response: "**¡PARO DE LINEA!** \n 1. **Detener** la línea inmediatamente \n 2. **Notificar** del evento a tu supervisor/calidad \n 3. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 4. **Colocar y registrar** la evidencia en el formato acorde a donde se haya encontrado madera: \n CCP -> FORM-38268 Monitoreo de Detectores de Metal (CCP) \n OPRP -> FORM-38267 Monitoreo de Mallas y Filtros \n PRODUCTO/TANQUES -> Reporte de turno \n 5. **Registrar** en el FORM-38268 Formato de registro de hallazgos \n 6. **Realizar** limpieza del área afectada \n 7. **Detonar** investigación para definir fuente y causa potencial. \n Evaluar alcance de la contaminación: ubicación del hallazgo, condición del material, producto expuesto, equipos involucrados y posibilidad de que existan fragmentos adicionales. \n 8. **Documentar** evento en 'reporte de turno' \n 9. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 10. **Lanzar** NCMGT QVS/Q&FS \n 11. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 12. **Esperar** señal de arranque y dictamen del producto (liberación, reproceso o destrucción) por el equipo HACCP. \n -------------------------------------\n **Referencias:** **FORM-40844** Incidente de rompimiento de vidrio, plástico duro y cerámica | **FORM-38293** Plan HACCP CCP's | **FORM-8295** PLAN HACCP OPRP's y NO OPRP's | **REF-05557** HACCP-based Food Safety Management Programme Standard | **PR-28761** Procedimiento Manejo de vidrio, plástico quebradizo y cerámica.",
+    image: "paro-linea.webp",
+    final: true
+  },
+  TOTRespuestaMadera2: {
+    response: "1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager \n **Evaluar** la posible afectación al producto. Si existe producto potencialmente afectado, deberá segregarse e identificarse y proceder conform al proceso de control de producto no conforme aplicable en Toluca. \n 3. **Investigar** la fuente y causa de la amdera. Por ejemplo, infraestructura, material, tarima o algún elemento utilizado en el área. El Manual de BPM de Toluca establece que los materiales y productos almacenados sobre tarimas deben utilizar tarimas en buen estado. \n 4. **Retirar** la madera y solicitar la limpieza al proveedor de limpieza",
+    final: true
+  },
+  TOTRespuestaPlastico1: {
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1. **Detener** la línea inmediatamente** \n 2. **Notificar** del evento a tu supervisor/calidad. \n 3. **Segrefar** el producto de acuerdo con el last good check (último control conforme). \n 4.**Colocar y registrar** la evidencia en el formato acorde a donde se haya encontrado plástico: \n CCP -> FORM-38268 Monitoreo de Detectores de Metal (CCP) \n OPRP -> FORM-38267 Monitoreo de Mallas y Filtros \n PRODUCTO/TANQUES -> Reporte de turno \n 5. **Retirar** los fragmentos/material roto y ejecutar la limpieza del área. \n 6. **Detonar** investigación para definir fuente y causa potencial. \n Evaluar el alcance de la contaminación: ubicación del hallazgo, condición del material, producto expuesto, equipos involucrados y posibilidad de que existan fragmentos adicionales. \n 7. **Documentar** evento en el 'FORM-40844 Incidente de rompimiento de vidrio, plástico duro y cerámica' y en 'reporte de turno'. \n 8. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 9 .**Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 11. **Esperar** señal de arranque y dictamen del producto (liberación, reproceso o destrucción) por el equipo HACCP. \n -------------------------------------------- \n **Referencias: ** **FORM-40884** Incidente de rompimiento de vidrio, plástico duro y cerámica | **FORM-38293** Plan HACCP CCP's | **FORM-38295** PLAN HACCP OPRP's y NO OPRP's | **REF-05557** HACCP-based Food Safety Management Programme Standard | **PR-28761** Procedimiento Manejo de vidrio, plástico quebradizo y cerámica",
+    image: "paro-linea.webp",
+    final: true
+  },
+  TOTRespuestaPlastico2: {
+    response: "1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager \n 2. **Evaluar** la ubicación, fuente y condición del plástico, particularmente si puede representar reisgo de contaminación para producto, materias primas, amteriales o equipos. \n 3. **Investigar** la fuente y causa del plástico. Por ejemplo, infraestructura, amterial, herramienta o algún elemento utilizado en el área. \n 4. **Retirar** el plástico y solicitar la limpieza al proveedor de limpieza. \n 5. **Corregir** la fuente del hallazg. Si corresponde a equipo/instalación, el procedimiento contempla reemplazo y/o seguimiento mediante anormalidad en SAP y seguimiento en el inventario de vidrio/plástico quebradizo cuando aplique. \n 6. **Documentar** el evento en el **FORM-40844 (solo si corresponde a una ruptura de plástico duro/quebradizo)** \n 7. **Solicitar** a calidad liberación del área afectada. \n ----------------------------------- \n **Referencias:** **FORM-40844** Incidente de rompimiento de vidrio, plástico duro y cerámica | **REF-05557** HACCP-based Food Safety Management Programme Standard | **PR-28761** Procedimiento Manejo de vidrio, plástico quebradizo y cerámica",
+    final: true
+  },
+  TOTRespuestaPlastico3: {
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1.**Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad \n 3. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 4. **Colocar y registrar**la evidencia en el formato acorde a donde se haya encontrado plástico: \n CCP -> FORM-38268 Monitoreo de Detectores Metal (CCP) \n OPRP -> FORM-38267 Monitoreo de Mallas y Filtros \n PRODUCTOS/TANQUES -> Reporte de turno \n 5. **Retirar** los fragmentos/material roto y ejecutar la limpieza del área. \n 6. **Buscar** el utensilio o todos sus fragmentos y determinar cuándo fue la última verificación confrome. Si el artículo no se encuentra, sustituirlo por uno nuevo, íntegro, limpio, seco y liberado según lo establecido en el procedimiento, y levantar la corección correspondiente. \n 7. **Detonar** investigación para definir fuente y causa potencial. \n Evaluar el alcance de la contaminación: ubicación del hallazgo, condición del material, producto expuesto, equipos involucrados y posibilidad de que existan fragmentos adicionales. \n 8. **Documentar** evento en el FORM-40844 Incidente de rompimiento de vidrio, plástico duro y cerámica y en 'reporte de turno' \n 9. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 10. **Lanzar** NCMGT QVS/Q&FS \n 11. **LLenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 12. **Esperar** señal de arranque y dictamen del producto (liberación, reproceso o destrucción) por el equipo HACCP. \n --------------------------------------- \n **Referencias: ** **PR-40192** Procedimiento de escalamiento ante herramientas rotas o extraviadas.",
+    image: "paro-linea.webp",
+    final: true
+  },
   //====================================================
   //                PREGUNTAS PLASTICO TE
   //====================================================
@@ -1145,59 +1172,6 @@ const chatFlow = {
     response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  5. Detonar investigación para definir fuente y causa potencial \n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT. \n 10. Continuar monitoreo.",
     final: true
   },
-  //====================================================
-  //                PREGUNTAS VIDRIO/MADERA MTM
-  //====================================================
-
-  //====================================================
-  //                PREGUNTAS VIDRIO/MADERA TOT
-  //====================================================
-
-  TOTVidrio1: {
-    id: "Pregunta11",
-    question: "¿Qué tipo de objeto encontraste?",
-    options: [
-      {
-        label: "Vidrio",
-        next: "TOTVidrio2"
-      },
-      {
-        label: "Madera",
-        next: "TOTVidrio2"
-      }
-    ]
-  },
-  TOTVidrio2: {
-    id: "Pregunta12",
-    question: "¿Dónde fue encontrado el objeto extraño?",
-    options: [
-      {
-        label: "En producto/tanques/marmita/PCC/OPRP",
-        next: "TOTVidrio3"
-      },
-      {
-        label: "En pasillos o áreas de tránsito",
-        next: "TOTVidrio4"
-      }
-    ]
-  },
-  TOTVidrio3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Delimitar** el área de tráfico peatonal para evitar que se dispersen estillas de vidrio a otras líneas.\n  5. **Detonar** investigación para definir fuente y causa potencial.\n 6. **Consultar y/o agregar** al registro de Vidrio y Plástico Duro de la línea para identificar el origen del fragmento \n 7. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. **Realizar** limpieza \n 9. **Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n ------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
-    image: "paro-linea.webp",
-    final: true
-  },
-  TOTVidrio4: {
-    response: "**Haz lo siguiente** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Delimitar** el área del tráfico peatonal para evitar que se dispersen astillas de vidrio a otra líneas. \n 3. **Detonar** investigación para definir fuente y causa potencial. \n 4. **Consultar y/o agregar** al registro de Vidrio y Plástico Duro de la línea para identificar el origen del fragmento. \n 5. **Solicitar** al proveedor KRYON. \n 6. **Documentar** evento en 'reporte de turno'. \n ------------------------------------- \n  **REFERENCIA:** **FORM-40844**-Incidente de rompimiento de vidrio, plástico duro y cerámica | **PR-28761**-Procedimiento Manejo de vidrio, plástico quebradizo y cerámica.",
-  },
-  TOTVidrio3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Detonar** investigación para definir fuente y causa potencial.\n 5. **Consultar y/o agregar** al registro de Vidrio y Plástico Duro de la línea para identificar el origen del fragmento \n 6. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. **Realizar** limpieza \n 8. **Lanzar** NCMGT QVS/Q&FS \n 9. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety \n 10. **Esperar** señal de arranque por RA equipo HACCP. \n -------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters, **PR-23679**-Effective Application of Optical Sorters, **PR-23566**-Effective Application of Sieves to Production Processes r2, **PR-28769**-Procedimiento de Monitoreo de CCPs y OPRPs, **REF-09274**-Corporate Foreign Materials Management Standard ",
-    image: "paro-linea.webp",
-    final: true
-  },
-  //====================================================
-  //                PREGUNTAS VIDRIO/MADERA TE
-  //====================================================
-  
   //====================================================
   //                PREGUNTAS OTROS MTM
   //====================================================
@@ -1267,25 +1241,25 @@ const chatFlow = {
   //====================================================
   TOTAgua1:{
     id: "Pregunta13",
-    question: "¿El goteo condensación o ingreso de agua cayó **DIRECTAMENTE** sobre el producto, materias primas, material de empaque o Zona 1,/Zona 2?",
+    question: "¿Dónde identificaste el goteo, condensación o ingreso de agua?",
     options:[
       {
-        label: "Si (Contacto Directo/Zona 1/Zona 2)",
+        label: "Contacto Directo/Zona 1/Zona 2",
         next: "TOTAgua2"
       },
       {
-        label: "No (Cayó en pasillos o áreas alejadas)",
+        label: "Zona 3/Zona 4",
         next: "TOTAgua3"
       }
     ]
   },
-  TOTAgua2:{
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimitar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda por otras líneas.\n 5. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 6. **Solicitar** un hispoado de Zona 1 en sucio. \n 7. **Limpiar** la zona afectada. \n 8. **Solicitar** un hisopado de Zona 1 en limpio. \n **Registrar y documentar** en el reporte de turno, llenar el FORM-56871 y **levanta** una No Conformidad en Nexus. \n 10. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP.** \n **REQUISITO DE ARRANQUE**: El quipo no podrá reanudar producción basándose únicamente en una inspección visual. El área **debe estar 100% seca** y se debe contar con **resultados de laboratorio conformes** que liberen la zona microbiológicamente. \n -------------------------------------------------- \n **Referencias:** 'STRD-01992-Mars Wrigley Cleaning and Sanitation Standard' , 'PR-28758 - Procedimiento General de Limpieza y Desinfección'",
+  TOTRespuestaAgua1:{
+    response: "**¡PARO DE LINEA!**\n **Debes hacer lo siguiente:**\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check (último control conforme) \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimitar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda por otras líneas.\n 5. **Solicitar** un hisopado de zona en sucio. \n 6. **Limpiar** la zona afectada. \n 7. **Secar** completamente el área y eleminar condiciones que permitan acumulación de agua. \n 8. **Solicitar** un hisopado de zona en limpio. \n - En caso de LLUVIA -> después de 4 horas \n - En caso de otro -> INMEDIATAMENTE después de la limpieza \n 9. **Levantar** el aviso/anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 10.**Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 11. **Lanzar** NCMGT \n 12. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 13. **Esperar** señal de arranque por RA equipo HACCP. \n 14. **Asegurar** que las superficies/equipos estén secos antes del arranque. \n -------------------------------------------------- \n **Referencias:** **STRD-01992** Mars Wrigley Cleaning and Sanitation Standard | **PR-28758** Procedimiento General de Limpieza y Desinfección'",
     image: "paro-linea.webp",
     final: true
   },
-  TOTAgua3:{
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área\n 3. Solicitar a Q&FS hisopado en SUCIO de la zona afectada. \n 4. Solicitar KRYON limpieza de la zona afectada. \n 5. Reportar y levantar anormalidad a mantenimiento. \n 6. Detonar investigación para definir fuente y causa potencial \n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Lanzar NCMGT \n 9. Continuar monitoreo. \n 10. Solicitar hisopado en limpio (DDL) por correo al equipo de Q&FS. \n En caso de LLUVIA -> después de 4 HORAS \n En otro caso -> INMEDIATAMENTE después de la limpieza \n --------------------------------------------- \n **Referencias:** **STRD-01992**-Mars Wrigley Cleaning and Sanitation Standard, **PR-28758**-Procedimiento General de Limpieza y Desinfección",
+  TOTRespuestaAgua2:{
+    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. **Investigar y delimitar el área:** Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda a otras líneas. \n 3. Solicitar un hisopado de la zona en sucio. \n 4. **Limpiar** la zona afectada \n 5. **Secar** completamente el área y eliminar condiciones que permitan acumulación de agua. \n 6. **Solicitar** un hisopado de la zona en limpio. \n - En caso de LLUVIA -> Después de 4 HORAS \n - En caso de otro -> INMEDIATAMENTE después de la limpieza \n 7. **Levantar** el aviso/anormalidad a Mantwnimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT \n --------------------------------------------- \n **Referencias:** **STRD-01992** Mars Wrigley Cleaning and Sanitation Standard | **PR-28758** Procedimiento General de Limpieza y Desinfección",
     final: true
   },
   //====================================================
