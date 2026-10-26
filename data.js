@@ -1188,7 +1188,26 @@ const chatFlow = {
   //                PREGUNTAS OTROS TOT
   //====================================================
   TOTOtros1:{
-    response: "**Haz lo siguiente:** \n 1. Notificar del evento a tu supervisor/QVS/Q&FS Local Team. \n 2. Asegurar que no haya producto expuesto en contacto con la plaga/materia extraña. \n 3. Continuar con tu producción normal. \n 4. Revisar: \n  - CARTÓN: El reporte del turno anterior para identificar intervenciones o mantenimientos donde pudieran haber quedado remanentes de cartón u otros materiales extraños. \n - PLAGAS: El último registro de limpieza profunda para detectar desviaciones. El último reporte del proveedor de plagas. \n - CABELLO/PELUSA/HILO/UÑAS: Verificar que el equipo de operación porte de manera correcta completa su Equipo de Protección Personal (EPP). \n 5. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Informacion para el levantamiento de incidentes en NCMGT'. \n 6. Lanzar NCMGT LOW QVS/Q&FS. \n 7. Esperar indicación del equipo calidad para realizar la limpieza en el área. \n --------------------------------------- \n **REFERENCIAS:** **PR-28756**-Procedimiento Manejo Integral de Plagas | **QM-03782**-Manual de Buenas Prácticas de Manufactura.",
+    id: "Pregunta10",
+    question: "¿Dónde identidicaste el cuerpo extraño?",
+    options: [
+      {
+        label: "Contacto Directo/ Zona 1/ Zona 2",
+        next: "TOTRespuestaOtros1"
+      },
+      {
+        label: "Zona3/ Zona4",
+        next: "TOTRespuestaOtros2"
+      }
+    ]
+  },
+  TOTRespuestaOtros1: {
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n **Debes hacer lo siguiente:** \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 3. **Segregar el Producto de Acuerdo con el Last Good Check (último control conforme). \n 4. **Evaluar el alcance** e investigar la fuente del hallazgo: \n **- Cabello:** verificar uso correcto de escafandra/balerina y cumplimiento de BPM. \n **- Pelusa/hilo/uña:** revisar univorme, EPP y materiales utilizados. \n **- Plaga:** gestionar conforme al procedimiento de Manejo Integral de Plagas. Si existe riesgo de inocuidad por afectación a producto, línea, materia prima o empaque, se genera PRIMP y las acciones son definidas con HACCP/Q&FS. \n **- Sangre:** detener la actividad de la persona lesionada. La herida visible debe protegerse con material impermeable de color diferente a la piel y la persona debe acudir inmediatamente al servicio médico. Si hubo posible contacto con producto, mantenerlo segregado y bajo control. \n 5. **Retira** el objeto extraño/fluido del área. \n 6. **Limpiar y desinfectar** el área. \n 7. **Documentar** evento en 'reporte de turno' y llenar el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 8. **Lanzar** NCMGT \n 9. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 9. **Esperar señal de arranque por RA equipo HACCP. \n ------------------------------------ \n **Referencias:** **QM-03782** Manual de Buenas Prácticas de Manufactura. | **PR-28756** Procedimiento Manejo Integral de Plagas. | **PR-28757** Procedimiento de Verificación de Buenas Prácticas de Personal | **REF-28680** Mapeo de Procesos TOT Riesgos Físicos | **PR-28743** PROCEDIMIENTO CONTROL DE PRODUCTO NO CONFORME V12",
+    image: "paro-linea.webp",
+    final: true
+  },
+  TOTRespuestaOtros2:{
+    response: "**Haz lo siguiente:** \n 1. **Notificar** al supervisor/Team Leader. \n 2. **Confirmar** que no exista afectación a producto o superficies de contacto. \n 3. **Retirar** el contaminante y limpiear el área utilizando los utensilios correspondientes. \n 4. **Investigar** y corregir la fuente del hallazgo \n  - CARTÓN: El reporte del turno anterior para identificar intervenciones o mantenimientos donde pudieran haber quedado remanentes de cartón u otros materiales extraños. \n - PLAGAS: El último registro de limpieza profunda para detectar desviaciones. El último reporte del proveedor de plagas. \n - CABELLO/PELUSA/HILO/UÑAS: Verificar que el equipo de operación porte de manera correcta completa su Equipo de Protección Personal (EPP). \n 5. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Informacion para el levantamiento de incidentes en NCMGT'. \n 6. Lanzar NCMGT LOW QVS/Q&FS. \n 7. Esperar indicación del equipo calidad para realizar la limpieza en el área. \n --------------------------------------- \n **REFERENCIAS:** **PR-28756**-Procedimiento Manejo Integral de Plagas | **QM-03782**-Manual de Buenas Prácticas de Manufactura.",
     final: true
   },
 
@@ -1245,21 +1264,21 @@ const chatFlow = {
     options:[
       {
         label: "Contacto Directo/Zona 1/Zona 2",
-        next: "TOTAgua2"
+        next: "TOTRespuestaAgua1"
       },
       {
         label: "Zona 3/Zona 4",
-        next: "TOTAgua3"
+        next: "TOTRespuestaAgua2"
       }
     ]
   },
   TOTRespuestaAgua1:{
-    response: "**¡PARO DE LINEA!**\n **Debes hacer lo siguiente:**\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check (último control conforme) \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimitar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda por otras líneas.\n 5. **Solicitar** un hisopado de zona en sucio. \n 6. **Limpiar** la zona afectada. \n 7. **Secar** completamente el área y eleminar condiciones que permitan acumulación de agua. \n 8. **Solicitar** un hisopado de zona en limpio. \n - En caso de LLUVIA -> después de 4 horas \n - En caso de otro -> INMEDIATAMENTE después de la limpieza \n 9. **Levantar** el aviso/anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 10.**Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 11. **Lanzar** NCMGT \n 12. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 13. **Esperar** señal de arranque por RA equipo HACCP. \n 14. **Asegurar** que las superficies/equipos estén secos antes del arranque. \n -------------------------------------------------- \n **Referencias:** **STRD-01992** Mars Wrigley Cleaning and Sanitation Standard | **PR-28758** Procedimiento General de Limpieza y Desinfección'",
+    response: "**¡PARO DE LINEA!**\n **Debes hacer lo siguiente:**\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check (último control conforme) \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimitar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda a otras líneas.\n 5.**Solicitar** un hisopado de zona en sucio. \n 6. **Limpiar** la zona afectada. \n 7. **Secar** completamente el área y eliminar condiciones que permitan acumulación de agua. \n 8. **Solicitar** un hisopado de zona en limpio. \n **-** En caso de LLUVIA -> después de 4 horas \n **-** En caso de otro -> INMEDIATAMENTE después de la limpieza \n 9. **Levantar** el aviso/anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 10.**Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 11. **Lanzar** NCMGT \n 12. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 13. **Esperar** señal de arranque por RA equipo HACCP. \n 14. **Asegurar** que las superficies/equipos estén secos antes del arranque. \n -------------------------------------------------- \n **Referencias:** **STRD-01992** Mars Wrigley Cleaning and Sanitation Standard | **PR-28758** Procedimiento General de Limpieza y Desinfección'",
     image: "paro-linea.webp",
     final: true
   },
   TOTRespuestaAgua2:{
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. **Investigar y delimitar el área:** Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda a otras líneas. \n 3. Solicitar un hisopado de la zona en sucio. \n 4. **Limpiar** la zona afectada \n 5. **Secar** completamente el área y eliminar condiciones que permitan acumulación de agua. \n 6. **Solicitar** un hisopado de la zona en limpio. \n - En caso de LLUVIA -> Después de 4 HORAS \n - En caso de otro -> INMEDIATAMENTE después de la limpieza \n 7. **Levantar** el aviso/anormalidad a Mantwnimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT \n --------------------------------------------- \n **Referencias:** **STRD-01992** Mars Wrigley Cleaning and Sanitation Standard | **PR-28758** Procedimiento General de Limpieza y Desinfección",
+    response: "**Debes hacer lo siguiente:**\n  1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager.\n  2. **Investigar y delimitar el área:** Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda a otras líneas. \n 3. **Solicitar** un hisopado de la zona en sucio. \n 4. **Limpiar** la zona afectada \n 5. **Secar** completamente el área y eliminar condiciones que permitan acumulación de agua. \n 6. **Solicitar** un hisopado de la zona en limpio. \n **-** En caso de LLUVIA -> Después de 4 HORAS \n **-** En caso de otro -> INMEDIATAMENTE después de la limpieza \n 7. **Levantar** el aviso/anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT \n --------------------------------------------- \n **Referencias:** **STRD-01992** Mars Wrigley Cleaning and Sanitation Standard | **PR-28758** Procedimiento General de Limpieza y Desinfección",
     final: true
   },
   //====================================================
@@ -1342,25 +1361,25 @@ const chatFlow = {
   //====================================================
   TOTQuimico1: {
     id: "Pregunta14",
-    question: "¿El químico tuvo contacto directo con el producto, ingredientes, material de empaque o superficies de Zona 1?",
+    question: "¿Dónde identificaste el derrame o la contaminación química?",
     options: [
       {
-        label: "Si, contacto directo o derrame en Zona 1/Zona 2",
-        next: "TOTQuimico2"
+        label: "Contacto Directo/ Zona 1/ Zona 2",
+        next: "TOTRespuestaQuimico1"
       },
       {
-        label: "No, pero es un derrame en Zona 3/Zona 4",
-        next: "TOTQuimico3"
+        label: "Zona 3/ Zona 4",
+        next: "TOTRespuestaQuimico2"
       }
     ]
   },
-  TOTQuimico2: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check  \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n  4. **Acordonar** y restringir el área  \n 5. **Realizar** la limpieza de las áreas involucradas \n - NOTA: Todos los materiales y utensilios que se utilicen para limpiar el derrame se deben segregar y los responables de limpiar derrames de alérgenos las deben desechar inmediatamente. \n 6. **Solicitar** un hisopado a calidad para validar la limpieza de la zona.\n  7. **Detonar** investigación para definir fuente y causa potencial.\n 8. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. **Lanzar** NCMGT QVS/Q&FS \n 10. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n -------------------------------------------\n **Referencias:** **PR-42219** (Procedimiento para derrame de Alérgenos) | **PR-28763** (Procedimiento Control de Químicos)",
+  TOTRespuestaQuimico1: {
+    response: "**¡PARO DE LINEA!**\n **Debes hacer lo siguiente:** \n  1. **Detener** la línea inmediatamente.\n  2. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager.\n  3. **Segregar** El Producto De Acuerdo Con El Last Good Check (último control conforme) \n  4. **Delimitar y restringir** el área afectada para evitar que personas, equipo o materiales propaguen el químico hacia otras zonas. \n 5. **Identificar** el químico o alérgeno y determinar el alcance del evento, considerando como mínimo: \n **-** Químico o alérgeno involucrado \n **-** Origen del derrame \n **-** Área y equipos afectados \n **-** Producto, ingrediente o empaque potencialmente involucrado \n **-** Superficies que pudieron tener contacto \n 6. **Limpiar** la zona afectada \n  7. **Desechar** inmediatamente los materiales y utensilios de limpieza utilizados en el derrame. \n 8. **Solicitar** un hisopado de zona en limpio con el KIT correspondiente al alérgeno. \n 9. **Levantar** el aviso/Anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 10. **Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 11. **Lanzar** NCMGT \n 12. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 13. **Esperar** señal de arranque por RA equipo HACCP.\n 14. **Asegurar** que las superficies/Equipos estén secos antes del arranque. \n -------------------------------------------\n **Referencias:** **PR-28763** Procedimiento Control de Químicos | **PR-42219** Procedimiento para derrame de Alérgenos | **PR-28759** Procedimiento de Manejo de Alérgenos TOT | **QM-03782** Manual de Buenas Prácticas de Manufactura",
     image: "paro-linea.webp",
     final: true
   },
-  TOTQuimico3: {
-    response: "**Haz lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS.\n 2. **Delimitar** la zona afectada en pisos o montacargas pr el área del derrame.\n 3. **Realizar** limpieza: \n - **Para alérgenos**: Realizar la limpieza utilizando los utensilios con el código de colores asignado en conjunto con los traje Tyvek amarillos. **Nota:** Todos los materiales de limpieza desechables utilizados deben segregarse y desecharse inmediatamente. \n - **Para químicos**: Realizar la limpieza utilizando materiales absorbentes inertes. **Nota 1:** Queda estrictamente prohibido usar agua a alta presion o mangueras de aire comprimido, ya que esto aerosoliza y dispersa las partículas químicas o alegrénicas hacia la Zona 1. **Nota 2:** Si el derrame es un químico que ha caducado o es peligroso, el área de HSE debe encargarse de su traslado seguro al almacén de residuos peligrosos, destinar su disposición final de acuerdo con su naturaleza química.\n \n4. **Solicitar** a Q&FS inspección visual para liberación del área. \n 5. **Documentar** evento en 'reporte de turno' \n ----------------------------------- \n **Referencias:** **PR-42219**-Procedimiento para derrame de Alérgenos, **PR-28763**-Procedimiento Control de Químicos",
+  TOTRespuestaQuimico2: {
+    response: "**Debes hacer lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Investigar y delimitar el área: **Identifica el origen y segrega el área de tránsito para prevenir la dispersión o transferencia del químico mediante personas, patines, materiales. \n 3. **Limpiar** la zona afectada utilizando materiales y equipo adecuados y respetando el código de colores establecido para los utencilios de limpieza: \n - **Para alérgenos**: Realizar la limpieza utilizando los utensilios con el código de colores asignado en conjunto con los traje Tyvek amarillos. **Nota:** Todos los materiales de limpieza desechables utilizados deben segregarse y desecharse inmediatamente. \n - **Para químicos**: Realizar la limpieza utilizando materiales absorbentes inertes. \n **Nota 1:** Queda estrictamente prohibido usar agua a alta presion o mangueras de aire comprimido, ya que esto aerosoliza y dispersa las partículas químicas o alegrénicas hacia la Zona 1. \n **Nota 2:** Si el derrame es un químico que ha caducado o es peligroso, el área de HSE debe encargarse de su traslado seguro al almacén de residuos peligrosos, destinar su disposición final de acuerdo con su naturaleza química.\n \n 4. **Desechar** inmediatamente los materiales y utensilios de limpieza utilizados en el derrame. \n 5. **Levantar** el aviso/anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 6. **Documentar** evento en 'reporte de turno' y llenar el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 7. **Lanzar** NCMGT. \n ----------------------------------- \n **Referencias:** **PR-42219** Procedimiento para derrame de Alérgenos | **PR-28759** Procedimiento De Manejo de Alérgenos TOT | **QM-03782** Manual de Buenas Prácticas de Manufactura",
     final: true
   },
   //====================================================
