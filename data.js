@@ -107,7 +107,7 @@ const chatFlow = {
       },
       {
         label: "Plástico (Suave/Duro)/Vidrio/Madera",
-        next: "TOTPlastico1"
+        next: "TOTPlastico01"
       },
       {
         label: "Otros Cuerpos Extraños (cabello/plagas/pelusa/sangre)",
@@ -1038,7 +1038,7 @@ const chatFlow = {
     ]
   },
   TOTPlastico1: {
-    id: "Pregunta9",
+    id: "Pregunta10",
     question: "¿Dónde fue encontrado el objeto plástico?",
     options: [
       {
