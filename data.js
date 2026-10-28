@@ -1207,7 +1207,7 @@ const chatFlow = {
     final: true
   },
   TOTRespuestaOtros2:{
-    response: "**Haz lo siguiente:** \n 1. **Notificar** al supervisor/Team Leader. \n 2. **Confirmar** que no exista afectación a producto o superficies de contacto. \n 3. **Retirar** el contaminante y limpiear el área utilizando los utensilios correspondientes. \n 4. **Investigar** y corregir la fuente del hallazgo \n  \n 5. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Informacion para el levantamiento de incidentes en NCMGT'. \n 6. Lanzar NCMGT LOW QVS/Q&FS. \n 7. Esperar indicación del equipo calidad para realizar la limpieza en el área. \n --------------------------------------- \n **REFERENCIAS:** **PR-28756**-Procedimiento Manejo Integral de Plagas | **QM-03782**-Manual de Buenas Prácticas de Manufactura.",
+    response: "**Haz lo siguiente:** \n 1. **Notificar** al supervisor/Team Leader. \n 2. **Confirmar** que no exista afectación a producto o superficies de contacto. \n 3. **Retirar** el contaminante y limpiear el área utilizando los utensilios correspondientes. \n 4. **Investigar** y corregir la fuente del hallazgo \n **-** Para cabello: verificar el cumplimiento de BPM del personal, incluyendo que el cabello esté completamente cubierto por la escafandra, que el cabello largo esté recogido y que se utilice balerina cuando corresponda.\n **-** Para pelusa/ hilo: revisar la condición del uniforme, EPP y materiales utilizados en el área para identificar la fuente. Sustiruír el elemento que esté generando desprendimientos. \n **-** Para uña: verificar el cumplimiento de BPM de higiene personal, revisa las manos de tu equipo que deben estar limpias, sin pintura/esmalte y cortas\n **-** Para plagas: dar seguimiento con el proveedor externo de plagas para aplicación de plaguicidas. \n **-** Para sangre: la persona lesionada debe acudir al servicio médico y proteger adecuadamente cualquier herida visible antes de regresar a las áreas correspondientes \n **Eliminar** las condiciones que puedan favorecer la presencia de plagas, recogiendo papeles, plásticos, trapos sucios u otros residuos y colocándolos en los contenedores correspondientes, aplicando la política Celan as you go /Mantén limpio a tu paso. \n 5. **Documentar** el hallazgo conforme al proceso aplicable. \n 6. **Continuar** la operación únicamente si se confirmó que no existe afectación al producto. \n --------------------------------------- \n **REFERENCIAS:** **QM-03782**-Manual de Buenas Prácticas de Manufactura. | **PR-28756**-Procedimiento Manejo Integral de Plagas | **PR-28757** Procedimiento de Verificación de Buenas Prácticas de Personal | **REF-28680** Mapeo de Procesos TOT Riesgos Físicos | **PR-28743** PROCEDIMIENTO CONTROL PRODUCTO NO CONFORME V12",
     final: true
   },
 
@@ -1434,20 +1434,28 @@ const chatFlow = {
     options: [
       {
         label: "Desviación Sensorial",
-        next: "TOTQFSIncidente2"
+        next: "TOTRespuestaQFSIncidente1"
       },
       {
-        label: "Error en la mezcla / ingredientes equivocados/ parámetro crítico fuera de límite (ej. Temperatura, Peso)",
-        next: "TOTQFSIncidente3"
+        label: "Error en la mezcla de producto/ pasta o  ingredientes equivocados",
+        next: "TOTRespuestaQFSIncidente2"
+      },
+      {
+        label: "Parámetro crítico fuera de límite",
+        next: "TOTRespuestaQFSIncidente3"
       }
     ]
   },
-  TOTQFSIncidente2: {
-    response: "**Haz lo siguiente** \n 1. Notificar del evento a tu supervisor/QVS. \n 2. Segregar. \n 3. Participar en el **Panel de Conformidad** para evaluar la muestra contra el estándar físico vigente utilizando la **Escala de Grado de Diferencia (DoD) de 7 puntos**.\n 4. Escalar \n 5. **Dictaminar el producto (SOLO si** el panel determina una **DoD >= 4 es RECHAZO**) \n 6. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 7. Lanzar NCMGT QVS/Q&FS. \n -------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT.",
+  TOTRespuestaQFSIncidente1: {
+    response: "**Haz lo siguiente** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Segregar** el Producto De Acuerdo Con el Last Good Check (último control conforme). \n 3. **Realizar** la evaluación mediante el Panel de Conformidad, comprobando la muestra contra el estándar vigente y utilizando la escala Degree of Difference (DoD) de 7 puntos.\n 4. **Mantener** el producto bajo control hasta contar con el dictamen/disposición \n 5. **Documentar** el hallazgo conforme al proceso aplicable. \n 6. **Lanzar** NCMGT \n 7. **Esperar** señal de arranque por calidad. \n -------------------------------------\n **Referencia:** **PR-28743** PROCEDIMIENTO CONTROL DE PRODUCTO NO CONFORME V12.",
     final: true
   },
-  TOTQFSIncidente3: {
-    response: "1. Notificar del evento a tu supervisor/QVS \n 2. Segregar. \n 3. Documentar evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 4. **Dictaminar el producto**: \n **En caso de mezcla de empaque= inspeccionar hasta el producto NO mezclado y seccionarlo** \n **En caso de mezcla de pastas y/o ingredientes= realizar sensorial y trazabilidad (integrar al DATA en el proceso)** \n Documentos de trazabilidad: reporte de turno, transferencias de pastas, entrega de materiales, cantidades utilizadas. \n 5. Lanzar NCMGT QVS/Q&FS. \n 6. Realizar investigación. \n 7. Esperar autorización con base a la información del dictamen del producto de Q&FS \n ------------------------------ \n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) TOT",
+  TOTRespuestaQFSIncidente2: {
+    response: "1. **Notifica** del evento a tu supervisor/QVS/Q&FS Manager \n 2. **Segregar** el Producto De Acuerdo Con El Last Good Check (último control conforme). \n 3. **Realizar** la trazabilidad e investigación, considerando el producto/material involucrado y su punto de utilización. \n **Documentos de trazabilidad:** \n **->** Reporte de turno \n **->** Reporte de turno \n **->** Transferencias/consumos de pastas \n **->** Registros de entrega y consumo de materias primas/ingredientes \n **->** Lotes y cantidades utilizadas \n **->** Órdenes y registros de producción \n **->** Registros de producto semiterminado/reproceso involucrado \n **->** Identificación de lote, fecha y hora/punto de uso \n 4. **Mantener** el producto bajo control hasta contar con el dictamen/disposición correspondiente. \n 5. **Documentar** el hallazgo conforme al proceso aplicable. \n 6. **Lanzar** NCMGT. \n 7. **Esperar** señal de arranque por calidad \n ------------------------------ \n **Referencia:** **PR-28743** PROCEDIMIENTO CONTROL DE PRODUCTO NO CONFORME V12",
+    final: true
+  },
+  TOTRespuestaQFSIncidente3: {
+    response: "**Haz lo siguiente** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2. **Segregar** el Producto De Acuerdo Con el Last Good Check (último control conforme). \n 3. **Revisar** el producto afectado con base en el último registro dentro de especificación del proceso. \n 4. **Mantener** el producto bajo control hasta contar con el dictamen/disposición correspondiente \n 5. **Documentar** el hallazgo conforme al proceso aplicable. \n 6. **Lanzar** NCMGT \n 7. **Esperar** señal de arranque por calidad. \n -------------------------------------\n **Referencia:** **PR-28743** PROCEDIMIENTO CONTROL DE PRODUCTO NO CONFORME V12.",
     final: true
   }
 
