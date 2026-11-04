@@ -69,19 +69,15 @@ const chatFlow = {
     options: [
       {
         label: "Objeto Metálico",
-        next: "lineaMetalSCA"
+        next: "SCAMetal1"
       },
       {
-        label: "Plástico Suave / Duro",
+        label: "Plástico (Suave/Duro) / Vidrio / Madera",
         next: "lineaPlasticoSCA"
       },
       {
-        label: "Vidrio o Madera",
+        label: "Otros cuerpos extraños (cabello/plagas/pelusa/sangre)",
         next: ""
-      },
-      {
-        label: "Otros Cuerpos Extraños (vidrio, madera, cabello, plagas, pelusa, etc.)",
-        next: "lineaFOSCA"
       },
       {
         label: "Ingreso de Agua",
@@ -178,14 +174,13 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS METAL SCA
   //====================================================
-
   SCAMetal1: {
-    id: "Pregunta5",
-    question: "¿El metal encontrado es mayor a 7mm?",
+    id: "Pregunta3",
+    question: "¿El objeto metálico encontrado es superior a 7mm y/o es esférico menor o igual a 44.5mm?",
     options: [
       {
         label: "Si",
-        next: "paroLinea"
+        next: "SCAMetalRespuesta1"
       },
       {
         label: "No",
@@ -194,114 +189,90 @@ const chatFlow = {
     ]
   },
   SCAMetal2: {
-    id: "Pregunta6",
+    id: "Pregunta4",
     question: "¿Dónde fue encontrado el objeto metálico?",
     options: [
       {
-        label: "En producto",
-        next: "SCAMetal5"
-      },
-      {
-        label: "En CCP",
-        next: "SCAMetal4"
+        label: "En producto/CCP (Ej. Magneto/Filtro)",
+        next: "SCAMetal6"
       },
       {
         label: "En algún ingrediente o material de empaque.",
-        next: "SCAMetal4"
+        next: "SCAMetalRespuesta11"
       },
       {
-        label: "En detector de metales (PCC/OPRP)",
-        next: "SCAMetal3"
+        label: "En OPRP",
+        next: "SCAMetal31"
       },
       {
-        label: "Otro",
-        next: "SCAMetal4"
+        label: "En No OPRP (Ej. Mallas Flitros)",
+        next: "SCAMetalRespuesta10"
       }
     ]
   },
   SCAMetal3:{
-    id: "Pregunta7",
+    id: "Pregunta5",
     question: "¿El objeto metálico encontrado es superior a 6 mm?",
     options: [
       {
         label: "Si",
-        next: "paroLinea"
+        next: "SCAMetalRespuesta2"
       },
       {
         label: "No",
-        next: "SCAMetal4"
+        next: "SCAMetal5"
       }
     ]
   },
-  SCAMetal4:{
-    id: "Pregunta8",
-    question: "¿Qué estructura tiene el objeto metálico?",
-    options: [
-      {
-        label: "Filoso",
-        next: "SCAMetal5"
-      },
-      {
-        label: "Duro",
-        next: "SCAMetal5"
-      },
-      {
-        label: "Felxible",
-        next: "SCAMetal5"
-      },
-      {
-        label: "No Filoso",
-        next: "SCAMetal5"
-      },
-      {
-        label: "Quebradizo",
-        next: "SCAMetal5"
-      },
-      {
-        label: "Blando",
-        next: "SCAMetal5"
-      },
-    ]
-  },
-  SCAMetal5:{
-    id:"Pregunta9",
-    question: "¿El objeto metálico de que material es?",
-    options:[
-      {
-        label: "Ferroso",
-        next: "SCAMetal6"
-      },
-      {
-        label: "No Ferroso",
-        next: "SCAMetal6"
-      },
-      {
-        label: "Acero Inoxidable",
-        next: "SCAMetal6"
-      }
-    ]
-  },
-  SCAMetal6:{
-    id: "Pregunta10",
-    question: "¿Existe la posibilidad de que el metal haya llegado al producto?",
+  SCAMetal31:{
+    id: "Pregunta5",
+    question: "¿El objeto metálico encontrado es mayor a 6 mm y es duro o su condición es afilada/puntiaguda?",
     options: [
       {
         label: "Si",
-        next: "SCAMetal7",
+        next: "SCAMetalRespuesta2"
       },
       {
         label: "No",
-        next: "SCAMetal7"
+        next: "SCAMetalRespuesta9"
       }
     ]
   },
-  SCAMetal7: {
-    id: "Pregunta11",
+  SCAMetal5: {
+    id: "Pregunta6",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
         label: "Si",
-        next: "NoParoLinea"
+        next: "SCAMetalRespuesta3"
+      },
+      {
+        label: "No",
+        next: "SCAMetal71"
+      }
+    ]
+  },
+  SCAMetal51: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "SCAMetalRespuesta6"
+      },
+      {
+        label: "No",
+        next: "SCAMetal71"
+      }
+    ]
+  },
+  SCAMetal6: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "SCAMetalRespuesta3"
       },
       {
         label: "No",
@@ -309,13 +280,17 @@ const chatFlow = {
       }
     ]
   },
-  SCAMetal8:{
-    id: "Pregunta12",
+  SCAMetal4: {
+    response: "**Puedes continuar con la producción normal bajo monitoreo. Ejecutar lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n 2. **Continuar** con producción normal. \n 3. **Revisar** el porcentaje de defectivo de la orden surtida. \n **En caso de que sea mayor o igual al 2%:** \n - Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n - Generar la etiqueta de Rechazo \n - Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n - Entregar el rechazo a almacén. \n \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 6. **Lanzar** NCMGT LOW QVS/Q&FS \n 7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n \n **Referencia:** **PR-28743** Porcedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **SCA PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site SCA)",
+    final: true
+  },
+  SCAMetal7:{
+    id: "Pregunta7",
     question: "¿Es el segundo rechazo confirmado?",
     options: [
       {
         label: "Si",
-        next: "NoParoLinea"
+        next: "SCAMetalRespuesta4"
       },
       {
         label: "No",
@@ -323,63 +298,96 @@ const chatFlow = {
       }
     ]
   },
-  SCAMetal9:{
-    id: "Pregunta13",
-    question: "¿Este es el tercer rechazo de metal confirmado en tres horas o menos?",
-    options:[
-        {
-            label: "Si",
-            next: "paroLinea"
-        },
-        {
-            label: "No",
-            next: "SCAMetal10"
-        }
-    ]
-  },
-  SCAMetal10:{
-    id: "Pregunta14",
-    question: "¿Este es el tercer rechazo de metal confirmado en más de tres horas?",
-    options:[
+  SCAMetal71:{
+    id: "Pregunta7",
+    question: "¿Es el segundo rechazo confirmado?",
+    options: [
       {
         label: "Si",
-        next: "NoParoLinea"
+        next: "SCAMetalRespuesta7"
       },
       {
         label: "No",
-        next: "SCAMetal11"
+        next: "SCAMetal81"
       }
     ]
   },
-  SCAMetal11:{
-    id: "Pregunta15",
-    question: "¿Este es el cuarto rechazo confirmado?",
+  SCAMetal8:{
+    id: "Pregunta8",
+    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
     options:[
-        {
-            label: "Si",
-            next: "NoParoLinea"
-        },
-        {
-            label: "No",
-            next: "SCAMetal12"
-        }
+      {
+        label: "Si",
+        next: "SCAMetalRespuesta5"
+      },
+      {
+        label: "No",
+        next: "NoParoLinea"
+      }
     ]
   },
-  SCAMetal12:{
-    id: "Pregunta16",
-    question:"¿Este es el quinto rechazo de metal confirmado en 12 horas o menos?",
-    options: [
-        {
-            label: "Si",
-            next: "paroLinea"
-        },
-        {
-            label: "No",
-            next: "NoParoLinea"
-        }
+  SCAMetal81:{
+    id: "Pregunta8",
+    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
+    options:[
+      {
+        label: "Si",
+        next: "SCAMetalRespuesta8"
+      },
+      {
+        label: "No",
+        next: "SCAMetalRespuesta7"
+      }
     ]
   },
-
+  SCAMetalRespuesta1:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad REF-38187 Árbol de decisiones para manejo de incidentes de metal detectados por Detectores de metal.\n 3. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme). \n 4. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza.\n **- Proporcionar** la pieza que se confirme contaminada para investigación. \n **- Colocar** la evidencia en el **FORM-20599 Registro Spicy-Goma de detector de metales** \n **- Registrar** en el **FORM-20599 Registro Spicy-Goma de detector de metales** \n 5. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen del producto (Liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    image: "paro-linea.webp",
+    final:true
+  },
+  SCAMetalRespuesta2:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1. **Detener** el proceso \n 2. **Escalar** con el VSL responsable y Calidad. \n 3. **Realizar** la investigación. \n 4. **Corregir** las oportunidades detectadas durante la investigación. \n 5. **Detonar** una NCMGT/PRIMP según aplique el procedimiento PR-26024 PRIMP y el procedimiento PR-32998 No Conformidades. Documentar las acciones en el FORM-20683 Registro de contaminación en proceso. \n---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard  ",
+    image: "paro-linea.webp",
+    final:true
+  },
+  SCAMetalRespuesta3:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad. \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es duro y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo HACCP. \n -------------------------------\n **RECUERDA** \n  - Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site SCA, Sec. 5.1) | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final:true
+  },
+  SCAMetalRespuesta4:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme).\n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirma contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Regsitrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo de HACCP. \n -------------------------------\n **RECUERDA** \n  - Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site SCA, Sec. 5.1) | **FORM-38293** Plan HACCP CCP's | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final:true
+  },
+  SCAMetalRespuesta5:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad \n 3. **Segregar** el producto de acuerdo con el last good cehck (útlimo control conforme). \n 4. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen del prpducto (liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCP's | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    image: "paro-linea.webp",
+    final:true
+  },
+  SCAMetalRespuesta6:{
+    response: "Puedes continuar con la producción bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **SCA PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site SCA, Sec. 5.1)",
+    final:true
+  },
+  SCAMetalRespuesta7:{
+    response: "Puedes continuar con la producción bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **SCA PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site SCA, Sec. 5.1)",
+    final:true
+  },
+  SCAMetalRespuesta8:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Revisar** el porcentaje de defectivo de la orden surtida: \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma. \n -Entregar el rechazo a almacén \n 6. **Caracterizar** las partículas con fines de investigación. \n 7. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 8. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 9. **Lanzar** NCMGT QVS/Q&FS. \n 10. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety. \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site SCA, Sec 5.1)",
+    image: "paro-linea.webp",
+    final:true
+  },
+  SCAMetalRespuesta9:{
+    response: " **Ejecutar** lo siguiente: \n 1. **Detener** el proceso \n 2. **Escalar** con el VSL responsable, Calidad y Mantenimiento. \n 3. **Realizar** el cambio de equipo y/o reparación del mismo \n 4. **Detener** desde el último monitoreo OK \n 5. **Detonar** una NCMGT/PRIMP segun aplique de acuerdo al procedimiento PR-26024 PRIMP \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
+  SCAMetalRespuesta10:{
+    response: " **Ejecutar** lo siguiente: \n 1. **Detener** el proceso \n 2. **Escalar con el VSL responsable, Calidad y Mantenimiento \n 3. **Realizar** el cambio de equipo y/o reparación del mismo \n 4. Detener desde el último monitoreo OK \n 5. **Detonar** una NCMGT/PRIMP segun aplique de acuerdo al procedimiento PR-26024 PRIMP \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
+  SCAMetalRespuesta11:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar inmediatamente** el hallazgo al VSL y a Calidad. \n 2. **Identificar y mantener bajo control el material/ingrediente involucrado mientras se evalúa el hallazgo.** \n 3. **Caracterizar la materia extraña** con fines de investigación. \n 4. **Conservar la evidencia del hallazgo** asociada con el incidente y la investigación \n 5. **Idetnificar el ingrediente/material de empaque, lote u orden involucrada.** \n 6. **Evaluar el hallazgo con Calidad/Q&FS** para determinar el control y disposición correspondiente del material y producto potencialmente relacionado. \n 7. **Determinar la posible fuente de contaminación**. \n 8. **Documentar evento y la investigación** en los registros aplicables \n 9. **Inicirar NCMGT y/o PRIMP de acuerdo con la evaluación del evento.** \n 10. **Definir la disposición del material y producto potencialmente afectado con Calidad/Q&FS.** \n 11. Cuando corresponda por la evaluación del material, **ejecutar el proceso de rechazo/no conformidad vigente para materias primas o pmaterial de empaque** \n 12. **Reiniciar o continuar el proceso conforme a la disposición documentada de Calidad/Q&FS.** \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
   //====================================================
   //                PREGUNTAS METAL TOT
   //====================================================
@@ -603,415 +611,16 @@ const chatFlow = {
   //                PREGUNTAS METAL MTM
   //====================================================
   
-  MTMMetal1: {
-    id: "Pregunta5",
-    question: "¿El metal encontrado es mayor a 7mm?",
-    options: [
-      {
-        label: "Si",
-        next: "paroLinea"
-      },
-      {
-        label: "No",
-        next: "MTMMetal2"
-      }
-    ]
-  },
-  MTMMetal2: {
-    id: "Pregunta6",
-    question: "¿Dónde fue encontrado el objeto metálico?",
-    options: [
-      {
-        label: "En producto",
-        next: "MTMMetal5"
-      },
-      {
-        label: "En CCP",
-        next: "MTMMetal4"
-      },
-      {
-        label: "En algún ingrediente o material de empaque.",
-        next: "MTMMetal4"
-      },
-      {
-        label: "En detector de metales (PCC/OPRP)",
-        next: "MTMMetal3"
-      },
-      {
-        label: "Otro",
-        next: "MTMMetal4"
-      }
-    ]
-  },
-  MTMMetal3:{
-    id: "Pregunta7",
-    question: "¿El objeto metálico encontrado es superior a 6 mm?",
-    options: [
-      {
-        label: "Si",
-        next: "paroLinea"
-      },
-      {
-        label: "No",
-        next: "MTMMetal4"
-      }
-    ]
-  },
-  MTMMetal4:{
-    id: "Pregunta8",
-    question: "¿Qué estructura tiene el objeto metálico?",
-    options: [
-      {
-        label: "Filoso",
-        next: "MTMMetal5"
-      },
-      {
-        label: "Duro",
-        next: "MTMMetal5"
-      },
-      {
-        label: "Felxible",
-        next: "MTMMetal5"
-      },
-      {
-        label: "No Filoso",
-        next: "MTMMetal5"
-      },
-      {
-        label: "Quebradizo",
-        next: "MTMMetal5"
-      },
-      {
-        label: "Blando",
-        next: "MTMMetal5"
-      },
-    ]
-  },
-  MTMMetal5:{
-    id:"Pregunta9",
-    question: "¿El objeto metálico de que material es?",
-    options:[
-      {
-        label: "Ferroso",
-        next: "MTMMetal6"
-      },
-      {
-        label: "No Ferroso",
-        next: "MTMMetal6"
-      },
-      {
-        label: "Acero Inoxidable",
-        next: "MTMMetal6"
-      }
-    ]
-  },
-  MTMMetal6:{
-    id: "Pregunta10",
-    question: "¿Existe la posibilidad de que el metal haya llegado al producto?",
-    options: [
-      {
-        label: "Si",
-        next: "MTMMetal7",
-      },
-      {
-        label: "No",
-        next: "MTMMetal7"
-      }
-    ]
-  },
-  MTMMetal7: {
-    id: "Pregunta11",
-    question: "¿Este es el primer rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
-        next: "NoParoLinea"
-      },
-      {
-        label: "No",
-        next: "MTMMetal7"
-      }
-    ]
-  },
-  MTMMetal8:{
-    id: "Pregunta12",
-    question: "¿Es el segundo rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
-        next: "NoParoLinea"
-      },
-      {
-        label: "No",
-        next: "MTMMetal8"
-      }
-    ]
-  },
-  MTMMetal9:{
-    id: "Pregunta13",
-    question: "¿Este es el tercer rechazo de metal confirmado en tres horas o menos?",
-    options:[
-        {
-            label: "Si",
-            next: "paroLinea"
-        },
-        {
-            label: "No",
-            next: "tercerMetalMas3Horas"
-        }
-    ]
-  },
-  MTMMetal10:{
-    id: "Pregunta14",
-    question: "¿Este es el tercer rechazo de metal confirmado en más de tres horas?",
-    options:[
-      {
-        label: "Si",
-        next: "NoParoLinea"
-      },
-      {
-        label: "No",
-        next: "cuartoMetal"
-      }
-    ]
-  },
-  MTMMetal11:{
-    id: "Pregunta15",
-    question: "¿Este es el cuarto rechazo confirmado?",
-    options:[
-        {
-            label: "Si",
-            next: "NoParoLinea"
-        },
-        {
-            label: "No",
-            next: "quintoMetal"
-        }
-    ]
-  },
-  MTMMetal12:{
-    id: "Pregunta16",
-    question:"¿Este es el quinto rechazo de metal confirmado en 12 horas o menos?",
-    options: [
-        {
-            label: "Si",
-            next: "paroLinea"
-        },
-        {
-            label: "No",
-            next: "NoParoLinea"
-        }
-    ]
-  },
 
   //====================================================
   //                PREGUNTAS METAL TE
   //====================================================
 
-  TEMetal1: {
-    id: "Pregunta5",
-    question: "¿El metal encontrado es mayor a 7mm?",
-    options: [
-      {
-        label: "Si",
-        next: "paroLinea"
-      },
-      {
-        label: "No",
-        next: "TEMetal2"
-      }
-    ]
-  },
-  TEMetal2: {
-    id: "Pregunta6",
-    question: "¿Dónde fue encontrado el objeto metálico?",
-    options: [
-      {
-        label: "En producto",
-        next: "TEMetal4"
-      },
-      {
-        label: "En el flujo de proceso (Zona 1)",
-        next: "TEMetal3"
-      },
-      {
-        label: "En algún ingrediente o material de empaque.",
-        next: "TEMetal3"
-      },
-      {
-        label: "En detector de metales (PCC/OPRP)",
-        next: "TEMetal3"
-      },
-      {
-        label: "En piso (Zona 2 o Zona 3)",
-        next: "TEMetal3"
-      },
-      {
-        label: "Otro",
-        next: "TEMetal3"
-      }
-    ]
-  },
-  TEMetal3: {
-    id: "Pregunta7",
-    question: "¿Existe posibilidad de que el metal haya llegado al producto?",
-    options: [
-      {
-        label: "Si",
-        next: "preguntaPrimerRechazo"
-      },
-      {
-        label: "No",
-        next: "preguntaPrimerRechazo"
-      }
-    ]
-  },
-  TEMetal4: {
-    id: "Pregunta8",
-    question: "¿Este es el primer rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
-        next: "NoParoLinea"
-      },
-      {
-        label: "No",
-        next: "segundoMetal"
-      }
-    ]
-  },
-  TEMetal5:{
-    id: "Pregunta9",
-    question: "¿Es el segundo rechazo confirmado?",
-    options: [
-        {
-            label: "Si",
-            next: "NoParoLinea"
-        },
-        {
-            label: "No",
-            next: "tercerMetal"
-        }
-    ]
-  },
-  TEMetal6:{
-    id: "Pregunta10",
-    question: "¿Este es el tercer rechazo de metal confirmado en tres horas o menos?",
-    options:[
-        {
-            label: "Si",
-            next: "paroLinea"
-        },
-        {
-            label: "No",
-            next: "tercerMetalMas3Horas"
-        }
-    ]
-  },
-  TEMetal7:{
-    id: "Pregunta11",
-    question: "¿Este es el tercer rechazo de metal confirmado en más de tres horas?",
-    options:[
-      {
-        label: "Si",
-        next: "NoParoLinea"
-      },
-      {
-        label: "No",
-        next: "cuartoMetal"
-      }
-    ]
-  },
-  TEMetal8:{
-    id: "Pregunta12",
-    question: "¿Este es el cuarto rechazo confirmado?",
-    options:[
-        {
-            label: "Si",
-            next: "NoParoLinea"
-        },
-        {
-            label: "No",
-            next: "quintoMetal"
-        }
-    ]
-  },
-  TEMetal9:{
-    id: "Pregunta13",
-    question:"¿Este es el quinto rechazo de metal confirmado en 12 horas o menos?",
-    options: [
-        {
-            label: "Si",
-            next: "paroLinea"
-        },
-        {
-            label: "No",
-            next: "NoParoLinea"
-        }
-    ]
-  },
 
   //====================================================
   //                PREGUNTAS PLASTICO SCA
   //====================================================
-  SCAPlastico1:{
-    id: "Pregunta17",
-    question: "¿Qué tipo de objeto plástico encontraste?",
-    options: [
-      {
-        label: "Duro (ej. moldes, acrílico, empaques)",
-        next: "SCAPlastico2"
-      },
-      {
-        label: "Suave (ej. empaque, bolsas)",
-        next: "SCAPlastico2"
-      }
-    ]
-  },
-  SCAPlastico2: {
-    id: "Pregunta18",
-    question: "¿Dónde fue encontrado el objeto plástico?",
-    options: [
-      {
-        label: "En producto",
-        next: "SCAPlastico3"
-      },
-      {
-        label: "En molde con desgaste (le falta un pedazo)",
-        next: "SCAPlastico4"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "SCAPlastico3"
-      },
-      {
-        label: "EN PCC",
-        next: "SCAPlastico3"
-      },
-      {
-        label: "EN OPRP",
-        next: "SCAPlastico3"
-      },
-      {
-        label: "En herramienta de limpieza",
-        next: "SCAPlastico3"
-      },
-      {
-        label: "Otro (Ej. Magneto/Filtro)",
-        next: "SCAPlastico3"
-      }
-    ]
-  },
-  SCAPlastico3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontro la particula.\n  5. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety  ---------------------------------------\n**RECUERDA**\nLa línea no puede arrancar nuevamente hasta que se tenga la aprobación formal del equipo local de Q&FS/VSQ.\n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 11. Esperar señal de arranque por RA equipo HACCP.  \n --------------------------------------- \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
-    image: "paro-linea.webp",
-    final: true
-  },
-  SCAPlastico4: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Retira el molde de uso operativo \n 5. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró la partícula \n  6. Detonar investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) .\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Detectar origen de partícula. \n 9. Revisar toda la linea para identificar más partículas plásticas y asegurar despeje completo. \n 10. Lanzar NCMGT MEDIO QVS/Q&FS \n 11. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety. \n 12. Esperar señal de arranque por RA equipo HACCP. \n **Referencias: ** **PR-24264**-Effective Application of Physical Sorters to Production Processes, **PR-23679**-Effective Application of Optical Sorters to Production Processes, **PR-40192**-Procedimiento de escalamiento ante herramientas rotas o extraviadas V0, **PR-28769**-Procedimiento de Monitoreo",
-    image: "paro-linea.webp",
-    final: true
-  },
+ 
   //====================================================
   //                PREGUNTAS PLASTICO MTM
   //====================================================
@@ -1122,56 +731,7 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS VIDRIO/MADERA SCA
   //====================================================
-  SCAVidrio1: {
-    id: "Pregunta19",
-    question: "¿Qué tipo de objeto encontraste?",
-    options: [
-      {
-        label: "Vidrio",
-        next: "SCAVidrio3"
-      },
-      {
-        label: "Madera",
-        next: "SCAVidrio3"
-      },
-      
-    ]
-  },
-  SCAVidrio3: {
-    id: "Pregunta20",
-    question: "¿Dónde fue encontrado el objeto extraño?",
-    options: [
-      {
-        label: "En producto",
-        next: "SCAVidrio4"
-      },
-      {
-        label: "En tanques/marmita",
-        next: "SCAVidrio4"
-      },
-      {
-        label: "En PCC",
-        next: "SCAVidrio4"
-      },
-      {
-        label: "En OPRP",
-        next: "SCAVidrio4"
-      },
-      {
-        label: "Otro",
-        next: "SCAVidrio4"
-      }
-    ]
-  },
-  SCAVidrio4: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Revisar OPRP, Magnetos y No OPRP Antes de PCC o donde se encontró el objeto extraño.\n  5. Detonar investigación para definir fuente y causa potencial.\n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 7. Detectar origen de partícula. \n 8. Revisar toda la linea para identificar más partículas y asegurar despeje completo. \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP.",
-    image: "paro-linea.webp",
-    final: true
-  },
-  SCAVidrio5: {
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  5. Detonar investigación para definir fuente y causa potencial \n 6. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT. \n 10. Continuar monitoreo.",
-    final: true
-  },
+
   //====================================================
   //                PREGUNTAS OTROS MTM
   //====================================================
@@ -1214,43 +774,7 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS AGUA SCA
   //====================================================
-  SCAAgua1:{
-    id: "Pregunta23",
-    question: "¿El goteo condensación o ingreso de agua cayó **DIRECTAMENTE** sobre el producto, materias primas, material de empaque o Zona 2?",
-    options:[
-      {
-        label: "Si",
-        next: "SCAAgua2"
-      },
-      {
-        label: "No",
-        next: "SCAAgua3"
-      }
-    ]
-  },
-  SCAAgua2:{
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n 4. Detonar investigación para definir fuente y causa potencial.\n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n 8. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n **9. Esperar señal de arranque por RA equipo HACCP.**",
-    image: "paro-linea.webp",
-    final: true
-  },
-  SCAAgua3:{
-    id: "Pregunta24",
-    question: "¿El agua está cayendo en pasillo o áreas alejadas, pero existe el riesgo de que salpique o llegue a la línea por el tráfico de personas o patines?",
-    options:[
-      {
-        label: "Si",
-        next: "SCAAgua2"
-      },
-      {
-        label: "No",
-        next: "SCAAgua4"
-      }
-    ]
-  },
-  SCAAgua4:{
-    response: "**Debes hacer lo siguiente:**\n  1. Notificar del evento a tu supervisor/QVS/Q&FS Manager.\n  2. Solicitar a Kryon acordonar el área, secar inmediatamente.\n  3. Reportar y levantar anormalidad a mantenimiento. \n 4. Detonar inversitgación para definir fuente y cuasa potencial \n 5. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n  6. SOLICITAR ISOPADO SUCIO ZONA AFECTADA \n 7. Lanzar NCMGT \n  8. Continuar monitoreo.",
-    final: true
-  },
+
   //====================================================
   //                PREGUNTAS AGUA MTM
   //====================================================
@@ -1288,70 +812,7 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS QUIMICO SCA
   //====================================================
-  SCAQuimico1: {
-    id: "Pregunta25",
-    question: "¿Qué tipo contaminación química identificaste?",
-    options: [
-      {
-        label: "Lubricantes",
-        next: "SCAQuimico2"
-      },
-      {
-        label: "Pintura",
-        next: "SCAQuimico2"
-      },
-      {
-        label: "Sanitizantes",
-        next: "SCAQuimico2"
-      },
-      {
-        label: "Alérgenos",
-        next: "SCAQuimico2"
-      }
-    ]
-  },
-  SCAQuimico2: {
-    id: "Pregunta26",
-    question: "¿El químico tuvo contacto con el producto, ingredientes, empaques o Z1?",
-    options: [
-      {
-        label: "Si",
-        next: "SCAQuimico3"
-      },
-      {
-        label: "No",
-        next: "SCAQuimico4"
-      }
-    ]
-  },
-  SCAQuimico3: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Acordonar y restringir el área  \n 5. Realizar la limpieza de las áreas involucradas. \n 6. Todos los materiales y utensilios de limpieza que se utilicen para limpiar el derrame se deben segregar y los responsables de limpiar derrames de alérgenos las deben desechar inmediatamente.\n  7. Detonar investigación para definir fuente y causa potencial.\n 8. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 9. Lanzar NCMGT MEDIO QVS/Q&FS \n 10. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 11. Esperar señal de arranque por RA equipo HACCP.",
-    image: "paro-linea.webp",
-    final: true
-  },
-  SCAQuimico4: {
-    id: "Pregunta27",
-    question: "¿El derrame ocurrió cerca de la línea  hay riesgo de contaminación cruzada?",
-    options: [
-      {
-        label: "Si",
-        next: "SCAQuimico5"
-      },
-      {
-        label: "No",
-        next: "SCAQuimico6"
-      }
-    ]
-  },
-  SCAQuimico5: {
-    response: "**¡PARO DE LINEA!**\n Debes hacer lo siguiente:\n  1. Detener la línea inmediatamente.\n  2. Segregar El Producto De Acuerdo Con El Last Good Check  \n  3. Notificar del evento a tu supervisor/QVS/Q&FS Manager. \n  4. Acordonar y restringir el área  \n 5. Realizar la limpieza de las áreas involucradas. \n  6. Detonar investigación para definir fuente y causa potencial.\n 7. Documentar evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 8. Lanzar NCMGT MEDIO QVS/Q&FS \n 9. Llenar el análisis de riesgos (RA FORM-5002) con el equipo de food safety \n 10. Esperar señal de arranque por RA equipo HACCP.",
-    image: "paro-linea.webp",
-    final: true
-  },
-  SCAQuimico6: {
-    response: "**Notificar del evento a tu supervisor/QVS/Q&FS Manager.**",
-    final: true
-  },
+
   //====================================================
   //                PREGUNTAS QUIMICO MTM
   //====================================================
@@ -1389,38 +850,7 @@ const chatFlow = {
   //====================================================
   //             PREGUNTAS INCIDENTES Q&FS SCA
   //====================================================
-  SCAQFSIncidente1: {
-    id: "Pregunta28",
-    question: "¿Qué tipo de desviación de calidad detectaste?",
-    options: [
-      {
-        label: "Error en la mezcla / ingredientes equivocados",
-        response: "**Detener el proceso.** \n No avanzar el producto. \n Escalar a Q&FS. \n Lanzar NCMGT"
-      },
-      {
-        label: "Parámetro fuera de límite",
-        next: "SCAQFSIncidente3"
-      },
-      {
-        label: "Falla Sensorial",
-        response: "**Detener** **avance** **del** **lote** **específico**. \n Aislar muestra y llamar a VS Calidad."
-      }
-    ]
-  },
-  SCAQFSIncidente2: {
-    id: "Pregunta29",
-    question: "¿Hay producto terminado comprometido?",
-    options: [
-      {
-        label: "Si",
-        response: "Ejecutar Protocolo de Paro Inmediato. \n Segregar todo el producto afectado. \n Escalar a Q&FS. \n Lanzar NCMGT"
-      },
-      {
-        label: "No",
-        response: "Detener el proceso. \n Escalar a Q&FS \n Lanzar NCMGT"
-      }
-      ]
-  },
+
   //====================================================
   //             PREGUNTAS INCIDENTES Q&FS MTM
   //====================================================
