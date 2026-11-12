@@ -379,7 +379,7 @@ const chatFlow = {
     final:true
   },
   SCAMetalRespuesta4:{
-    response: "**Ejecutar** lo siguiente: \n 1. **Mantener el producto rechazado segregado.** \n 2. **Clasificaro como rechazo no confirmado** cuanod, después de la inspección, no se detecte materia extraña. \n 3. **Mermar completamente el producto rechazado.** Un rechazo no confirmado **no vuelve a producción.** \n 4. **Registrar el evento en el sistema de conformidad del PCC a la hora de ocurrencia** \n 5. **Mantener el seguimiento del número de rechazos no confirmados durante el turno.** \n 6. El límite establecido por SCA es **5 rechazos no confirmados en un turno de 12 horas**. Al completar este límite, se debe ejecutar el procedimiento de **falla del equipo**. \n -----------------------------------------\n RECUERDA \n Cuando se presentan 5 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n ------------------------------------ \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard.",
+    response: "**Ejecutar** lo siguiente: \n 1. **Mantener el producto rechazado segregado.** \n 2. **Clasificaro como rechazo no confirmado** cuando, después de la inspección, no se detecte materia extraña. \n 3. **Mermar completamente el producto rechazado.** Un rechazo no confirmado **no vuelve a producción.** \n 4. **Registrar el evento en el sistema de conformidad del PCC a la hora de ocurrencia** \n 5. **Mantener el seguimiento del número de rechazos no confirmados durante el turno.** \n 6. El límite establecido por SCA es **5 rechazos no confirmados en un turno de 12 horas**. Al completar este límite, se debe ejecutar el procedimiento de **falla del equipo**. \n -----------------------------------------\n RECUERDA \n Cuando se presentan 5 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n ------------------------------------ \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard.",
     final:true
   },
   SCAMetalRespuesta5:{
@@ -409,7 +409,7 @@ const chatFlow = {
     final: true
   },
   SCAMetalRespuesta11:{
-    response: "**Ejecutar** lo siguiente: \n 1. **Notificar inmediatamente** el hallazgo al VSL y a Calidad. \n 2. **Identificar y mantener bajo control el material/ingrediente involucrado mientras se evalúa el hallazgo.** \n 3. **Caracterizar la materia extraña** con fines de investigación. \n 4. **Conservar la evidencia del hallazgo** asociada con el incidente y la investigación \n 5. **Idetnificar el ingrediente/material de empaque, lote u orden involucrada.** \n 6. **Evaluar el hallazgo con Calidad/Q&FS** para determinar el control y disposición correspondiente del material y producto potencialmente relacionado. \n 7. **Determinar la posible fuente de contaminación**. \n 8. **Documentar evento y la investigación** en los registros aplicables \n 9. **Inicirar NCMGT y/o PRIMP de acuerdo con la evaluación del evento.** \n 10. **Definir la disposición del material y producto potencialmente afectado con Calidad/Q&FS.** \n 11. Cuando corresponda por la evaluación del material, **ejecutar el proceso de rechazo/no conformidad vigente para materias primas o pmaterial de empaque** \n 12. **Reiniciar o continuar el proceso conforme a la disposición documentada de Calidad/Q&FS.** \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar inmediatamente** el hallazgo al VSL y a Calidad. \n 2. **Identificar y mantener bajo control el material/ingrediente involucrado mientras se evalúa el hallazgo.** \n 3. **Caracterizar la materia extraña** con fines de investigación. \n 4. **Conservar la evidencia del hallazgo** asociada con el incidente y la investigación \n 5. **Idetnificar el ingrediente/material de empaque, lote u orden involucrada.** \n 6. **Evaluar el hallazgo con Calidad/Q&FS** para determinar el control y disposición correspondiente del material y producto potencialmente relacionado. \n 7. **Determinar la posible fuente de contaminación**. \n 8. **Documentar evento y la investigación** en los registros aplicables \n 9. **Inicirar NCMGT y/o PRIMP de acuerdo con la evaluación del evento.** \n 10. **Definir la disposición del material y producto potencialmente afectado con Calidad/Q&FS.** \n 11. Cuando corresponda por la evaluación del material, **ejecutar el proceso de rechazo/no conformidad vigente para materias primas o material de empaque** \n 12. **Reiniciar o continuar el proceso conforme a la disposición documentada de Calidad/Q&FS.** \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final: true
   },
   SCAMetalRespuesta12:{
@@ -643,7 +643,224 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS METAL MTM
   //====================================================
-  
+ MTMMetal1: {
+    id: "Pregunta3",
+    question: "¿El objeto metálico encontrado es mayor o igual a 2mm y/o menor o igual a 44.5mm?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta1"
+      },
+      {
+        label: "No",
+        next: "MTMMetal2"
+      }
+    ]
+  },
+  MTMMetal2: {
+    id: "Pregunta4",
+    question: "¿Dónde fue encontrado el objeto metálico?",
+    options: [
+      {
+        label: "En producto/CCP (Ej. Magneto/Filtro)",
+        next: "MTMMetal6"
+      },
+      {
+        label: "En algún ingrediente o material de empaque.",
+        next: "MTMMetalRespuesta11"
+      },
+      {
+        label: "En OPRP",
+        next: "MTMMetal31"
+      },
+      {
+        label: "En No OPRP (Ej. Mallas Flitros)",
+        next: "MTMMetalRespuesta10"
+      }
+    ]
+  },
+  MTMMetal3:{
+    id: "Pregunta5",
+    question: "¿El objeto metálico encontrado es superior a 6 mm?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta2"
+      },
+      {
+        label: "No",
+        next: "MTMMetal5"
+      }
+    ]
+  },
+  MTMMetal31:{
+    id: "Pregunta5",
+    question: "¿El objeto metálico encontrado es superior a 6 mm?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta2"
+      },
+      {
+        label: "No",
+        next: "MTMMetalRespuesta9"
+      }
+    ]
+  },
+  MTMMetal5: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta3"
+      },
+      {
+        label: "No",
+        next: "MTMMetal71"
+      }
+    ]
+  },
+  MTMMetal51: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta6"
+      },
+      {
+        label: "No",
+        next: "MTMMetal71"
+      }
+    ]
+  },
+  MTMMetal6: {
+    id: "Pregunta6",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta3"
+      },
+      {
+        label: "No",
+        next: "MTMMetal7"
+      }
+    ]
+  },
+  MTMMetal4: {
+    response: "**Puedes continuar con la producción normal bajo monitoreo. Ejecutar lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n 2. **Continuar** con producción normal. \n 3. **Revisar** el porcentaje de defectivo de la orden surtida. \n **En caso de que sea mayor o igual al 2%:** \n - Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n - Generar la etiqueta de Rechazo \n - Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n - Entregar el rechazo a almacén. \n \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 6. **Lanzar** NCMGT LOW QVS/Q&FS \n 7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n \n **Referencia:** **PR-28743** Porcedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **MTM PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM)",
+    final: true
+  },
+  MTMMetal7:{
+    id: "Pregunta7",
+    question: "¿Es el segundo rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta4"
+      },
+      {
+        label: "No",
+        next: "MTMMetal8"
+      }
+    ]
+  },
+  MTMMetal71:{
+    id: "Pregunta7",
+    question: "¿Es el segundo rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta7"
+      },
+      {
+        label: "No",
+        next: "MTMMetal81"
+      }
+    ]
+  },
+  MTMMetal8:{
+    id: "Pregunta8",
+    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
+    options:[
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta5"
+      },
+      {
+        label: "No",
+        next: "MTMMetalRespuesta12"
+      }
+    ]
+  },
+  MTMMetal81:{
+    id: "Pregunta8",
+    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
+    options:[
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta8"
+      },
+      {
+        label: "No",
+        next: "MTMMetalRespuesta7"
+      }
+    ]
+  },
+  MTMMetalRespuesta1:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad.\n **- Retener y Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme). \n  **- Revisar** el producto rechazado pieza por pieza y sin flujo de producción. \n **- Secciona** la pieza que se confirme contaminada para investigación hasta encontrar la particula. \n **- Colocar** la evidencia en el FORM-58004 FORMATO PARA REGISTRO DE EVIDENCIA PRP-OPRP BARRAS localizar y extraer la partícula. \n **- Registrar** en el FORM-27693 Monitoreo de Detector de Metales \n 3. **Caracterizar** las aprtículas con fines de investigación. \n 4. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 5. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n **- Documentar** evento en 'reporte de turno' \n 6. **Lanzar** NCMGT QVS/Q&FS. \n **- Llenar** el análisis de riesgos (FORM-50002) con el equipo de Food Safety. \n **- Esperar** señal de arranque y dictamen del producto (Liberación, reproceso o destrucción) por el equipo de Calidad. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    image: "paro-linea.webp",
+    final:true
+  },
+  MTMMetalRespuesta2:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad. \n 3. **Caracterizar** las partículas con fines de investigación. \n 4. **Colocar** la evidencia en el FORM-38267 Monitoreo de Mallas y Filtros. \n 5. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 6. **Documentar** evento en 'reporte de turno' \n 7.  **Llenar** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 8. **Lanzar** NCMGT QVS/Q&FS. \n 9. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 10. **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38295** PLAN HACCP OPRPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    image: "paro-linea.webp",
+    final:true
+  },
+  MTMMetalRespuesta3:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad. \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es duro y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo HACCP. \n -------------------------------\n **RECUERDA** \n  - Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencias:** **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final:true
+  },
+  MTMMetalRespuesta4:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme).\n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirma contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Regsitrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo de HACCP. \n -------------------------------\n **RECUERDA** \n  - Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCP's | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final:true
+  },
+  MTMMetalRespuesta5:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n 1. **Detener** la línea inmediatamente. \n 2. **Notificar** del evento a tu supervisor/calidad \n 3. **Segregar** el producto de acuerdo con el last good cehck (útlimo control conforme). \n 4. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de turno'. \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS. \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen del producto (liberación, reproceso o destrucción) por el equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCP's | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    image: "paro-linea.webp",
+    final:true
+  },
+  MTMMetalRespuesta6:{
+    response: "Puedes continuar con la producción bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **MTM PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM, Sec. 5.1)",
+    final:true
+  },
+  MTMMetalRespuesta7:{
+    response: "Puedes continuar con la producción bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **MTM PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM, Sec. 5.1)",
+    final:true
+  },
+  MTMMetalRespuesta8:{
+    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Revisar** el porcentaje de defectivo de la orden surtida: \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma. \n -Entregar el rechazo a almacén \n 6. **Caracterizar** las partículas con fines de investigación. \n 7. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 8. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 9. **Lanzar** NCMGT QVS/Q&FS. \n 10. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety. \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM, Sec 5.1)",
+    image: "paro-linea.webp",
+    final:true
+  },
+  MTMMetalRespuesta9:{
+    response: " **Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager. \n 2. **Continuar** con producción con monitoreo especial por las siguientes 24 horas. \n 3. **Caracterizar** las partículas con fines de investigación. \n 4. **Colocar** la evidencia en el FORM-38267 Monitoreo de Mallas y Filtros. \n 5. **Revisar** el reporte de turno para detectar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS \n -------------------------------------\n **Referencia:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38295** PLAN HACCP OPRPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
+  MTMMetalRespuesta10:{
+    response: " **Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Continuar** con producción con monitoreo especial por las siguientes 24 horas. \n 3. **Caracterizar** las partículas con fines de investiación. \n 4. **Colocar** la evidencia en el FORM-56611 Monitoreo de Filtros y Tamices \n 5. **Revisar** el reporte de turno para detectar algún incidente. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS. \n -------------------------------------- \n **Referencia:** **FORM-38295** PLAN HACCP OPRPs y NO OPRPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
+  MTMMetalRespuesta11:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/ Q&FS Manager. \n 2. **Continuar** con producción con monitoreo especial por las siguientes 24 horas. \n 3. **Caracterizar** las partículas con fines de investigación. \n 4. **Colocar** la evidencia en el FORM-56871 Información para el levantamiento de incidentes en NCMGT \n - **Revisar** el porcentaje de defectivo de la orden surtida:\n **-**En caso de que sea mayor o igual a 2%: \n **->** Registrar en la base FORM-41789 REPORTE DE RECHAZOS.\n **->** Generar la etiqueta de Rechazo \n **->** Entregar el rechazo al DATA con el sello y firma para que lo entregue al material tester y lo ingrese a almacén. \n **->** Entregar el rechazo a almacén. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n ----------------------------------------- \n **Referencias:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **REF-05557** HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
+  MTMMetalRespuesta12:{
+    response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de tunro' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo HACCP. \n ------------------------------------ \n RECUERDA \n Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento \n -------------------------------------- \n **Referencias:** \n **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safey Management Programme Standard.",
+    final: true
+  },
 
   //====================================================
   //                PREGUNTAS METAL TE
@@ -718,12 +935,12 @@ const chatFlow = {
     ]
   },
   SCARespuestaVidrio1: {
-    response: "**¡PARO DE LINEA!**\n 1. **Detener la línea inmediatamente.** \n  2. **Notificar inmediatamente** el evento al Supervisor de Producción y a **Calidad**. \n  3. **Segregar e identificar el producto potencialmente afectado.** \n 4. **Conservar y recuperar la evidencia de vidrio** para ralizar la investigación. \n 5. **Caracterizar el objeto/material extraño** encontrado con fines de investigación y evaluación de riesgo. \n 6. **Identificar exactamente dónde fue encontrado el vidrio:** \n I. Producto\n II. Tanque/proceso \n III. OPRPR/PPRO, or ejemplo, malla o filtro \n IV. PCC \n 7. **Registrar el hallazgo en el formato correspondiente al dispositivo y línea donde ocurrió el evento.** \n 8. **Si el vidrio fue encontrado en una mallo o filtro, inspeccionar inmediatamente la integridad y condición del dispositivo.** \n 9. **Si se identifica daño de la malla/filtro:** \n I. Avisar al VSL y Quality and Food Safety Technician. \n II. Detener el producto desde la última revisión exitosa. \n III. Levantar reporte de producto no conforme. \n IV. Reparar o reemplazar el dispositivo. \n V. Volver a filtrar el producto desde el último monitoreo exitoso. \n VI. Docimentar las acciones correctivas en el registro aplicable. \n 10. **Detonar la investigación para determinar la fuente y causa potencial del vidrio.** \n 11. **Corregir las oportunidades o causas identificadas durante la investigación.** \n 12. **Documentar el evento y las acciones realizadas.** \n 13. **Levantar el registro de contaminación de producto y/o Producto No Confrome que corresponda. FORM-20683 Registro de contaminación de producto** y el **FORM-20737 Reporte de Producto No Conforme.** \n 14. **Iniciar NCMGT y/o PRIMP según corresponda a la evaluación del incidente.** \n 15. **Antes de reiniciar, verificar que las condiciones que originaron el hallazgo hayan sido corregidas** y completar las acciones aplicables al dispositivo/proceso. \n --------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev 10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Panzón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    response: "**¡PARO DE LINEA!**\n 1. **Detener la línea inmediatamente.** \n  2. **Notificar inmediatamente** el evento al Supervisor de Producción y a **Calidad**. \n  3. **Segregar e identificar el producto potencialmente afectado.** \n 4. **Conservar y recuperar la evidencia de vidrio** para ralizar la investigación. \n 5. **Caracterizar el objeto/material extraño** encontrado con fines de investigación y evaluación de riesgo. \n 6. **Identificar exactamente dónde fue encontrado el vidrio:** \n I. Producto\n II. Tanque/proceso \n III. OPRPR/PPRO, por ejemplo, malla o filtro \n IV. PCC \n 7. **Registrar el hallazgo en el formato correspondiente al dispositivo y línea donde ocurrió el evento.** \n 8. **Si el vidrio fue encontrado en una mallo o filtro, inspeccionar inmediatamente la integridad y condición del dispositivo.** \n 9. **Si se identifica daño de la malla/filtro:** \n I. Avisar al VSL y Quality and Food Safety Technician. \n II. Detener el producto desde la última revisión exitosa. \n III. Levantar reporte de producto no conforme. \n IV. Reparar o reemplazar el dispositivo. \n V. Volver a filtrar el producto desde el último monitoreo exitoso. \n VI. Documentar las acciones correctivas en el registro aplicable. \n 10. **Detonar la investigación para determinar la fuente y causa potencial del vidrio.** \n 11. **Corregir las oportunidades o causas identificadas durante la investigación.** \n 12. **Documentar el evento y las acciones realizadas.** \n 13. **Levantar el registro de contaminación de producto y/o Producto No Confrome que corresponda. FORM-20683 Registro de contaminación de producto** y el **FORM-20737 Reporte de Producto No Conforme.** \n 14. **Iniciar NCMGT y/o PRIMP según corresponda a la evaluación del incidente.** \n 15. **Antes de reiniciar, verificar que las condiciones que originaron el hallazgo hayan sido corregidas** y completar las acciones aplicables al dispositivo/proceso. \n --------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev 10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Panzón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     image: "paro-linea.webp",
     final: true
   },
   SCARespuestaVidrio2: {
-    response: "1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager \n 2. **Delimitar** el área del tráfico peatonal para evitar que se dispersen astillas de vidrio a otras líneas \n 3. **Evaluar** la posible afectación al producto. Si existe producto potencialmente afectado, deberá segregarse e identificarse y proceder conforme al proceso de control de producto no conforme aplicable en Toluca. \n 4. **Investigar** la fuente y causa del vidrio, incluyendo la revisión de equipos, instalaciones y elementos quebradizos cercanos. Si corresponde a un elemento inventariado, dar seguimiento en FORM-40610 Inventario de vidrio, plástico duro y cerámica; las desviaciones de equipo/instalaciones requieren seguimiento a reparación o sustitución. \n 5. **Solicitar** la recolección del vidrio y limpieza al proveedor de limpieza. \n 6. **Realizar** inspección y liberación del área por Q&FS, verificando que el área se encuentre en condiciones adecuadas y no represente riesgo para el proceso. \n 7. **Documentar** evento en FORM-40844 'Incidente de rompimiento de vidrio, plástico duro y cerámica' y en 'reporte de turno' \n --------------------------------------------- \n **Referencias: ** **FORM-40844** Incidente de rompimiento de vidrio, plástico duro y cerámica | **FORM-38293** Plan HACCP CCP's | **FORM-38295** PLAN HACCP OPRP's y NO OPRP's | **REF-05557** HACCP-based Food Safety Management Programme Standard | **PR-28761** Procedimiento Manejo de vidrio, plástico quebradizo y cerámica",
+    response: "1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager \n 2. **Delimitar** el área del tráfico peatonal para evitar que se dispersen astillas de vidrio a otras líneas \n 3. **Evaluar** la posible afectación al producto. Si existe producto potencialmente afectado, deberá segregarse e identificarse y proceder conforme al proceso de control de producto no conforme aplicable en Santa Catarina. \n 4. **Investigar** la fuente y causa del vidrio, incluyendo la revisión de equipos, instalaciones y elementos quebradizos cercanos. Si corresponde a un elemento inventariado, dar seguimiento en FORM-40610 Inventario de vidrio, plástico duro y cerámica; las desviaciones de equipo/instalaciones requieren seguimiento a reparación o sustitución. \n 5. **Solicitar** la recolección del vidrio y limpieza al proveedor de limpieza. \n 6. **Realizar** inspección y liberación del área por Q&FS, verificando que el área se encuentre en condiciones adecuadas y no represente riesgo para el proceso. \n 7. **Documentar** evento en FORM-40844 'Incidente de rompimiento de vidrio, plástico duro y cerámica' y en 'reporte de turno' \n --------------------------------------------- \n **Referencias: ** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev 10 | **FORM-37754 Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Panzón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final: true
   },
   SCARespuestaMadera1: {
@@ -902,7 +1119,29 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS AGUA SCA
   //====================================================
-
+  SCAAgua1:{
+    id: "Pregunta13",
+    question: "¿Dónde identificaste el goteo, condensación o ingreso de agua?",
+    options:[
+      {
+        label: "Contacto Directo/Zona 1/Zona 2",
+        next: "SCARespuestaAgua1"
+      },
+      {
+        label: "Zona 3/Zona 4",
+        next: "SCARespuestaAgua2"
+      }
+    ]
+  },
+  SCARespuestaAgua1:{
+    response: "**¡PARO DE LINEA!**\n **Debes hacer lo siguiente:**\n  1. **Detener** la línea inmediatamente.\n  2. **Segregar** El Producto De Acuerdo Con El Last Good Check (último control conforme) \n  3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Investigar y delimitar el área**: Identifica el origen del goteo y segrega el área de tránsito para asegurar que el agua no se extienda a otras líneas.\n 5. **Solicitar** un hisopado de zona en sucio. \n 6. **Limpiar** la zona afectada. \n 7. **Secar** completamente el área y eliminar condiciones que permitan acumulación de agua. \n 8. **Solicitar** un hisopado de zona en limpio. \n **-** En caso de LLUVIA -> después de 4 horas \n **-** En caso de otro -> INMEDIATAMENTE después de la limpieza \n 9. **Levantar** el aviso/anormalidad a Mantenimiento cuando el origen corresponda a instalaciones o servicios y realizar las acciones necesarias para eliminar la fuente. \n 10.**Documentar** evento en “reporte de turno” y llena el documento “FORM-56871 Información para el levantamiento de incidentes en NCMGT” \n 11. **Lanzar** NCMGT \n 12. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety \n 13. **Esperar** señal de arranque por RA equipo HACCP. \n 14. **Asegurar** que las superficies/equipos estén secos antes del arranque. \n -------------------------------------------------- \n **Referencias:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev 10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Panzón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safet Management Programme Standard",
+    image: "paro-linea.webp",
+    final: true
+  },
+  SCARespuestaAgua2:{
+    response: "**Debes hacer lo siguiente:**\n  1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager.\n  2. **Solicitar** a Kryon acordonar el área. \n 3. **Solicitar** a Q&FS hisopado en sucio de la zona afectada. \n 4. **Solicitar** a KRYON limpieza de la zona afectada \n 5. **Reportar y lebantar** anormalidad a mantenimiento. \n 6. **Detonar** investigación para definir fuente y causa potencial. \n 7. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 8. **Lanzar** NCMGT \n 9. **Continuar** monitoreo \n 10. **Solicitar** hisopado en limpio (DDL) por correo al equipo Q&FS \n - En caso de LLUVIA -> después de 4 HORAS \n - En caso de otro -> INMEDIATAMENTE después de la limpieza. \n ---------------------------------------- \n **Referencias:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev 10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Panzón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de proceso Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
+    final: true
+  },
   //====================================================
   //                PREGUNTAS AGUA MTM
   //====================================================
