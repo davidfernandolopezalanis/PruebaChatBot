@@ -488,19 +488,19 @@ const chatFlow = {
     options: [
       {
         label: "En producto/CCP (Ej. Magneto/Filtro)",
-        next: "MTMMetal6"
+        next: "MTMMetal4"
       },
       {
         label: "En algún ingrediente o material de empaque.",
-        next: "MTMMetalRespuesta11"
+        next: "MTMMetalRespuesta8"
       },
       {
         label: "En OPRP",
-        next: "MTMMetal31"
+        next: "MTMMetal3"
       },
       {
         label: "En No OPRP (Ej. Mallas Flitros)",
-        next: "MTMMetalRespuesta10"
+        next: "MTMMetalRespuesta7"
       }
     ]
   },
@@ -514,72 +514,26 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "MTMMetal5"
-      }
-    ]
-  },
-  MTMMetal31:{
-    id: "Pregunta7",
-    question: "¿El objeto metálico encontrado es superior a 6 mm?",
-    options: [
-      {
-        label: "Si",
-        next: "MTMMetalRespuesta2"
-      },
-      {
-        label: "No",
-        next: "MTMMetalRespuesta9"
-      }
-    ]
-  },
-  MTMMetal5: {
-    id: "Pregunta8",
-    question: "¿Este es el primer rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
-        next: "MTMMetalRespuesta3"
-      },
-      {
-        label: "No",
-        next: "MTMMetal71"
-      }
-    ]
-  },
-  MTMMetal51: {
-    id: "Pregunta9",
-    question: "¿Este es el primer rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
         next: "MTMMetalRespuesta6"
-      },
-      {
-        label: "No",
-        next: "MTMMetal71"
-      }
-    ]
-  },
-  MTMMetal6: {
-    id: "Pregunta6",
-    question: "¿Este es el primer rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
-        next: "MTMMetalRespuesta3"
-      },
-      {
-        label: "No",
-        next: "MTMMetal7"
       }
     ]
   },
   MTMMetal4: {
-    response: "**Puedes continuar con la producción normal bajo monitoreo. Ejecutar lo siguiente:** \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager \n 2. **Continuar** con producción normal. \n 3. **Revisar** el porcentaje de defectivo de la orden surtida. \n **En caso de que sea mayor o igual al 2%:** \n - Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n - Generar la etiqueta de Rechazo \n - Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n - Entregar el rechazo a almacén. \n \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' \n 6. **Lanzar** NCMGT LOW QVS/Q&FS \n 7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n \n **Referencia:** **PR-28743** Porcedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **MTM PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM)",
-    final: true
-  },
-  MTMMetal7:{
     id: "Pregunta7",
+    question: "¿Este es el primer rechazo confirmado?",
+    options: [
+      {
+        label: "Si",
+        next: "MTMMetalRespuesta3"
+      },
+      {
+        label: "No",
+        next: "MTMMetal5"
+      }
+    ]
+  },
+  MTMMetal5:{
+    id: "Pregunta8",
     question: "¿Es el segundo rechazo confirmado?",
     options: [
       {
@@ -588,27 +542,13 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "MTMMetal8"
+        next: "MTMMetal6"
       }
     ]
   },
-  MTMMetal71:{
-    id: "Pregunta7",
-    question: "¿Es el segundo rechazo confirmado?",
-    options: [
-      {
-        label: "Si",
-        next: "MTMMetalRespuesta7"
-      },
-      {
-        label: "No",
-        next: "MTMMetal81"
-      }
-    ]
-  },
-  MTMMetal8:{
-    id: "Pregunta8",
-    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
+  MTMMetal6:{
+    id: "Pregunta9",
+    question: "¿Este es el tercer rechazo de metal confirmado?",
     options:[
       {
         label: "Si",
@@ -616,21 +556,7 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "MTMMetalRespuesta12"
-      }
-    ]
-  },
-  MTMMetal81:{
-    id: "Pregunta8",
-    question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
-    options:[
-      {
-        label: "Si",
-        next: "MTMMetalRespuesta8"
-      },
-      {
-        label: "No",
-        next: "MTMMetalRespuesta7"
+        next: "MTMMetalRespuesta9"
       }
     ]
   },
@@ -658,31 +584,18 @@ const chatFlow = {
     final:true
   },
   MTMMetalRespuesta6:{
-    response: "Puedes continuar con la producción bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **MTM PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM, Sec. 5.1)",
-    final:true
-  },
-  MTMMetalRespuesta7:{
-    response: "Puedes continuar con la producción bajo con monitoreo. Ejecutar lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 2.**Continuar** con tu producción. \n 3. **Revisar** El porcentaje de defectivo de la orden surtida. \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma \n -Entregar el rechazo a almacén. \n 4. **Caracterizar** las partículas con fines de investigación. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n  7. **Reiniciar** con monitoreo especial por las siguientes 12 horas. \n -------------------------------\n **RECUERDA* \n  - Cuando se presentan 3 eventos confirmados de metal en 3 horas o menos debes detener la línea y seguir el proceso de escalamiento. \n --------------------------------------\n **Referencia:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **MTM PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM, Sec. 5.1)",
-    final:true
-  },
-  MTMMetalRespuesta8:{
-    response: "**¡PARO DE LÍNEA INMEDIATO!** \n Se ha detectado un peligro físico **crítico**. Ejecuta las siguientes acciones de inmediato: \n 1. **Detener** la línea inmediatamente. \n 2. **Segregar** el Producto de Acuerdo Con El Last Good Check (último control conforme).\n 3. **Notificar** del evento a tu supervisor/QVS/Q&FS Manager. \n 4. **Revisar** CCPs, OPRP filtros, mallas, magnetos. \n 5. **Revisar** el porcentaje de defectivo de la orden surtida: \n En caso de que sea mayor o igual a 2%: \n -Registrar en la base FORM-41789 REPORTE DE RECHAZOS \n -Generar la etiqueta de Rechazo \n -Entrega el rechazo al Material Tester con el sello para ingreso a almacén y su firma. \n -Entregar el rechazo a almacén \n 6. **Caracterizar** las partículas con fines de investigación. \n 7. **Detonar** investigación para definir fuente y causa potencial. (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno). \n 8. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 9. **Lanzar** NCMGT QVS/Q&FS. \n 10. **Llenar** el análisis de riesgos (RISK ASSESMENT FORM-50002) con el equipo de food safety. \n 11. **Esperar** señal de arranque por RA equipo HACCP. \n ---------------------------------- \n **REFERENCIAS:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **PR-28769** (Monitoreo, Verificación y Validación de CCPs y OPRPs site MTM, Sec 5.1)",
-    image: "paro-linea.webp",
-    final:true
-  },
-  MTMMetalRespuesta9:{
     response: " **Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/Q&FS Manager. \n 2. **Continuar** con producción con monitoreo especial por las siguientes 24 horas. \n 3. **Caracterizar** las partículas con fines de investigación. \n 4. **Colocar** la evidencia en el FORM-38267 Monitoreo de Mallas y Filtros. \n 5. **Revisar** el reporte de turno para detectar algún mantenimiento previo donde se pudo generar roce metal con metal. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS \n -------------------------------------\n **Referencia:** **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38295** PLAN HACCP OPRPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  MTMMetalRespuesta10:{
+  MTMMetalRespuesta7:{
     response: " **Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Continuar** con producción con monitoreo especial por las siguientes 24 horas. \n 3. **Caracterizar** las partículas con fines de investiación. \n 4. **Colocar** la evidencia en el FORM-56611 Monitoreo de Filtros y Tamices \n 5. **Revisar** el reporte de turno para detectar algún incidente. \n 6. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 7. **Lanzar** NCMGT LOW QVS/Q&FS. \n -------------------------------------- \n **Referencia:** **FORM-38295** PLAN HACCP OPRPs y NO OPRPs | **REF-05557** HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  MTMMetalRespuesta11:{
+  MTMMetalRespuesta8:{
     response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/QVS/Q&FS Local Team/ Q&FS Manager. \n 2. **Continuar** con producción con monitoreo especial por las siguientes 24 horas. \n 3. **Caracterizar** las partículas con fines de investigación. \n 4. **Colocar** la evidencia en el FORM-56871 Información para el levantamiento de incidentes en NCMGT \n - **Revisar** el porcentaje de defectivo de la orden surtida:\n **-**En caso de que sea mayor o igual a 2%: \n **->** Registrar en la base FORM-41789 REPORTE DE RECHAZOS.\n **->** Generar la etiqueta de Rechazo \n **->** Entregar el rechazo al DATA con el sello y firma para que lo entregue al material tester y lo ingrese a almacén. \n **->** Entregar el rechazo a almacén. \n 5. **Documentar** evento en 'reporte de turno' y llena el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT'. \n 6. **Lanzar** NCMGT LOW QVS/Q&FS. \n ----------------------------------------- \n **Referencias:** **PR-28743** Procedimiento sobre liberación producto (positive release) y control de producto no conforme (hold & release) | **REF-05557** HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  MTMMetalRespuesta12:{
+  MTMMetalRespuesta9:{
     response: "**Ejecutar** lo siguiente: \n 1. **Notificar** del evento a tu supervisor/calidad \n 2. **Segregar** el producto de acuerdo con el last good check (último control conforme). \n 3. **Pasar** el producto rechazado por el mismo detector SIN flujo de producción pieza por pieza. \n 4. **Continuar** con monitoreo especial. \n 5. **Fundir** la pieza que se confirme contaminada para investigación. \n 6. **Colocar** la evidencia en el FORM-38268 Monitoreo de Detectores de Metal (CCP). \n 7. **Registrar** en el FORM-38268 Formato de registro de hallazgos de detector de metales. \n 8. **Caracterizar** las partículas con fines de investigación. \n 9. **Detonar** investigación para definir fuente y causa potencial (Recuerda consultar la lista de caracterización de equipos de línea e información del reporte de turno) \n 10. **Revisar** CCPs, OPRP filtros, mallas, magnetos para determinar fuente de la partícula. \n 11. **Documentar** evento en 'reporte de tunro' \n 12. **Llena** el documento 'FORM-56871 Información para el levantamiento de incidentes en NCMGT' y especifica si la partícula es dura y/o afilada. \n 13. **Lanzar** NCMGT QVS/Q&FS \n 14. **Llenar** el análisis de riesgos (FORM-50002) con el equipo de food safety. \n 15. **Esperar** señal de arranque y dictamen (liberación, reproceso o destrucción) por el equipo HACCP. \n ------------------------------------ \n RECUERDA \n Cuando se presentan 3 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento \n -------------------------------------- \n **Referencias:** \n **PR-28769** Monitoreo, Verificación y Validación de CCPs y OPRPs | **FORM-38293** Plan HACCP CCPs | **REF-05557** HACCP-based Food Safey Management Programme Standard.",
     final: true
   },
@@ -696,7 +609,7 @@ const chatFlow = {
   //                PREGUNTAS VIDRIO/PLASTICO/MADERA SCA
   //====================================================
   SCAPlastico01: {
-    id: "Pregunta9",
+    id: "Pregunta12",
     question: "¿De qué material es el objeto encontrado?",
     options: [
       {
@@ -714,7 +627,7 @@ const chatFlow = {
     ]
   },
   SCAPlastico1: {
-    id: "Pregunta10",
+    id: "Pregunta13",
     question: "¿Dónde fue encontrado el objeto plástico?",
     options: [
       {
@@ -732,7 +645,7 @@ const chatFlow = {
     ]
   },  
   SCAVidrio1: {
-    id: "Pregunta9",
+    id: "Pregunta14",
     question: "¿Dónde fue encontrado el objeto?",
     options: [
       {
@@ -746,7 +659,7 @@ const chatFlow = {
     ]
   }, 
   SCAMadera1: {
-    id: "Pregunta9",
+    id: "Pregunta15",
     question: "¿Dónde fue encontrado el objeto?",
     options: [
       {
@@ -799,7 +712,7 @@ const chatFlow = {
   //                PREGUNTAS VIDRIO/PLASTICO/MADERA TOT
   //====================================================
   TOTPlastico01: {
-    id: "Pregunta9",
+    id: "Pregunta12",
     question: "¿De qué material es el objeto encontrado?",
     options: [
       {
@@ -817,7 +730,7 @@ const chatFlow = {
     ]
   },
   TOTPlastico1: {
-    id: "Pregunta10",
+    id: "Pregunta13",
     question: "¿Dónde fue encontrado el objeto plástico?",
     options: [
       {
@@ -835,7 +748,7 @@ const chatFlow = {
     ]
   },  
   TOTVidrio1: {
-    id: "Pregunta9",
+    id: "Pregunta14",
     question: "¿Dónde fue encontrado el objeto?",
     options: [
       {
@@ -849,7 +762,7 @@ const chatFlow = {
     ]
   }, 
   TOTMadera1: {
-    id: "Pregunta9",
+    id: "Pregunta15",
     question: "¿Dónde fue encontrado el objeto?",
     options: [
       {
