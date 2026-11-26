@@ -35,7 +35,7 @@ const chatFlow = {
     options: [
       {
         label: "Objeto Metálico",
-        next: "turnoMetalMTM"
+        next: "MTMMetal1"
       },
       {
         label: "Plástico Suave/Duro",
@@ -175,7 +175,7 @@ const chatFlow = {
   //                PREGUNTAS METAL SCA
   //====================================================
   SCAMetal1: {
-    id: "Pregunta3",
+    id: "Pregunta4",
     question: "¿El objeto metálico encontrado es superior a 7mm?",
     options: [
       {
@@ -189,29 +189,29 @@ const chatFlow = {
     ]
   },
   SCAMetal2: {
-    id: "Pregunta4",
+    id: "Pregunta5",
     question: "¿Dónde fue encontrado el objeto metálico?",
     options: [
       {
         label: "En producto/CCP (Ej. Magneto/Filtro)",
-        next: "SCAMetal6"
+        next: "SCAMetal4"
       },
       {
         label: "En algún ingrediente o material de empaque.",
-        next: "SCAMetalRespuesta11"
+        next: "SCAMetalRespuesta8"
       },
       {
         label: "En OPRP",
-        next: "SCAMetal31"
+        next: "SCAMetal3"
       },
       {
         label: "En No OPRP (Ej. Mallas Flitros)",
-        next: "SCAMetalRespuesta10"
+        next: "SCAMetalRespuesta7"
       }
     ]
   },
-  SCAMetal31:{
-    id: "Pregunta5",
+  SCAMetal3:{
+    id: "Pregunta6",
     question: "¿El objeto metálico encontrado es mayor a 6 mm y es duro o su condición es afilada/puntiaguda?",
     options: [
       {
@@ -220,12 +220,12 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "SCAMetalRespuesta9"
+        next: "SCAMetalRespuesta6"
       }
     ]
   },
-  SCAMetal6: {
-    id: "Pregunta6",
+  SCAMetal4: {
+    id: "Pregunta7",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
@@ -234,12 +234,12 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "SCAMetal7"
+        next: "SCAMetal5"
       }
     ]
   },
-  SCAMetal7:{
-    id: "Pregunta7",
+  SCAMetal5:{
+    id: "Pregunta8",
     question: "¿Es el segundo rechazo confirmado?",
     options: [
       {
@@ -248,12 +248,12 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "SCAMetal8"
+        next: "SCAMetal6"
       }
     ]
   },
-  SCAMetal8:{
-    id: "Pregunta8",
+  SCAMetal6:{
+    id: "Pregunta9",
     question: "¿Este es el tercer rechazo de metal confirmado?",
     options:[
       {
@@ -262,31 +262,31 @@ const chatFlow = {
       },
       {
         label: "No",
-        next: "SCAMetal9"
+        next: "SCAMetal7"
       }
     ]
   },
-  SCAMetal9:{
-    id: "Pregunta9",
+  SCAMetal7:{
+    id: "Pregunta10",
     question: "¿Es el cuarto rechazo confirmado?",
     options: [
       {
         label: "Si",
-        next: "SCAMetalRespuesta12",
+        next: "SCAMetalRespuesta9",
       },
       {
         label: "No",
-        next: "SCAMetal10"
+        next: "SCAMetal8"
       }
     ]
   },
-  SCAMetal10:{
-    id: "Pregunta10",
+  SCAMetal8:{
+    id: "Pregunta11",
     question: "¿Es el quinto rechazo confirmado?",
     options: [
       {
         label: "Si",
-        next: "SCAMetalRespuesta13"
+        next: "SCAMetalRespuesta10"
       }
     ]
   },
@@ -312,23 +312,23 @@ const chatFlow = {
     response: "**Mantener el producto rechazado segregado** \n 1. **Clasificarlo como rechazo no confirmado** cuando, después de la inspección, no se detecte materia extraña. \n 2. **Mermar completamente el producto rechazado.** Un rechazo no confirmado **no vuelve a producción.** \n 3. **Registrar el evento en el sistema de conformidad del PCC a la hora de ocurrencia.** \n 4. **Mantener el seguimiento del número de rechazos no confirmados durante el turno.** \n 5. El límite establecido por SCA es **5 rechazos no confirmados en un turno de 12 horas.** Al completar este límite, se debe ejecutar el procedimiento de **falla del equipo**. \n --------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final:true
   },
-  SCAMetalRespuesta9:{
+  SCAMetalRespuesta6:{
     response: " **Ejecutar** lo siguiente: \n 1. **Detener** el proceso \n 2. **Escalar** con el VSL responsable, Calidad y Mantenimiento. \n 3. **Realizar** el cambio de equipo y/o reparación del mismo \n 4. **Detener** desde el último monitoreo OK \n 5. **Detonar** una NCMGT/PRIMP segun aplique de acuerdo al procedimiento PR-26024 PRIMP \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  SCAMetalRespuesta10:{
+  SCAMetalRespuesta7:{
     response: " **Ejecutar** lo siguiente: \n 1. **Detener** el proceso \n 2. **Escalar** con el VSL responsable, Calidad y Mantenimiento \n 3. **Realizar** el cambio de equipo y/o reparación del mismo \n 4. **Detener** desde el último monitoreo OK \n 5. **Detonar** una NCMGT/PRIMP segun aplique de acuerdo al procedimiento PR-26024 PRIMP \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  SCAMetalRespuesta11:{
+  SCAMetalRespuesta8:{
     response: "**Ejecutar** lo siguiente: \n 1. **Notificar inmediatamente** el hallazgo al VSL y a Calidad. \n 2. **Identificar y mantener bajo control el material/ingrediente involucrado mientras se evalúa el hallazgo.** \n 3. **Caracterizar la materia extraña** con fines de investigación. \n 4. **Conservar la evidencia del hallazgo** asociada con el incidente y la investigación \n 5. **Idetnificar el ingrediente/material de empaque, lote u orden involucrada.** \n 6. **Evaluar el hallazgo con Calidad/Q&FS** para determinar el control y disposición correspondiente del material y producto potencialmente relacionado. \n 7. **Determinar la posible fuente de contaminación**. \n 8. **Documentar evento y la investigación** en los registros aplicables \n 9. **Inicirar NCMGT y/o PRIMP de acuerdo con la evaluación del evento.** \n 10. **Definir la disposición del material y producto potencialmente afectado con Calidad/Q&FS.** \n 11. Cuando corresponda por la evaluación del material, **ejecutar el proceso de rechazo/no conformidad vigente para materias primas o material de empaque** \n 12. **Reiniciar o continuar el proceso conforme a la disposición documentada de Calidad/Q&FS.** \n ---------------------------------- \n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  SCAMetalRespuesta12:{
+  SCAMetalRespuesta9:{
     response: "**Mantener el producto rechazado segregado.** \n 1. **Clasificarlo como rechazo no confirmado** cuando, después de la inspección, no se detecte materia extraña. \n 2. **Mermar completamente el producto rechazado.** Un rechazo no confirmado **no vuelve a producción.** \n 3. **Registrar el evento en el sistema de conformidad del PCC a la hora de ocurencia.** \n 4. **Mantener el seguimiento del número de rechazos no confirmados durante el turno.** \n 5. El límite establecido por SCA es **5 rechazos no confirmados en un turno de 12 horas.** Al completar este límite, se debe ejecutar el procdimiento de **falla del equipo**. \n -------------------------------- \n \n RECUERDA \n Cuando se presentan 5 eventos confirmados de metal en 1 hora o menos debes detener la línea y seguir el proceso de escalamiento \n \n --------------------------------------\n  **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev 10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Panzón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     final: true
   },
-  SCAMetalRespuesta13:{
+  SCAMetalRespuesta10:{
     response: "**PARO DE LÍNEA DE PRODUCCIÓN** \n **Haz lo siguiente** \n 1. **Detener e identificar el producto desde el último monitoreo correcto** \n 2. **Escalar al Operador especializado, VSL, Calidad y Mantenimiento para los ajustes del equipo.** \n 3. **Generar y registrar el número de aviso en el registro del PCC.** \n 4. **Documentar mediante NCMGT el producto detenido.** \n 5. **Realizar los ajustes necesarios al Detector de Metales** por Mantenimiento. \n 6. **Validar el Detector de Metales para confirmar su correcto funcionamiento.** \n 7. **Arrancar la línea únicamente después de confirmar el correcto funcionamiento del equipo por Mantenimiento y Calidad.** \n ------------------------------------ \n **RECUERDA** \n **Desde el primer evento de metal rechazado por un PCC se debe parar el flujo e iniciar la identificación/investigación de la fuente.** \n El producto rechazado debe mantenerse segregado y analizarse imediatamente para determinar si corresponde a un **rechazo confirmado o no confirmado.** \n El producto rechazado por el Detector de Metales debe ser mermado. \n  **Para rechzaos confirmados:** seguir el Árbol de Decisiones para Manejo de Incidentes de Metal vigente de SCA [PR-19116 V21] \n **Para rechazos no confirmados:** el límite establecido es **5 rechazos no confirmados en un turno de 12 horas**. Al alcanzar ese límite, se debe aplicar el procedimiento de falla del equipo. \n ----------------------------------------\n **REFERENCIAS:** **FORM-37750** Análisis del Proceso Skwinkles L1 Rev 09 | **FORM-37760** Análisis de Proceso Hubba Bubba Rev 09 | **FORM-37757** Análisis de Riesgo Gusano Rev 09 | **FORM-37753** Análisis de Proceso Skwinkles L3 Rev10 | **FORM-37754** Análisis de Proceso Muecas 8 y 9 Rev 11 | **FORM-37755** Análisis de Proceso Pnazón Rev 08 | **FORM-37761** Análisis de Proceso Pellet Rev 09 | **FORM-37759** Análisis de Proceso Polvos Rev 09 | **FORM-37751** Análisis de Proceso Skwinkles L2 Rev 07 | **FORM-55791** Análisis de Procesos Skwinkles Premezclas Rev 04 | HACCP-based Food Safety Management Programme Standard",
     image: "paro-linea.webp",
     final: true
@@ -338,7 +338,7 @@ const chatFlow = {
   //====================================================
 
   TOTMetal1: {
-    id: "Pregunta3",
+    id: "Pregunta4",
     question: "¿El objeto metálico encontrado es superior a 7mm y/o es esférico menor o igual a 44.5mm?",
     options: [
       {
@@ -352,7 +352,7 @@ const chatFlow = {
     ]
   },
   TOTMetal2: {
-    id: "Pregunta4",
+    id: "Pregunta5",
     question: "¿Dónde fue encontrado el objeto metálico?",
     options: [
       {
@@ -374,7 +374,7 @@ const chatFlow = {
     ]
   },
   TOTMetal3:{
-    id: "Pregunta5",
+    id: "Pregunta6",
     question: "¿El objeto metálico encontrado es superior a 6 mm?",
     options: [
       {
@@ -388,7 +388,7 @@ const chatFlow = {
     ]
   },
   TOTMetal4: {
-    id: "Pregunta6",
+    id: "Pregunta7",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
@@ -402,7 +402,7 @@ const chatFlow = {
     ]
   },
   TOTMetal5:{
-    id: "Pregunta7",
+    id: "Pregunta8",
     question: "¿Es el segundo rechazo confirmado?",
     options: [
       {
@@ -416,7 +416,7 @@ const chatFlow = {
     ]
   },
   TOTMetal6:{
-    id: "Pregunta8",
+    id: "Pregunta9",
     question: "¿Este es el tercer rechazo de metal confirmado en una hora o menos?",
     options:[
       {
@@ -468,7 +468,7 @@ const chatFlow = {
   //====================================================
   //                PREGUNTAS METAL MTM
   //====================================================
- MTMMetal1: {
+  MTMMetal1: {
     id: "Pregunta3",
     question: "¿El objeto metálico encontrado es mayor o igual a 2mm y/o menor o igual a 44.5mm?",
     options: [
@@ -483,7 +483,7 @@ const chatFlow = {
     ]
   },
   MTMMetal2: {
-    id: "Pregunta4",
+    id: "Pregunta5",
     question: "¿Dónde fue encontrado el objeto metálico?",
     options: [
       {
@@ -505,7 +505,7 @@ const chatFlow = {
     ]
   },
   MTMMetal3:{
-    id: "Pregunta5",
+    id: "Pregunta6",
     question: "¿El objeto metálico encontrado es superior a 6 mm?",
     options: [
       {
@@ -519,7 +519,7 @@ const chatFlow = {
     ]
   },
   MTMMetal31:{
-    id: "Pregunta5",
+    id: "Pregunta7",
     question: "¿El objeto metálico encontrado es superior a 6 mm?",
     options: [
       {
@@ -533,7 +533,7 @@ const chatFlow = {
     ]
   },
   MTMMetal5: {
-    id: "Pregunta6",
+    id: "Pregunta8",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
@@ -547,7 +547,7 @@ const chatFlow = {
     ]
   },
   MTMMetal51: {
-    id: "Pregunta6",
+    id: "Pregunta9",
     question: "¿Este es el primer rechazo confirmado?",
     options: [
       {
